@@ -6,10 +6,6 @@ Delphos is designed to support both methodological research in reinforcement lea
 
 ---
 
-## Repositories
-
-The Delphos ecosystem is organized into three interconnected repositories.
-
 ## [Delphos Core](researchers/architecture.md)
 
 Main research and development repository containing the complete reinforcement learning framework required to train, evaluate, and extend Delphos.
