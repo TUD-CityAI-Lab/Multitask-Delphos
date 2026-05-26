@@ -1,4 +1,4 @@
-# Delphos: Reinforcement Learning for Automated Discrete Choice Model Specification
+# Delphos: Reinforcement Learning for Automated Discrete Choice Model Specification.
 
 **Delphos** is a reinforcement learning framework designed to automate the specification of discrete choice models. It learns how to specify models by iteratively building configurations and receiving feedback (e.g., Log-Likelihood, AIC, BIC) from the resulting estimations.
 
