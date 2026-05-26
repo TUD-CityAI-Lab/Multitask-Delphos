@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#inference-and-transfer-learning" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -556,6 +561,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -898,6 +905,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -917,9 +926,91 @@
   
 
 
-  <h1>Overview</h1>
+<h1 id="inference-and-transfer-learning">Inference and transfer learning</h1>
+<p>Delphos supports inference workflows in which a previously trained reinforcement learning agent is applied to unseen discrete choice modelling tasks without additional training or few adaptation steps.</p>
+<p>The objective of inference is to evaluate whether the agent has learned transferable modelling strategies that generalize across datasets and modelling contexts.</p>
+<hr />
+<h1 id="frozen-agent-transfer">Frozen-Agent Transfer</h1>
+<p>The transfer workflow evaluates a frozen reinforcement learning policy on unseen tasks.</p>
+<p>In this setting:</p>
+<ul>
+<li>network weights remain fixed,</li>
+<li>gradients are disabled,</li>
+<li>replay buffers are not updated,</li>
+<li>and no additional learning occurs.</li>
+</ul>
+<p>The trained agent only performs sequential specification actions using the modelling strategies acquired during training.</p>
+<hr />
+<h1 id="inference-pipeline">Inference Pipeline</h1>
+<p>The inference phase follows four main stages:</p>
+<ol>
+<li>Load the trained agent.</li>
+<li>Switch the trainer to inference mode.</li>
+<li>Register an unseen dataset runtime.</li>
+<li>Execute inference episodes under multiple decision policies.</li>
+</ol>
+<hr />
+<h1 id="main-transfer-function">Main Transfer Function</h1>
+<pre><code class="language-python">def transfer(loaded_agent):
 
+    loaded_agent.inference()
 
+    unseen_runtime = loaded_agent.register_runtime(INFERENCE_TASKS[0])
+
+    transfer_df = compare_inference_modes(
+        trainer=loaded_agent,
+        runtime=unseen_runtime,
+        modes=[&quot;greedy&quot;, &quot;stochastic&quot;, &quot;boltzmann&quot;],
+        n_episodes=N_TRANSFER_EPISODES,
+    )
+</code></pre>
+<hr />
+<p>To evaluate whether the trained agent can generalize to unseen tasks, Delphos uses different inference protocols.</p>
+<h2 id="greedy-inference">Greedy inference</h2>
+<p>The agent always selects the action with the highest predicted Q-value.</p>
+<p>Characteristics:</p>
+<ul>
+<li>deterministic,</li>
+<li>exploitative,</li>
+<li>low exploration,</li>
+<li>stable specifications.</li>
+</ul>
+<h2 id="stochastic-inference">Stochastic inference</h2>
+<p>Actions are sampled probabilistically from the policy distribution.</p>
+<p>Characteristics:</p>
+<ul>
+<li>moderate exploration,</li>
+<li>increased specification diversity,</li>
+<li>stochastic trajectories.</li>
+</ul>
+<h2 id="boltzmann-inference">Boltzmann inference</h2>
+<p>Actions are sampled using a temperature-controlled softmax over Q-values.</p>
+<p>Characteristics:</p>
+<ul>
+<li>exploration-exploitation balance,</li>
+<li>controlled stochasticity,</li>
+<li>sensitivity to Q-value magnitudes.</li>
+</ul>
+<h1 id="inference-diagnostics">Inference Diagnostics</h1>
+<p>The inference workflow logs diagnostics during transfer evaluation.</p>
+<pre><code class="language-python">inf_logger = DiagnosticsLogger(cap=50_000)
+</code></pre>
+<p>Diagnostics are used to evaluate:</p>
+<ul>
+<li>transferability,</li>
+<li>exploration behaviour,</li>
+<li>specification diversity,</li>
+<li>trajectory stability,</li>
+<li>and policy uncertainty.</li>
+</ul>
+<p>The output of the transfer phase is a dataframe which stores:</p>
+<ul>
+<li>rewards,</li>
+<li>model specifications,</li>
+<li>number of terms,</li>
+<li>number of steps,</li>
+<li>and estimation outcomes.</li>
+</ul>
 
 
 
