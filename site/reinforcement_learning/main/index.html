@@ -16,7 +16,7 @@
         <link rel="prev" href="../../inference/main/">
       
       
-        <link rel="next" href="../../datasets/main/">
+        <link rel="next" href="../training/">
       
       
         
@@ -66,6 +66,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#delphos-core" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -645,6 +650,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -663,6 +670,34 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Training
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -870,6 +905,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -889,9 +926,149 @@
   
 
 
-  <h1>Overview</h1>
+<h1 id="delphos-core">Delphos Core</h1>
+<p>Welcome to the <code>delphos-core</code> repository, the heart of Multitask Delphos framework. This repository contains the complete reinforcement learning infrastructure required to:</p>
+<ul>
+<li>formulate discrete choice model specification as a Markov Decision Process (MDP),</li>
+<li>train reinforcement learning agents,</li>
+<li>evaluate modelling strategies,</li>
+<li>benchmark transferability across datasets,</li>
+<li>and automate utility specification workflows.</li>
+</ul>
+<hr />
+<h1 id="structure">Structure</h1>
+<p>The framework is organized into modular components.</p>
+<h1 id="configs"><code>configs/</code></h1>
+<p>It defines the set of tasks to be used in the training process. Each discrete choice dataset can be defined as a task by creating a <code>dataset.yaml</code> file in <code>dataset/</code> and registering it using <code>task_registry.py</code>.</p>
+<p>Example:</p>
+<pre><code class="language-python">from mdp.task import Task
 
+TASKS: list[Task] = [
+    Task.from_yaml(0, PROJECT_ROOT.parent / &quot;dataset/dataset_1/dataset.yaml&quot;),
+    Task.from_yaml(1, PROJECT_ROOT.parent / &quot;dataset/dataset_2/dataset.yaml&quot;),
+    Task.from_yaml(2, PROJECT_ROOT.parent / &quot;dataset/dataset_3/dataset.yaml&quot;),
+    #...
+    Task.from_yaml(N, PROJECT_ROOT.parent / &quot;dataset/dataset_N/dataset.yaml&quot;),
+]
 
+INFERENCE_TASKS: list[Task] = [
+    Task.from_yaml(0, PROJECT_ROOT.parent / &quot;dataset/dataset_N+1/dataset.yaml&quot;)
+]
+</code></pre>
+<hr />
+<h1 id="mdp"><code>mdp/</code></h1>
+<p>It defines defines all the core Markov Decision Process (MDP) components of Delphos. The specification process is formulated as a sequential decision-making problem in which:</p>
+<ul>
+<li>states represent utility specifications,</li>
+<li>actions represent modelling decisions,</li>
+<li>and rewards evaluate the resulting estimated models.</li>
+</ul>
+<h3 id="taskpy"><code>task.py</code></h3>
+<p>Defines the <code>Task</code> object, which acts as the central representation of a dataset and modelling environment. Responsible for:</p>
+<ul>
+<li>parsing <code>dataset.yaml</code> files,</li>
+<li>constructing attribute and covariate spaces,</li>
+<li>generating structural tensors and masks,</li>
+<li>and exposing environment configurations to the RL agent.</li>
+</ul>
+<h3 id="state_managerpy"><code>state_manager.py</code></h3>
+<p>Defines the state space of all feasible model specification space given the attributes and covariates in the task object. It is responsible for:</p>
+<ul>
+<li>encoding utility terms into symbolic states,</li>
+<li>decoding specifications from symbolic states to utility structures,</li>
+<li>generating fixed-length state representations.</li>
+</ul>
+<h3 id="action_managerpy"><code>action_manager.py</code></h3>
+<p>Defines the modelling action grammar and valid actions available to the agent. It is responsible for:</p>
+<ul>
+<li>adding utility terms,</li>
+<li>modifying transformations,</li>
+<li>changing taste structures,</li>
+<li>adding covariate interactions,</li>
+<li>and terminating specifications.</li>
+</ul>
+<h3 id="task_runtimepy"><code>task_runtime.py</code></h3>
+<p>Encapsulates task instances, state managers, and action managers into a single environment instance.</p>
+<h3 id="rewardpy"><code>reward.py</code></h3>
+<p>Defines the reward functions used during training. Reward signals may incorporate:</p>
+<ul>
+<li>AIC,</li>
+<li>BIC,</li>
+<li>Log-Likelihood,</li>
+<li>adjusted rho-square,</li>
+<li>behavioural plausibility,</li>
+<li>convergence quality,</li>
+<li>etc.</li>
+</ul>
+<h1 id="env"><code>env/</code></h1>
+<p>It connects Delphos with Apollo estimation software and is responsible for:</p>
+<ul>
+<li>executing model estimations,</li>
+<li>retrieving metrics,</li>
+<li>caching results,</li>
+<li>and coordinating communication between Python and the estimation backend.</li>
+</ul>
+<h3 id="environmentpy"><code>environment.py</code></h3>
+<p>Coordinates:</p>
+<ul>
+<li>estimation requests,</li>
+<li>reward retrieval,</li>
+<li>caching,</li>
+<li>and interaction between Delphos and the estimation environment.</li>
+</ul>
+<h3 id="apollo_runnerpy"><code>apollo_runner.py</code></h3>
+<p>Generates and executes Apollo estimation scripts dynamically. Responsible for:</p>
+<ul>
+<li>Generating Apollo syntax to be ran using R,</li>
+<li>launching estimation routines,</li>
+<li>extracting estimation results,</li>
+<li>and returning model metrics to the reinforcement learning environment.</li>
+</ul>
+<h3 id="result_cache_sqlitepy"><code>result_cache_sqlite.py</code></h3>
+<p>Implements SQLite-based caching to avoid redundant model estimations.</p>
+<h1 id="agent"><code>agent/</code></h1>
+<p>It contains the reinforcement learning architectures and neural networks used by Delphos.</p>
+<h3 id="delphos_agentpy"><code>delphos_agent.py</code></h3>
+<p>Includes:</p>
+<ul>
+<li>policy network (a DQN),</li>
+<li>modelling term embedding (a DeepSet encorder),</li>
+<li>action masking,</li>
+<li>exploration strategies,</li>
+<li>multitask learning integration,</li>
+<li>and state encoding pipelines.</li>
+</ul>
+<h3 id="dqnpy"><code>dqn.py</code></h3>
+<p>Implements the Double Deep Q-Network (Double DQN) architecture used for training.</p>
+<h3 id="z_state_encoderpy"><code>z_state_encoder.py</code></h3>
+<p>Contains permutation-invariant state encoders used to create a fixed-length state of model specifications.</p>
+<h1 id="training"><code>training/</code></h1>
+<p>It contains the training algorithm, where <code>trainer.py</code>:</p>
+<p>Coordinates:</p>
+<ul>
+<li>multitask training,</li>
+<li>exploration,</li>
+<li>replay buffer updates,</li>
+<li>target network synchronization,</li>
+<li>checkpointing,</li>
+<li>and logging.</li>
+</ul>
+<h1 id="transfer"><code>transfer/</code></h1>
+<p>It contains benchmarking and evaluation workflows for unseen datasets. It supports:</p>
+<ul>
+<li>zero-shot transfer,</li>
+<li>few-shot adaptation.</li>
+</ul>
+<h1 id="scripts"><code>scripts/</code></h1>
+<p>Contains executable entry points for:</p>
+<ul>
+<li>training (e.g., run_small_full_pipeline.py),</li>
+<li>evaluation (e.g., run_evaluation.py),</li>
+<li>benchmarking (e.g., run_transfer_benchmark.py).</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-bash">python scripts/run_small_full_pipeline.py
+</code></pre>
 
 
 
