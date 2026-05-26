@@ -1,67 +1,59 @@
 # Delphos: Reinforcement Learning for Automated Discrete Choice Model Specification
 
-**Delphos** is a Reinforcement learning agent to assist the choice model specification process. The framework formulates model specification as a sequential decision-making problem in which Delphos progressively proposes utility specifications and receives feedback from an estimation environment (e.g. Log-Likelihood, AIC, BIC, convergence metrics).
+**Delphos** is a reinforcement learning agent designed to assist the discrete choice model specification process. The framework formulates model specification as a sequential decision-making problem in which Delphos progressively proposes utility specifications and receives feedback from an estimation environment through metrics such as Log-Likelihood, AIC, BIC, and convergence diagnostics.
 
 Delphos is designed to support both methodological research in reinforcement learning for choice modelling and the practical application of trained agents for assisted model specification.
 
-The codebase is organised into three interconnected repositories:
-
 ---
+
+## Repositories
+
+The Delphos ecosystem is organized into three interconnected repositories.
 
 <div class="grid cards" markdown>
 
-- ## Delphos Core
+- ## [:material-brain: Delphos Core](researchers/architecture.md)
 
-  The main research and development repository containing the reinforcement learning framework for automated discrete choice model specification. It provides the code for extending the methodology, implementing new algorithms, designing reward functions, and reproducing experiments.
+  Main research and development repository containing the complete reinforcement learning framework required to train, evaluate, and extend Delphos.
 
-  This repository includes:
-  - Markov Decision Process (State space, Action space, Reward function, and task manager)
-  - Agent
-  - Environment (Apollo integration)
-  - Training
-  - Inference
-  - configs
+  Includes:
+  - Markov Decision Process formulation
+  - State and action spaces
+  - Reward functions
+  - Task manager
+  - Reinforcement learning agents
+  - Environment and Apollo integration
+  - Training pipelines
+  - Inference modules
+  - Benchmarking utilities
+  - Experiment configurations
 
-  [:octicons-arrow-right-24: Explore Delphos Core](researchers/architecture.md)
+- ## [:material-rocket-launch: Delphos User](choice_modellers/inference.md)
 
-- ## Delphos User
+  Lightweight repository for applying trained Delphos agents in inference mode to unseen or similar discrete choice modelling contexts without requiring further training.
 
-  Repository for applying trained Delphos agents in inference mode to unseen or similar discrete choice modelling contexts without requiring further training.
-
-  This repository focuses exclusively on inference and application workflows, including:
+  Includes:
   - Loading pre-trained weights
-  - Loading new dataset schema
-  - Proposing utility specifications
-  - Generating Pareto front based on user-defined metrics
-  - Reproducible application tutorials
+  - Loading dataset schemas
+  - Utility specification generation
+  - Pareto-front generation
+  - Inference workflows
+  - Reproducible tutorials
+  - Deployment examples
 
-  [:octicons-arrow-right-24: Explore Delphos User](choice_modellers/inference.md)
+- ## [:material-database: Transport Choice Datasets](datasets/structure.md)
 
-- ## Transport Choice Datasets
+  Repository of standardized transport choice datasets used for training, inference, benchmarking, and reproducibility.
 
-  Repository of transport choice datasets used for training, inference, and reproducibility.
-
-  [:octicons-arrow-right-24: Explore Transport Datasets](datasets/structure.md)
+  Includes:
+  - Raw and processed datasets
+  - Metadata and schemas
+  - Variable dictionaries
+  - Benchmark tasks
+  - Dataset preprocessing pipelines
+  - Reproducibility resources
 
 </div>
-
----
-
-## Overview
-
-This repository separates the methodological development of Delphos from its application in inference mode.
-
-### Delphos core
-
-Contains the complete reinforcement learning framework required to train, evaluate, and extend Delphos. It includes the MDP formulation, environments, agents, training pipelines, reward functions, benchmarking utilities, and inference modules.
-
-### Delphos user
-
-Contains only the components required to apply trained Delphos agents in inference mode. It provides a lightweight interface for loading pre-trained models and generating utility specifications for new datasets without retraining the agent.
-
-### Transport choice datasets
-
-Provides standardized transport choice datasets and metadata used for training, evaluation, benchmarking, and reproducibility.
 
 ---
 
@@ -69,11 +61,7 @@ Provides standardized transport choice datasets and metadata used for training, 
 
 ### Reinforcement Learning for Model Specification
 
-Delphos formulates utility specification as a sequential decision-making problem in which an agent progressively modifies and evaluates model specifications.
-
-### Automated Utility Specification
-
-The framework can propose utility specifications for discrete choice models based on learned modelling strategies from previous datasets and experiments.
+Delphos formulates utility specification as a sequential decision-making problem in which an agent progressively builds and evaluates utility specifications. Moreover, Delphos can propose utility specifications based on modelling strategies learned from previous datasets and experiments.
 
 ### Multi-Task Learning
 
@@ -91,11 +79,11 @@ Reward functions may incorporate:
 
 ### Apollo Integration
 
-The framework integrates with the Apollo R package for model estimation and evaluation.
+The framework integrates with the Apollo R package for estimation and evaluation of generated specifications.
 
 ### Reproducibility and Benchmarking
 
-This repo includes standardized datasets, benchmark tasks, and reproducible workflows for evaluating reinforcement learning approaches for choice model specification.
+The ecosystem includes standardized datasets, benchmark tasks, and reproducible workflows for evaluating reinforcement learning approaches for discrete choice model specification.
 
 ---
 
@@ -125,14 +113,13 @@ Multitask-Delphos/
 
 If you use Delphos, please cite the corresponding repositories and associated publications.
 
-### Working Paper
+### Publications
 
-```
+```bibtex
 @techreport{nova2025delphos,
   title={Delphos: A reinforcement learning framework for assisting discrete choice model specification},
   author={Nova, Gabriel and Hess, Stephane and van Cranenburgh, Sander},
   year={2025},
-  month={dec},
   institution={TU Delft},
   url={https://arxiv.org/abs/2506.06410}
 }
@@ -141,7 +128,6 @@ If you use Delphos, please cite the corresponding repositories and associated pu
   title={Sharing modelling decisions across assisted choice model specification tasks},
   author={Nova, Gabriel and Hess, Stephane and van Cranenburgh, Sander},
   year={2026},
-  month={may},
   institution={TU Delft},
   note={Working paper}
 }
