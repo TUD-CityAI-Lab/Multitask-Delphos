@@ -37,7 +37,7 @@ Includes:
 - Reproducible tutorials
 - Deployment examples
 
-## [Transport Choice Datasets](datasets/structure.md)
+## [Transport Choice Datasets](datasets/main.md)
 
 Repository of standardized transport choice datasets used for training, inference, benchmarking, and reproducibility.
 
