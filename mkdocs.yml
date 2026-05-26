@@ -1,0 +1,40 @@
+site_name: Multitask Delphos
+site_description: Reinforcement Learning for Assisted Discrete Choice Model Specification
+site_url: https://tud-cityai-lab.github.io/Multitask-Delphos/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+      - Overview: getting_started/overview.md
+      - Installation: getting_started/installation.md
+
+  - Choice Modellers:
+      - Inference Workflow: choice_modellers/inference.md
+      - Examples: choice_modellers/examples.md
+
+  - Researchers:
+      - Architecture: researchers/architecture.md
+      - Training: researchers/training.md
+      - Benchmarks: researchers/benchmarks.md
+
+  - Datasets:
+      - Repository Structure: datasets/structure.md
+
+  - Tutorials:
+      - tutorials/index.md
+
+repo_url: https://github.com/TUD-CityAI-Lab/Multitask-Delphos
+repo_name: Multitask-Delphos
+
+markdown_extensions:
+  - attr_list
+  - md_in_html

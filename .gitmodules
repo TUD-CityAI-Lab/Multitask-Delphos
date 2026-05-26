@@ -1,0 +1,6 @@
+[submodule "submodules/delphos-core"]
+	path = submodules/delphos-core
+	url = https://github.com/gnova3/delphos-core.git
+[submodule "submodules/transport-choice-datasets"]
+	path = submodules/transport-choice-datasets
+	url = https://github.com/TUD-CityAI-Lab/transport-choice-datasets.git
