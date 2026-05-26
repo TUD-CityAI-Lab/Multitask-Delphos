@@ -10,50 +10,49 @@ Delphos is designed to support both methodological research in reinforcement lea
 
 The Delphos ecosystem is organized into three interconnected repositories.
 
-<div class="grid cards" markdown>
+## [Delphos Core](researchers/architecture.md)
 
-- ## [:material-brain: Delphos Core](researchers/architecture.md)
+Main research and development repository containing the complete reinforcement learning framework required to train, evaluate, and extend Delphos.
 
-  Main research and development repository containing the complete reinforcement learning framework required to train, evaluate, and extend Delphos.
+Includes:
 
-  Includes:
-  - Markov Decision Process formulation
-  - State and action spaces
-  - Reward functions
-  - Task manager
-  - Reinforcement learning agents
-  - Environment and Apollo integration
-  - Training pipelines
-  - Inference modules
-  - Benchmarking utilities
-  - Experiment configurations
+- Markov Decision Process formulation
+- State and action spaces
+- Reward functions
+- Task manager
+- Reinforcement learning agents
+- Environment and Apollo integration
+- Training pipelines
+- Inference modules
+- Benchmarking utilities
+- Experiment configurations
 
-- ## [:material-rocket-launch: Delphos User](choice_modellers/inference.md)
+## [Delphos User](choice_modellers/inference.md)
 
-  Lightweight repository for applying trained Delphos agents in inference mode to unseen or similar discrete choice modelling contexts without requiring further training.
+Lightweight repository for applying trained Delphos agents in inference mode to unseen or similar discrete choice modelling contexts without requiring further training.
 
-  Includes:
-  - Loading pre-trained weights
-  - Loading dataset schemas
-  - Utility specification generation
-  - Pareto-front generation
-  - Inference workflows
-  - Reproducible tutorials
-  - Deployment examples
+Includes:
 
-- ## [:material-database: Transport Choice Datasets](datasets/structure.md)
+- Loading pre-trained weights
+- Loading dataset schemas
+- Utility specification generation
+- Pareto-front generation
+- Inference workflows
+- Reproducible tutorials
+- Deployment examples
 
-  Repository of standardized transport choice datasets used for training, inference, benchmarking, and reproducibility.
+## [Transport Choice Datasets](datasets/structure.md)
 
-  Includes:
-  - Raw and processed datasets
-  - Metadata and schemas
-  - Variable dictionaries
-  - Benchmark tasks
-  - Dataset preprocessing pipelines
-  - Reproducibility resources
+Repository of standardized transport choice datasets used for training, inference, benchmarking, and reproducibility.
 
-</div>
+Includes:
+
+- Raw and processed datasets
+- Metadata and schemas
+- Variable dictionaries
+- Benchmark tasks
+- Dataset preprocessing pipelines
+- Reproducibility resources
 
 ---
 
