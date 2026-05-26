@@ -6,7 +6,7 @@ Delphos is designed to support both methodological research in reinforcement lea
 
 ---
 
-## [Delphos Core](researchers/architecture.md)
+## [Delphos Core](reinforcement_learning/main.md)
 
 Main research and development repository containing the complete reinforcement learning framework required to train, evaluate, and extend Delphos.
 
@@ -23,7 +23,7 @@ Includes:
 - Benchmarking utilities
 - Experiment configurations
 
-## [Delphos User](choice_modellers/inference.md)
+## [Delphos User](inference/main.md)
 
 Lightweight repository for applying trained Delphos agents in inference mode to unseen or similar discrete choice modelling contexts without requiring further training.
 
