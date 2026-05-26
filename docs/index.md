@@ -2,8 +2,6 @@
 
 **Delphos** is a reinforcement learning framework designed to automate the specification of discrete choice models. It learns how to specify models by iteratively building configurations and receiving feedback (e.g., Log-Likelihood, AIC, BIC) from the resulting estimations.
 
-## The Ecosystem
-
 The project consists of three interconnected repositories:
 
 <div class="grid cards" markdown>
