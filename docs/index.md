@@ -1,6 +1,6 @@
-# Delphos: Reinforcement Learning for Automated Discrete Choice Model Specification
+# Reinforcement Learning for Automated Discrete Choice Model Specification
 
-**Delphos** is a reinforcement learning agent designed to assist the discrete choice model specification process. The framework formulates model specification as a sequential decision-making problem in which Delphos progressively proposes utility specifications and receives feedback from an estimation environment through metrics such as Log-Likelihood, AIC, BIC, and convergence diagnostics.
+**Delphos** is a multitask reinforcement learning agent designed to assist the discrete choice model specification process. The framework formulates model specification as a sequential decision-making problem in which Delphos progressively proposes utility specifications and receives feedback from an estimation environment through metrics such as Log-Likelihood, AIC, BIC, and convergence diagnostics.
 
 Delphos is designed to support both methodological research in reinforcement learning for choice modelling and the practical application of trained agents for assisted model specification.
 
