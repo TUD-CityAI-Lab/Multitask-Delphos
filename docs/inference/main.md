@@ -85,5 +85,10 @@ The transfer evaluation provides a non-dominated Pareto front over the explored 
 ```python
 # Generate the interactive Pareto front!
 fig = plot_pareto(df_results)
-fig.show()
+
+if fig is not None:
+    fig.write_html("pareto_front.html")
+    # fig.show()  # If running in a local Jupyter notebook
 ```
+
+<iframe src="pareto_front.html" width="100%" height="650px" frameborder="0"></iframe>
