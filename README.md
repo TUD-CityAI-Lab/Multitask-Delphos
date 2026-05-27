@@ -14,6 +14,10 @@ git commit -m "Update Delphos documentation"
 
 git push
 
-# 5. Rebuild and deploy MkDocs site
+# 5. Activate virtual environment
+
+pyenv activate Hermes
+
+# 6. Rebuild and deploy MkDocs site
 
 mkdocs gh-deploy --force
