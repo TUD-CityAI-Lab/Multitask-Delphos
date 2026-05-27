@@ -91,4 +91,4 @@ if fig is not None:
     # fig.show()  # If running in a local Jupyter notebook
 ```
 
-<iframe src="../assets/pareto_front.html" width="100%" height="700px" frameborder="0"></iframe>
+<iframe src="/Multitask-Delphos/assets/pareto_front.html" width="100%" height="700px" frameborder="0"></iframe>
