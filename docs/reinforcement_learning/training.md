@@ -1,7 +1,8 @@
 ---
 hide:
-  - navigation
+  - toc
 ---
+
 # Training Delphos
 
 Training Delphos on a new discrete choice dataset involves three main steps.
