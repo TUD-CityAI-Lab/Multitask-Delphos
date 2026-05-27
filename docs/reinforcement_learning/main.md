@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Delphos Core
 
 Welcome to the `delphos-core` repository, the heart of Multitask Delphos framework. This repository contains the complete reinforcement learning infrastructure required to:
