@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Transfer module
 
 The Delphos transfer module is responsible for evaluating pre-trained Delphos agents on unseen datasets and choice tasks. It provides a robust, multi-scenario pipeline designed to test both **Zero-Shot Inference** (how well the agent generalizes purely through exploration strategies) and **Few-Shot Adaptation** (how quickly the agent can fine-tune its Q-network to a novel task).
