@@ -1,109 +1,89 @@
-# Inference and transfer learning
+# Transfer module
 
-Delphos supports inference workflows in which a previously trained reinforcement learning agent is applied to unseen discrete choice modelling tasks without additional training or few adaptation steps.
+The Delphos transfer module is responsible for evaluating pre-trained Delphos agents on unseen datasets and choice tasks. It provides a robust, multi-scenario pipeline designed to test both **Zero-Shot Inference** (how well the agent generalizes purely through exploration strategies) and **Few-Shot Adaptation** (how quickly the agent can fine-tune its Q-network to a novel task).
 
-The objective of inference is to evaluate whether the agent has learned transferable modelling strategies that generalize across datasets and modelling contexts.
+### Zero-Shot Scenarios
 
----
+In zero-shot mode, the agent's architecture weights are strictly frozen. The agent generates sequences of modelling actions based solely on its pre-trained state representations.
 
-# Frozen-Agent Transfer
+1. **Greedy Search** (`greedy`)
+   Always selects the action that maximizes the predicted Q-value at the current step. It provides a deterministic baseline for the agent's absolute best guess.
+2. **Stochastic Search** (`stochastic`)
+   Implements an $\epsilon$-greedy exploration policy. With probability $1 - \epsilon$, it acts greedily; with probability $\epsilon$, it takes a random valid action. Useful to quickly sample around the greedy path.
+3. **Boltzmann Search** (`boltzmann`)
+   Selects actions by sampling from a categorical distribution formed by applying a Softmax function over the Q-values, scaled by a `temperature` parameter. Higher temperatures flatten the probabilities (more exploration), while lower temperatures sharpen them (approaching greedy).
+4. **Top-K Search** (`topk`)
+   At every step, computes the top $K$ actions with the highest Q-values and samples uniformly among them.
+5. **Beam Search** (`beam`)
+   A classical tree-search algorithm. It maintains a set (beam) of the $W$ most promising partial specification trajectories at each step. At the end of the depth, it yields the highest scoring paths. Highly effective for deep specification mining but computationally expensive.
 
-The transfer workflow evaluates a frozen reinforcement learning policy on unseen tasks.
+### Few-Shot Scenarios (Online Adaptation)
 
-In this setting:
+In few-shot mode, the agent is allowed to actively fine-tune its neural network online using the reward signals (e.g., AIC/BIC or Log-Likelihood) produced by the unseen task. The original agent is copied to prevent cross-contamination.
 
-- network weights remain fixed,
-- gradients are disabled,
-- replay buffers are not updated,
-- and no additional learning occurs.
-
-The trained agent only performs sequential specification actions using the modelling strategies acquired during training.
-
----
-
-# Inference Pipeline
-
-The inference phase follows four main stages:
-
-1. Load the trained agent.
-2. Switch the trainer to inference mode.
-3. Register an unseen dataset runtime.
-4. Execute inference episodes under multiple decision policies.
+1. **Q-Head Only** (`q_head_only`)
+   Only the final Q-policy network is updated via backpropagation, while the DeepSet encoder is frozen.
+2. **Encoder Only** (`encoder_only`)
+   Only the DeepSet encoder is updated via backpropagation, while the Q-policy network is frozen.
+3. **Full Fine-tuning** (`full`)
+   The entire agent architecture is un-frozen and fine-tuned jointly on the unseen dataset.
 
 ---
 
-# Main Transfer Function
+## Usage Guide
+
+### 1. Load the pre-trained agent
 
 ```python
-def transfer(loaded_agent):
+from transfer.transfer_utils import (
+    load_pretrained_trainer,
+    get_tasks_and_runtimes,
+    run_zero_shot_inference,
+    run_few_shot_inference,
+    plot_pareto
+)
+from configs.task_registry import INFERENCE_TASKS
 
-    loaded_agent.inference()
+# 1. Load the pre-trained agent and metadata automatically
+EXPERIMENT_DIR = "experiments/small_full_pipeline/iteration_20260526_220728"
+trainer = load_pretrained_trainer(experiment_dir=EXPERIMENT_DIR)
 
-    unseen_runtime = loaded_agent.register_runtime(INFERENCE_TASKS[0])
+# 2. Get the environments for the target transfer tasks
+tasks_and_runtimes = get_tasks_and_runtimes(trainer=trainer, tasks=INFERENCE_TASKS)
 
-    transfer_df = compare_inference_modes(
-        trainer=loaded_agent,
-        runtime=unseen_runtime,
-        modes=["greedy", "stochastic", "boltzmann"],
-        n_episodes=N_TRANSFER_EPISODES,
+# 3. Evaluate Zero-Shot & Few-Shot scenarios
+for task, runtime in tasks_and_runtimes:
+
+    # Run zero-shot heuristics (automatically merges LLout/nFreeParams)
+    df_zero_shot = run_zero_shot_inference(
+        trainer=trainer,
+        runtime=runtime,
+        task=task,
+        n_episodes=20,
+        modes=["greedy", "boltzmann", "beam"]
     )
+
+    # Run few-shot fine-tuning
+    df_few_shot = run_few_shot_inference(
+        trainer=trainer,
+        runtime=runtime,
+        task=task,
+        n_adaptation_episodes=50,
+        modes=["q_head_only"]
+    )
+
+    # ... Aggregate results into df_results ...
 ```
 
----
+### 2. Pareto Front Visualization
 
-To evaluate whether the trained agent can generalize to unseen tasks, Delphos uses different inference protocols.
+The transfer evaluation provides a non-dominated Pareto front over the explored specifications (minimizing both complexity/`nFreeParams` and LogLikelihood/`LLout`). We display all specifications generated during the transfer evaluation across all zero-shot and few-shot scenarios.
 
-## Greedy inference
-
-The agent always selects the action with the highest predicted Q-value.
-
-Characteristics:
-
-- deterministic,
-- exploitative,
-- low exploration,
-- stable specifications.
-
-## Stochastic inference
-
-Actions are sampled probabilistically from the policy distribution.
-
-Characteristics:
-
-- moderate exploration,
-- increased specification diversity,
-- stochastic trajectories.
-
-## Boltzmann inference
-
-Actions are sampled using a temperature-controlled softmax over Q-values.
-
-Characteristics:
-
-- exploration-exploitation balance,
-- controlled stochasticity,
-- sensitivity to Q-value magnitudes.
-
-# Inference Diagnostics
-
-The inference workflow logs diagnostics during transfer evaluation.
+- Pareto-optimal models are highlighted with bold markers and connected via a dashed frontier line.
+- Sub-optimal models are rendered with low opacity.
 
 ```python
-inf_logger = DiagnosticsLogger(cap=50_000)
+# Generate the interactive Pareto front!
+fig = plot_pareto(df_results)
+fig.show()
 ```
-
-Diagnostics are used to evaluate:
-
-- transferability,
-- exploration behaviour,
-- specification diversity,
-- trajectory stability,
-- and policy uncertainty.
-
-The output of the transfer phase is a dataframe which stores:
-
-- rewards,
-- model specifications,
-- number of terms,
-- number of steps,
-- and estimation outcomes.
