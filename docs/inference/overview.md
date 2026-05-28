@@ -1,9 +1,14 @@
----
-hide:
-  - navigation
----
+# Inference Overview
 
-# Transfer module
+Delphos can be used to generate model specifications for new datasets without needing to retrain the reinforcement learning agent from scratch. This process is called **Inference**.
+
+There are three primary modes of using Delphos for a new dataset:
+
+1. **[Zero-Shot Inference](zero_shot.md)**: Using a pre-trained agent out-of-the-box on a new dataset.
+2. **[Few-Shot (Transfer) Learning](../reinforcement_learning/transfer_learning.md)**: Fine-tuning a pre-trained agent for a few steps on the new dataset before generating specifications.
+3. **[From Scratch](from_scratch.md)**: Training a new agent entirely on the new dataset.
+
+The `delphos` user library is designed specifically to make Zero-Shot inference as easy as possible.
 
 The Delphos transfer module is responsible for evaluating pre-trained Delphos agents on unseen datasets and choice tasks. It provides a robust, multi-scenario pipeline designed to test both **Zero-Shot Inference** (how well the agent generalizes purely through exploration strategies) and **Few-Shot Adaptation** (how quickly the agent can fine-tune its Q-network to a novel task).
 

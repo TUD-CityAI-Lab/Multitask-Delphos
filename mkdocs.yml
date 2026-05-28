@@ -16,19 +16,34 @@ nav:
   - Getting Started:
       - Overview: getting_started/overview.md
       - Installation: getting_started/installation.md
-
-  - Inference:
-      - Overview: inference/main.md
-
-  - Reinforcement Learning:
-      - Overview: reinforcement_learning/main.md
-      - Training: reinforcement_learning/training.md
+      - First Example: getting_started/first_example.md
+      - Quickstart: getting_started/quickstart.md
 
   - Datasets:
-      - Overview: datasets/main.md
+      - Overview: datasets/overview.md
+      - Usage: datasets/usage.md
+      - Example: datasets/example.md
+      - Format: datasets/dataset_format.md
+
+  - Inference:
+      - Overview: inference/overview.md
+      - Zero Shot: inference/zero_shot.md
+      - Few Shot: inference/few_shot.md
+      - From Scratch: inference/from_scratch.md
+
+  - Reinforcement Learning:
+      - Overview: reinforcement_learning/overview.md
+      - Training: reinforcement_learning/training.md
+      - Rewards: reinforcement_learning/rewards.md
+      - Transfer Learning: reinforcement_learning/transfer_learning.md
 
   - Tutorials:
-      - tutorials/main.md
+      - Ready to Use: tutorials/ready2use.md
+
+  - Development:
+      - Branches: development/branches.md
+      - Contribution Workflow: development/contribution_workflow.md
+      - Submodules: development/submodules.md
 
 repo_url: https://github.com/TUD-CityAI-Lab/Multitask-Delphos
 repo_name: Multitask-Delphos

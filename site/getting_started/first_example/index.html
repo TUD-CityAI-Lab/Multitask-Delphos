@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/getting_started/installation/">
+        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/getting_started/first_example/">
       
       
-        <link rel="prev" href="../overview/">
+        <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="../first_example/">
+        <link rel="next" href="../quickstart/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Installation - Multitask Delphos</title>
+        <title>First Example - Multitask Delphos</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#first-example-end-to-end-walkthrough" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              First Example
             
           </span>
         </div>
@@ -483,6 +483,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -502,7 +530,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    First Example
   
 
     
@@ -520,7 +548,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    First Example
   
 
     
@@ -546,10 +574,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#1-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        1. Preparation
       
     </span>
   </a>
@@ -557,10 +585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-the-user-library" class="md-nav__link">
+  <a href="#2-initialize-the-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installing the User Library
+        2. Initialize the Agent
       
     </span>
   </a>
@@ -568,10 +596,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-for-development-core" class="md-nav__link">
+  <a href="#3-run-inference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installing for Development (Core)
+        3. Run Inference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-inspecting-the-pareto-front" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Inspecting the Pareto Front
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-export-to-apollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Export to Apollo
       
     </span>
   </a>
@@ -582,34 +632,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../first_example/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    First Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1430,10 +1452,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#1-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        1. Preparation
       
     </span>
   </a>
@@ -1441,10 +1463,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-the-user-library" class="md-nav__link">
+  <a href="#2-initialize-the-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installing the User Library
+        2. Initialize the Agent
       
     </span>
   </a>
@@ -1452,10 +1474,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-for-development-core" class="md-nav__link">
+  <a href="#3-run-inference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installing for Development (Core)
+        3. Run Inference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-inspecting-the-pareto-front" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Inspecting the Pareto Front
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-export-to-apollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Export to Apollo
       
     </span>
   </a>
@@ -1482,27 +1526,39 @@
   
 
 
-<h1 id="installation">Installation</h1>
-<p>Delphos is currently under active development. The best way to use it is by cloning the repository and installing the user library locally.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li>Python 3.9+</li>
-<li><a href="https://www.r-project.org/">R</a> and the <a href="http://www.apollochoicemodelling.com/">Apollo package</a> (required for the estimation environment)</li>
-</ul>
-<h2 id="installing-the-user-library">Installing the User Library</h2>
-<p>To use pre-trained Delphos agents for assisted specification, you only need the <code>delphos</code> user library.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/TUD-CityAI-Lab/Multitask-Delphos.git
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>Multitask-Delphos/submodules/delphos-user
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<h1 id="first-example-end-to-end-walkthrough">First Example: End-to-End Walkthrough</h1>
+<p>In this guide, we'll walk through a complete example of using Delphos to assist in specifying a discrete choice model.</p>
+<h2 id="1-preparation">1. Preparation</h2>
+<p>First, ensure you have the <code>delphos</code> library installed and an R installation with Apollo configured. 
+We will use one of the standard datasets from <code>delphos-datasets</code> (e.g., Swissmetro).</p>
+<h2 id="2-initialize-the-agent">2. Initialize the Agent</h2>
+<p>We start by loading a pre-trained agent.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="kn">import</span> <span class="n">DelphosAgent</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_swissmetro</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">DelphosAgent</span><span class="o">.</span><span class="n">load_pretrained</span><span class="p">(</span><span class="s2">&quot;multitask_base&quot;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">data</span><span class="p">,</span> <span class="n">schema</span> <span class="o">=</span> <span class="n">load_swissmetro</span><span class="p">()</span>
 </span></code></pre></div>
-<h2 id="installing-for-development-core">Installing for Development (Core)</h2>
-<p>If you intend to train new agents or modify the RL environment, you need to install the core repository.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/TUD-CityAI-Lab/Multitask-Delphos.git
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>Multitask-Delphos/submodules/delphos-core
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<h2 id="3-run-inference">3. Run Inference</h2>
+<p>We ask Delphos to explore the specification space. It will propose utility functions, estimate them using the Apollo backend, and observe the rewards (AIC/BIC improvements).</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">results</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">dataset</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">steps</span><span class="o">=</span><span class="mi">50</span> <span class="c1"># Number of exploration steps</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
 </span></code></pre></div>
+<h2 id="4-inspecting-the-pareto-front">4. Inspecting the Pareto Front</h2>
+<p>Delphos maintains a Pareto front of the best models found during exploration, balancing model complexity and Goodness-of-Fit.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pareto</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_pareto_front</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">best_model</span> <span class="o">=</span> <span class="n">pareto</span><span class="o">.</span><span class="n">get_best_by_metric</span><span class="p">(</span><span class="s2">&quot;BIC&quot;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">best_model</span><span class="o">.</span><span class="n">utility_equations</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="5-export-to-apollo">5. Export to Apollo</h2>
+<p>Once you find a specification you like, you can easily export it to an Apollo R script for final reporting and analysis.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">best_model</span><span class="o">.</span><span class="n">export_to_apollo</span><span class="p">(</span><span class="s2">&quot;swissmetro_final.R&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>You can now run <code>Rscript swissmetro_final.R</code> to get the full Apollo output!</p>
 
 
 
