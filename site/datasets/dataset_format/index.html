@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dataset-format-schema" class="md-skip">
+        <a href="#dataset-format" class="md-skip">
           Skip to content
         </a>
       
@@ -775,10 +775,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#schema-structure" class="md-nav__link">
+  <a href="#dataset-schema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schema Structure
+        Dataset schema
       
     </span>
   </a>
@@ -1419,10 +1419,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#schema-structure" class="md-nav__link">
+  <a href="#dataset-schema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Schema Structure
+        Dataset schema
       
     </span>
   </a>
@@ -1460,10 +1460,9 @@
   
 
 
-<h1 id="dataset-format-schema">Dataset Format &amp; Schema</h1>
-<p>For Delphos to understand the structure of a dataset and what variables it can use to build utility functions, it requires a <strong>Dataset Schema</strong>.</p>
-<p>This schema is defined in JSON format.</p>
-<h2 id="schema-structure">Schema Structure</h2>
+<h1 id="dataset-format">Dataset Format</h1>
+<p>To use your own dataset with Delphos, you need to provide a dataset in the correct format, as well as its dataset schema in a .yaml file.</p>
+<h2 id="dataset-schema">Dataset schema</h2>
 <p>A valid schema must define:</p>
 <ol>
 <li><strong><code>alternatives</code></strong>: The names of the alternatives in the choice set.</li>
@@ -1485,19 +1484,19 @@
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;time&quot;</span><span class="p">,</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;continuous&quot;</span><span class="p">,</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;applies_to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;car&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bus&quot;</span><span class="p">],</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;car&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;time_car&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;bus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;time_bus&quot;</span><span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;car&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;time_car&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;bus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;time_bus&quot;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">},</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cost&quot;</span><span class="p">,</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;continuous&quot;</span><span class="p">,</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">      </span><span class="nt">&quot;applies_to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;car&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bus&quot;</span><span class="p">],</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;car&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cost_car&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;bus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cost_bus&quot;</span><span class="p">}</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">      </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;car&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cost_car&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;bus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cost_bus&quot;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">},</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;income&quot;</span><span class="p">,</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;continuous&quot;</span><span class="p">,</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="nt">&quot;applies_to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;all&quot;</span><span class="p">],</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;income&quot;</span><span class="p">}</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">      </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;all&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;income&quot;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">  </span><span class="p">]</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="p">}</span>
