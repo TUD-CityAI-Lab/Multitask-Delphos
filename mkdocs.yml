@@ -14,10 +14,16 @@ nav:
   - Home: index.md
 
   - Getting Started:
-      - Overview: getting_started/overview.md
-      - Installation: getting_started/installation.md
-      - First Example: getting_started/first_example.md
-      - Quickstart: getting_started/quickstart.md
+      - Getting Started: choice_modellers/getting_started.md
+
+  - Choice Modellers:
+      - Getting Started: choice_modellers/getting_started.md
+      - First Application: choice_modellers/first_application.md
+      - Understanding Results: choice_modellers/understanding_results.md
+      - Using Catalogue Datasets: choice_modellers/catalogue_datasets.md
+      - Using Your Own Datasets: choice_modellers/own_datasets.md
+      - Custom Objectives: choice_modellers/custom_objectives.md
+      - Exporting Results: choice_modellers/exporting_results.md
 
   - Datasets:
       - Overview: datasets/overview.md
@@ -25,25 +31,22 @@ nav:
       - Example: datasets/example.md
       - Format: datasets/dataset_format.md
 
-  - Inference:
-      - Overview: inference/overview.md
-      - Zero Shot: inference/zero_shot.md
-      - Few Shot: inference/few_shot.md
-      - From Scratch: inference/from_scratch.md
-
-  - Reinforcement Learning:
-      - Overview: reinforcement_learning/overview.md
-      - Training: reinforcement_learning/training.md
-      - Rewards: reinforcement_learning/rewards.md
-      - Transfer Learning: reinforcement_learning/transfer_learning.md
+  - Researchers and ML Practitioners:
+      - Getting Started: researchers/getting_started.md
+      - Delphos Architecture: researchers/architecture.md
+      - Task and Catalogue: researchers/task_and_catalogue.md
+      - State Representations: researchers/state_representations.md
+      - Action Space: researchers/action_space.md
+      - Reward Functions: researchers/reward_functions.md
+      - Apollo Integration: researchers/apollo_integration.md
+      - Training Pipeline: researchers/training_pipeline.md
+      - Inference and Transfer: researchers/inference_and_transfer.md
+      - Adding New Datasets: researchers/adding_datasets.md
+      - Adding New Rewards: researchers/adding_rewards.md
+      - Extending the Framework: researchers/extending_framework.md
 
   - Tutorials:
       - Ready to Use: tutorials/ready2use.md
-
-  - Development:
-      - Branches: development/branches.md
-      - Contribution Workflow: development/contribution_workflow.md
-      - Submodules: development/submodules.md
 
 repo_url: https://github.com/TUD-CityAI-Lab/Multitask-Delphos
 repo_name: Multitask-Delphos
