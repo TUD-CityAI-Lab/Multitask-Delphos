@@ -17,7 +17,9 @@ The goal is not to replace the human-modeller, but to assist the specification p
 
 ## Installing Delphos
 
-1. Install Python 3.11 or later. Delphos is an open-source Python package that uses Python 3.11. Ensure Python is installed in your computer, if not, follow the instructions on the [official Python website](https://www.python.org/downloads/).
+1. Install Python 3.11 or later.
+
+Delphos is an open-source Python package that uses Python 3.11. Ensure Python is installed in your computer, if not, follow the instructions on the [official Python website](https://www.python.org/downloads/).
 
 It is recommended to use a virtual environment to avoid conflicts with other Python packages. You may run the following commands to create a virtual environment:
 
@@ -39,7 +41,9 @@ Activate the virtual environment:
 source .venv/bin/activate
 ```
 
-2. Install Delphos requirements. Having an environment configured, you can install the required dependencies for Delphos using pip:
+2. Install Delphos requirements.
+
+Having an environment configured, you can install the required dependencies for Delphos using pip:
 
 ```bash
 pip install -r requirements.txt
