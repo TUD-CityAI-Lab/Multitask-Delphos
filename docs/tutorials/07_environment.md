@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ```python
 import sys
 from pathlib import Path
@@ -17,7 +22,6 @@ from env.result_cache import ResultCache
 
 A. Load task and create a catalogue
 
-
 ```python
 task_1 = Task.from_yaml(0,  yaml_path=ROOT / "dataset/dataset_1/dataset.yaml") # ApolloModeChoice
 task_2 = Task.from_yaml(1,  yaml_path=ROOT / "dataset/dataset_2/dataset.yaml") # ApolloRouteChoice
@@ -28,7 +32,7 @@ task_6 = Task.from_yaml(5,  yaml_path=ROOT / "dataset/dataset_7/dataset.yaml") #
 task_7 = Task.from_yaml(6,  yaml_path=ROOT / "dataset/dataset_8/dataset.yaml") # 2014_spain_parkingChoice
 task_8 = Task.from_yaml(7,  yaml_path=ROOT / "dataset/dataset_9/dataset.yaml") # 2018 LPMC
 task_9 = Task.from_yaml(8,  yaml_path=ROOT / "dataset/dataset_10/dataset.yaml") # 2018_Optima
-task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh      
+task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh
 
 tasks = [task_1, task_2, task_3, task_4, task_5, task_6, task_7, task_8, task_9, task_10]
 
@@ -42,7 +46,6 @@ generator = ApolloGenerator(task)
 
 1. Linear additive
 
-
 ```python
 print("rewards_path", task.rewards_path)
 print("yaml_path", task.yaml_path)
@@ -53,8 +56,6 @@ print("dataset_path",task.dataset_path)
     yaml_path /Users/gnova/Developer/Delphos-core/dataset/dataset_1/dataset.yaml
     dataset_path /Users/gnova/Developer/Delphos-core/dataset/dataset_1/2019_apollo_modechoice_formatted.csv
 
-
-
 ```python
 specification = action_space.create_initial_specification()
 backend_specification = specification_manager.to_backend(specification)
@@ -63,11 +64,8 @@ apollo_specification = generator.build_apollo_specification(backend_specificatio
 evaluate_specification(
     task,
     apollo_specification
-    ) 
+    )
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -82,6 +80,7 @@ evaluate_specification(
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -137,9 +136,6 @@ evaluate_specification(
 </table>
 </div>
 
-
-
-
 ```python
 specification_2 = action_space.create_initial_specification()
 specification_2, _ = action_space.apply_action(specification_2, action_index=3)
@@ -152,11 +148,8 @@ apollo_specification_2 = generator.build_apollo_specification(backend_specificat
 evaluate_specification(
     task,
     apollo_specification_2,
-    ) 
+    )
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -171,6 +164,7 @@ evaluate_specification(
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -225,5 +219,3 @@ evaluate_specification(
   </tbody>
 </table>
 </div>
-
-

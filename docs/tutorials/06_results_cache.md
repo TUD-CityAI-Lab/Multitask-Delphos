@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ```python
 import sys
 from pathlib import Path
@@ -19,7 +24,6 @@ from env.result_cache import ResultCache
 
 1. Create a temporary rewards database
 
-
 ```python
 cache_path = Path("./test_rewards.sqlite")
 
@@ -31,23 +35,14 @@ cache = ResultCache(cache_path)
 cache
 ```
 
-
-
-
     ResultCache(db_path=PosixPath('test_rewards.sqlite'))
 
-
-
 2. Create a failed outcome
-
 
 ```python
 failed = cache.failed(task_name="apollo_mode_choice", specification="spec_1")
 failed
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -62,6 +57,7 @@ failed
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -117,18 +113,12 @@ failed
 </table>
 </div>
 
-
-
 3. Create a skipped outcome
-
 
 ```python
 skipped = cache.skipped(task_name="apollo_mode_choice", specification="spec_2", n_free_parameters=60)
 skipped
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -143,6 +133,7 @@ skipped
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -198,39 +189,26 @@ skipped
 </table>
 </div>
 
-
-
 4. Add failed and skipped outcomes
-
 
 ```python
 cache.upsert(failed)
 cache.upsert(skipped)
 ```
 
-5. Check if a specification has already estimated 
-
+5. Check if a specification has already estimated
 
 ```python
 cache.exists(task_name="apollo_mode_choice", specification="spec_1")
 ```
 
-
-
-
     True
 
-
-
 6. Retrieve modelling outcomes of a estimated model
-
 
 ```python
 cache.lookup(task_name="apollo_mode_choice", specification="spec_1")
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -245,6 +223,7 @@ cache.lookup(task_name="apollo_mode_choice", specification="spec_1")
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -300,17 +279,11 @@ cache.lookup(task_name="apollo_mode_choice", specification="spec_1")
 </table>
 </div>
 
-
-
 7. Load all the model outcomes
-
 
 ```python
 cache.load()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -325,6 +298,7 @@ cache.load()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -403,10 +377,7 @@ cache.load()
 </table>
 </div>
 
-
-
 8. update a model estimation outcome
-
 
 ```python
 updated = failed.copy()
@@ -415,9 +386,6 @@ cache.upsert(updated)
 
 cache.lookup(task_name="apollo_mode_choice", specification="spec_1")
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -432,6 +400,7 @@ cache.lookup(task_name="apollo_mode_choice", specification="spec_1")
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -487,10 +456,7 @@ cache.lookup(task_name="apollo_mode_choice", specification="spec_1")
 </table>
 </div>
 
-
-
 ## Emprical rewards
-
 
 ```python
 cache_path = Path("../dataset/dataset_1/rewards.sqlite")
@@ -498,9 +464,6 @@ cache = ResultCache(cache_path)
 
 cache.load()
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -515,6 +478,7 @@ cache.load()
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -800,5 +764,3 @@ cache.load()
 </table>
 <p>26390 rows × 20 columns</p>
 </div>
-
-

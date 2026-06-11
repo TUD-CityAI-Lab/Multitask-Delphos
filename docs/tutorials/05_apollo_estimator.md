@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ```python
 import sys
 from pathlib import Path
@@ -14,7 +19,6 @@ from env.apollo.generator import ApolloGenerator
 
 A. Load task and create a catalogue
 
-
 ```python
 task_1 = Task.from_yaml(0,  yaml_path=ROOT / "dataset/dataset_1/dataset.yaml") # ApolloModeChoice
 task_2 = Task.from_yaml(1,  yaml_path=ROOT / "dataset/dataset_2/dataset.yaml") # ApolloRouteChoice
@@ -25,7 +29,7 @@ task_6 = Task.from_yaml(5,  yaml_path=ROOT / "dataset/dataset_7/dataset.yaml") #
 task_7 = Task.from_yaml(6,  yaml_path=ROOT / "dataset/dataset_8/dataset.yaml") # 2014_spain_parkingChoice
 task_8 = Task.from_yaml(7,  yaml_path=ROOT / "dataset/dataset_9/dataset.yaml") # 2018 LPMC
 task_9 = Task.from_yaml(8,  yaml_path=ROOT / "dataset/dataset_10/dataset.yaml") # 2018_Optima
-task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh      
+task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh
 
 tasks = [task_1, task_2, task_3, task_4, task_5, task_6, task_7, task_8, task_9, task_10]
 
@@ -37,16 +41,12 @@ action_space = ActionSpace(task, catalogue, specification_manager,linear_additiv
 generator = ApolloGenerator(task)
 ```
 
-
 ```python
 from env.apollo.estimator import apollo_info
 from env.apollo.estimator import run_apollo_estimation
 
 apollo_info()
 ```
-
-
-
 
     {'r_version': 'R version 4.5.1 (2025-06-13)',
      'r_home': '/Library/Frameworks/R.framework/Resources/R',
@@ -56,18 +56,12 @@ apollo_info()
      'apollo_loaded': False,
      'apollo_ready': False}
 
-
-
 1. Linear additive
-
 
 ```python
 specification = action_space.create_initial_specification()
 specification
 ```
-
-
-
 
     tensor([[1, 1, 1, 0],
             [2, 1, 1, 0],
@@ -76,9 +70,6 @@ specification
             [5, 0, 0, 0],
             [6, 1, 1, 0],
             [7, 0, 0, 0]])
-
-
-
 
 ```python
 specification = action_space.create_initial_specification()
@@ -99,7 +90,7 @@ results = run_apollo_estimation(task, apollo_specification, output_directory=Pat
     Please acknowledge the use of Apollo by citing Hess & Palma (2019)
       DOI 10.1016/j.jocm.2019.100170
       www.ApolloChoiceModelling.com
-    
+
     Model name                                  : 1110_2110_3110_4110_5000_6110_7000
     Model description                           : MNL proposed by Delphos
     Model run at                                : 2026-06-03 12:21:21.493206
@@ -112,30 +103,30 @@ results = run_apollo_estimation(task, apollo_specification, output_directory=Pat
     Number of individuals                       : 400
     Number of rows in database                  : 5600
     Number of modelled outcomes                 : 5600
-    
-    Number of cores used                        :  1 
+
+    Number of cores used                        :  1
     Model without mixing
-    
+
     LL(start)                                   : -6607.09
     LL at equal shares, LL(0)                   : -6607.09
     LL at observed shares, LL(C)                : -5430.89
     LL(final)                                   : -4670.99
-    Rho-squared vs equal shares                  :  0.293 
-    Adj.Rho-squared vs equal shares              :  0.292 
-    Rho-squared vs observed shares               :  0.1399 
-    Adj.Rho-squared vs observed shares           :  0.1392 
-    AIC                                         :  9355.98 
-    BIC                                         :  9402.39 
-    
+    Rho-squared vs equal shares                  :  0.293
+    Adj.Rho-squared vs equal shares              :  0.292
+    Rho-squared vs observed shares               :  0.1399
+    Adj.Rho-squared vs observed shares           :  0.1392
+    AIC                                         :  9355.98
+    BIC                                         :  9402.39
+
     Estimated parameters                        : 7
-    Time taken (hh:mm:ss)                       :  00:00:0.49 
-         pre-estimation                         :  00:00:0.21 
-         estimation                             :  00:00:0.07 
-         post-estimation                        :  00:00:0.21 
-    Iterations                                  :  9  
-    
+    Time taken (hh:mm:ss)                       :  00:00:0.49
+         pre-estimation                         :  00:00:0.21
+         estimation                             :  00:00:0.07
+         post-estimation                        :  00:00:0.21
+    Iterations                                  :  9
+
     Unconstrained optimisation.
-    
+
     Estimates:
                          Estimate        s.e.   t.rat.(0)    Rob.s.e. Rob.t.rat.(0)
     ASC_car               0.54624    0.123957       4.407    0.133607         4.088
@@ -146,9 +137,6 @@ results = run_apollo_estimation(task, apollo_specification, output_directory=Pat
     b_cost_generic       -0.05536    0.001587     -34.896    0.001948       -28.427
     b_access_generic     -0.01956    0.002771      -7.059    0.002869        -6.820
     b_service_generic     0.18133    0.027893       6.501    0.026975         6.722
-    
-
-
 
 ```python
 specification_2 = action_space.create_initial_specification()
@@ -173,7 +161,7 @@ results = run_apollo_estimation(task, apollo_specification_2, output_directory=P
     Please acknowledge the use of Apollo by citing Hess & Palma (2019)
       DOI 10.1016/j.jocm.2019.100170
       www.ApolloChoiceModelling.com
-    
+
     Model name                                  : 1112_2110_3110_4110_5000_6110_7000
     Model description                           : MNL proposed by Delphos
     Model run at                                : 2026-06-03 12:22:16.952767
@@ -186,30 +174,30 @@ results = run_apollo_estimation(task, apollo_specification_2, output_directory=P
     Number of individuals                       : 400
     Number of rows in database                  : 5600
     Number of modelled outcomes                 : 5600
-    
-    Number of cores used                        :  1 
+
+    Number of cores used                        :  1
     Model without mixing
-    
+
     LL(start)                                   : -6607.09
     LL at equal shares, LL(0)                   : -6607.09
     LL at observed shares, LL(C)                : -5430.89
     LL(final)                                   : -4554.37
-    Rho-squared vs equal shares                  :  0.3107 
-    Adj.Rho-squared vs equal shares              :  0.3083 
-    Rho-squared vs observed shares               :  0.1614 
-    Adj.Rho-squared vs observed shares           :  0.159 
-    AIC                                         :  9140.74 
-    BIC                                         :  9246.83 
-    
+    Rho-squared vs equal shares                  :  0.3107
+    Adj.Rho-squared vs equal shares              :  0.3083
+    Rho-squared vs observed shares               :  0.1614
+    Adj.Rho-squared vs observed shares           :  0.159
+    AIC                                         :  9140.74
+    BIC                                         :  9246.83
+
     Estimated parameters                        : 16
-    Time taken (hh:mm:ss)                       :  00:00:0.89 
-         pre-estimation                         :  00:00:0.09 
-         estimation                             :  00:00:0.1 
-         post-estimation                        :  00:00:0.69 
-    Iterations                                  :  10  
-    
+    Time taken (hh:mm:ss)                       :  00:00:0.89
+         pre-estimation                         :  00:00:0.09
+         estimation                             :  00:00:0.1
+         post-estimation                        :  00:00:0.69
+    Iterations                                  :  10
+
     Unconstrained optimisation.
-    
+
     Estimates:
                          Estimate        s.e.   t.rat.(0)    Rob.s.e. Rob.t.rat.(0)
     ASC_car_income_1      0.90387    0.140752      6.4217    0.156224        5.7857
@@ -232,5 +220,3 @@ results = run_apollo_estimation(task, apollo_specification_2, output_directory=P
     b_cost_generic       -0.05685    0.001622    -35.0447    0.002041      -27.8483
     b_access_generic     -0.02011    0.002810     -7.1573    0.002899       -6.9367
     b_service_generic     0.18294    0.028208      6.4853    0.027679        6.6092
-    
-
