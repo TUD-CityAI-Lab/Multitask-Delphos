@@ -1519,7 +1519,7 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="kn">import</span> <span class="n">Delphos</span>
 </span></code></pre></div>
 <div class="admonition example">
-<p class="admonition-title">Step 2: Load a Pretrained Agent</p>
+<p class="admonition-title">Step 2: Load a pretrained agent</p>
 </div>
 <p>Delphos provides pretrained agents that have learned model specification strategies from previous choice modelling tasks. For now, Delphos is specialised for transport applications, so we load the pretrained transport agent.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Delphos</span><span class="o">.</span><span class="n">load_pretrained</span><span class="p">(</span><span class="s2">&quot;transport&quot;</span><span class="p">)</span>
@@ -1528,7 +1528,7 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="admonition example">
-<p class="admonition-title">Step 3: Load a Dataset</p>
+<p class="admonition-title">Step 3: Load a dataset</p>
 </div>
 <p>For this example, we use the Swissmetro dataset.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">Delphos</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;swissmetro&quot;</span><span class="p">)</span>
@@ -1537,14 +1537,14 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="admonition example">
-<p class="admonition-title">Step 4: Generate Candidate Specifications</p>
+<p class="admonition-title">Step 4: Generate candidate specifications</p>
 </div>
 <p>Apply the pretrained agent to the dataset. The agent will iteratively propose utility specifications and estimate the corresponding choice models.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">results</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">inference</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span> <span class="n">num_specifications</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </span></code></pre></div>
 <p>The <code>num_specifications</code> controls how many alternative utility specifications are proposed by Delphos. Larger values typically produce a wider range of candidate specifications but require more computation time.</p>
 <div class="admonition example">
-<p class="admonition-title">Step 5: Inspect the Pareto Front</p>
+<p class="admonition-title">Step 5: Inspect the Pareto front</p>
 </div>
 <p>You can inspect the Pareto front using the <code>plot_pareto_front()</code> method, which returns a dataframe with the candidate specifications and their associated model performance metrics. It shows the trade-offs between model performance (Log-likelihood) and model complexity (Number of parameters).</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">results</span><span class="o">.</span><span class="n">plot_pareto_front</span><span class="p">()</span>

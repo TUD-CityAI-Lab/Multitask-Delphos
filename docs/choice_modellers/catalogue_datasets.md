@@ -71,11 +71,8 @@ You can also inspect the full alternative objects:
 
 ```python
 task.alternatives
-```
 
-Example output:
-
-```python
+# Example output:
 (   Alternative(
         id=1,
         name="car",
@@ -103,11 +100,8 @@ Attributes define the explanatory variables available for modelling.
 
 ```python
 task.attribute_names
-```
 
-Example output:
-
-```python
+# Example output:
 ('travel_time', 'travel_cost', 'headway', 'seat_availability')
 ```
 
@@ -115,11 +109,8 @@ To inspect a particular attribute:
 
 ```python
 task.get_attribute("travel_time")
-```
 
-Example output:
-
-```python
+# Example output:
 Attribute(
     id=2,
     name='travel_time',
@@ -135,11 +126,8 @@ Covariates are variables that can be used to model systematic taste heterogeneit
 
 ```python
 task.covariate_names
-```
 
-Example output:
-
-```python
+# Example output:
 ('income', 'purpose', 'gender')
 ```
 
@@ -147,11 +135,8 @@ Inspect a specific covariate:
 
 ```python
 task.get_covariate("income")
-```
 
-Example output:
-
-```python
+# Example output:
 Covariate( id=1, name='income', levels=(0, 1, 2) )
 ```
 
@@ -161,11 +146,8 @@ Delphos currently supports three non-linear transformations that can be applied 
 
 ```python
 task.transform_names
-```
 
-Output:
-
-```python
+# Example output:
 ('linear', 'log', 'box_cox')
 ```
 
@@ -175,11 +157,8 @@ Delphos currently supports two taste structures: generic and alternative-specifi
 
 ```python
 task.taste_names
-```
 
-Output:
-
-```python
+# Example output:
 ('generic', 'specific')
 ```
 
@@ -210,11 +189,8 @@ Inspect the catalogue:
 
 ```python
 print(catalogue.summary())
-```
 
-Example output:
-
-```text
+# Example output:
 Catalogue( tasks=12, attributes=15, covariates=8, transformations=3, tastes=2 )
 ```
 
