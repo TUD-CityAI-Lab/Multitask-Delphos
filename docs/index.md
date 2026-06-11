@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# Delphos: Assisting Discrete Choice Model Specification with Reinforcement Learning
+# Assisting Discrete Choice Model Specification with Reinforcement Learning
 
 Specifying discrete choice models is often an iterative and time-consuming process. Modellers typically evaluate many alternative utility specifications while balancing model fit, parsimony, behavioural plausibility, and theoretical consistency. As model complexity and the number of modelling decisions increase, exploring the specification space becomes increasingly challenging.
 
@@ -14,51 +14,6 @@ The project supports:
 1. Practical model specification assistance through pre-trained agents;
 2. Methodological research on reinforcement learning for automated choice model specification;
 3. Choice datasets hub for benchmarking and reproducibility.
-
----
-
-## Overview
-
-It consists of three components: Delphos for automating model specification, transport choice datasets, and Delphos-core for reinforcement learning research and development.
-
-### [Delphos](delphos/overview.md)
-
-A Python package that allows choice modellers to apply pre-trained Delphos to their own discrete choice datasets without requiring reinforcement learning expertise. It supports zero-shot inference and few-shot fine-tuning on the new dataset.
-
-Includes:
-
-- Loading pre-trained agents
-- Loading discrete choice datasets from the catalgoue
-- Automated utility specification generation
-- Pareto-front exploration
-- Reproducible modelling workflows
-- Tutorials and examples
-
-### [Choice datasets](transport-choice-datasets/overview.md)
-
-A collection of transport choice datasets used for training, benchmarking, teaching, and reproducible research.
-
-Includes:
-
-- Dataset files
-- Data processing and validation pipelines
-- Metadata and documentation
-
-### [Delphos-core](delphos-core/overview.md)
-
-The research framework used to train, evaluate, and extend Delphos agents.
-
-Includes:
-
-- Markov Decision Process formulation
-- State and action space
-- Reward function design
-- Reinforcement learning algorithms
-- Apollo integration
-- Training and evaluation pipeline
-- Experiment configurations
-
----
 
 ## Why Delphos?
 
@@ -75,11 +30,46 @@ Includes:
   - implementing alternative reinforcement learning algorithms,
   - and reporting issues and suggestions.
 
+---
+
+### [Delphos](delphos/overview.md)
+
+A Python package that allows choice modellers to apply pre-trained Delphos to their own discrete choice datasets without requiring reinforcement learning expertise. It supports zero-shot inference and few-shot fine-tuning on the new dataset. It includes:
+
+- Loading pre-trained agents
+- Loading discrete choice datasets from the catalgoue
+- Automated utility specification generation
+- Pareto-front exploration
+- Reproducible modelling workflows
+- Tutorials and examples
+
+### [Choice datasets](transport-choice-datasets/overview.md)
+
+A collection of transport choice datasets used for training, benchmarking, teaching, and reproducible research. It includes:
+
+- Dataset files
+- Data processing and validation pipelines
+- Metadata and documentation
+
+### [Delphos-core](delphos-core/overview.md)
+
+The research framework used to train, evaluate, and extend Delphos agents. It includes:
+
+- Markov Decision Process formulation
+- State and action space
+- Reward function design
+- Reinforcement learning algorithms
+- Apollo integration
+- Training and evaluation pipeline
+- Experiment configurations
+
+---
+
 ## Getting Started
 
 Choose the guide that best matches your profile.
 
-### Choice Modellers: Learn how to use pretrained Delphos agents for model specification.
+- **Choice Modellers**: Learn how to use pretrained Delphos agents for model specification.
 
 1. [Getting Started](./choice_modellers/getting_started.md)
 2. [First application](./choice_modellers/first_application.md)
@@ -89,7 +79,7 @@ Choose the guide that best matches your profile.
 6. [Custom objectives](./choice_modellers/custom_objectives.md)
 7. [Exporting results](./choice_modellers/exporting_results.md)
 
-### Researchers and ML Practitioners: Learn how Delphos is trained, evaluated, and extended.
+- **Researchers and ML Practitioners**: Learn how Delphos is trained, evaluated, and extended.
 
 1. [Installation](./researchers/installation.md)
 2. [Delphos architecture](./researchers/delphos_architecture.md)
