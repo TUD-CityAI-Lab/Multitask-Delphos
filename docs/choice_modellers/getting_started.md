@@ -23,24 +23,24 @@ Delphos is an open-source Python package that uses Python 3.11. Ensure Python is
 
 It is recommended to use a virtual environment to avoid conflicts with other Python packages. You may run the following commands to create a virtual environment:
 
-```bash title="Terminal"
+!!! example "Step 1 — Create a virtual environment"
+
+```bash
 python -m venv .venv
 ```
 
-Activate the virtual environment:
+!!! example "Step 2 — Activate the environment"
 
-=== "macOS / Linux"
+==== "macOS / Linux"
 
-    ```bash title="Terminal"
-
+    ```bash
     source .venv/bin/activate
 
     ```
 
 === "Windows"
 
-    ```powershell title="PowerShell"
-
+    ```bash
     .venv\Scripts\activate
 
     ```
@@ -49,11 +49,13 @@ Activate the virtual environment:
 
 Having an environment configured, you can install the required dependencies for Delphos using pip:
 
+!!! example "Step 3 — Install Delphos requirements"
+
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Verify the installation. Open a Python shell and run:
+!!! example "Step 4 — Verify the installation"
 
 ```python
 import delphos
