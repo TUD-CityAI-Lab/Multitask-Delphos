@@ -84,7 +84,8 @@ Let's define a custom reward function that optimises adjusted McFadden's Rho-Squ
 def reward_function(task, modelling_outcome):
     if modelling_outcome.empty:
         return -1.0
-    return float(modelling_outcome["adjRho2_0"].iloc[0])
+    r = modelling_outcome["adjRho2_0"].iloc[0]
+    return float(tanh(r))
 ```
 
 In this case, Delphos will prioritise specifications with high adjusted pseudo-R² values.
