@@ -46,7 +46,7 @@ nav:
       - Extending the Framework: researchers/extending_framework.md
 
   - Tutorials:
-      - Ready to Use: tutorials/ready2use.md
+      - Notebooks: tutorials/notebooks.md
 
 repo_url: https://github.com/TUD-CityAI-Lab/Multitask-Delphos
 repo_name: Multitask-Delphos

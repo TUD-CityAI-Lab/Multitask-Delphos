@@ -99,3 +99,7 @@ model = apollo_estimate(apollo_beta, apollo_fixed, apollo_probabilities, apollo_
 # Output results
 apollo_modelOutput(model)
 ```
+
+## Internal Components Tutorials
+
+If you want to dive deeper into how Delphos works under the hood, check out our [Jupyter Notebook Tutorials](notebooks.md). These notebooks cover the internal components of the framework step-by-step, including the RL environment, state representation, and Apollo generators.
