@@ -64,7 +64,7 @@ covariates:
 
 The YAML file describes the model specification task and can be shared independently from the Delphos codebase.
 
-1. Alternatives define the available options from which decision-makers choose. You must define:
+**Alternatives** define the available options from which decision-makers choose. You must define:
 
 - their name (car, bus, ...).
 - their id (value in the choice column).
@@ -80,7 +80,7 @@ alternatives:
     avail: av_bus
 ```
 
-2. Attributes describe the alternatives. You must define:
+**Attributes** describe the alternatives. You must define:
 
 - their name (column name in the dataset).
 - their id (ID value from the Catalogue).
@@ -128,7 +128,7 @@ Task(
 )
 ```
 
-3. Covariates are variables that can be used to model systematic taste heterogeneity. You must define:
+**Covariates** are variables that can be used to model systematic taste heterogeneity. You must define:
 
 - their name (column name in the dataset).
 - their id (ID value from the Catalogue).
