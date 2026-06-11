@@ -1496,13 +1496,13 @@
 <li><strong>Greedy Search</strong> (<code>greedy</code>)
    Always selects the action that maximizes the predicted Q-value at the current step. It provides a deterministic baseline for the agent's absolute best guess.</li>
 <li><strong>Stochastic Search</strong> (<code>stochastic</code>)
-   Implements an $\epsilon$-greedy exploration policy. With probability $1 - \epsilon$, it acts greedily; with probability $\epsilon$, it takes a random valid action. Useful to quickly sample around the greedy path.</li>
+   Implements an <span class="arithmatex">\(\epsilon\)</span>-greedy exploration policy. With probability <span class="arithmatex">\(1 - \epsilon\)</span>, it acts greedily; with probability <span class="arithmatex">\(\epsilon\)</span>, it takes a random valid action. Useful to quickly sample around the greedy path.</li>
 <li><strong>Boltzmann Search</strong> (<code>boltzmann</code>)
    Selects actions by sampling from a categorical distribution formed by applying a Softmax function over the Q-values, scaled by a <code>temperature</code> parameter. Higher temperatures flatten the probabilities (more exploration), while lower temperatures sharpen them (approaching greedy).</li>
 <li><strong>Top-K Search</strong> (<code>topk</code>)
-   At every step, computes the top $K$ actions with the highest Q-values and samples uniformly among them.</li>
+   At every step, computes the top <span class="arithmatex">\(K\)</span> actions with the highest Q-values and samples uniformly among them.</li>
 <li><strong>Beam Search</strong> (<code>beam</code>)
-   A classical tree-search algorithm. It maintains a set (beam) of the $W$ most promising partial specification trajectories at each step. At the end of the depth, it yields the highest scoring paths. Highly effective for deep specification mining but computationally expensive.</li>
+   A classical tree-search algorithm. It maintains a set (beam) of the <span class="arithmatex">\(W\)</span> most promising partial specification trajectories at each step. At the end of the depth, it yields the highest scoring paths. Highly effective for deep specification mining but computationally expensive.</li>
 </ol>
 <h3 id="few-shot-scenarios-online-adaptation">Few-Shot Scenarios (Online Adaptation)</h3>
 <p>In few-shot mode, the agent is allowed to actively fine-tune its neural network online using the reward signals (e.g., AIC/BIC or Log-Likelihood) produced by the unseen task. The original agent is copied to prevent cross-contamination.</p>
@@ -1623,6 +1623,8 @@
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
