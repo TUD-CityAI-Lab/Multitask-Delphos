@@ -28,12 +28,7 @@ The objective is not to estimate model parameters directly, but rather to learn 
 Formally, the MDP is defined as:
 
 $$
-\mathcal{M}
-
-(\mathcal{S},
-\mathcal{A},
-P,
-R)
+\mathcal{M} = (\mathcal{S}, \mathcal{A}, P, R)
 $$
 
 where:
@@ -60,36 +55,19 @@ A fundamental challenge is that utility specifications are variable-sized object
 For example,
 
 $$
-V_1
-
-ASC
-+
-\beta_{TT}TT
-+
-\beta_{TC}TC
+V_1 = ASC + \beta_{TT}TT + \beta_{TC}TC
 $$
 
 contains fewer modelling terms than
 
 $$
-V_2
-
-ASC
-+
-\beta_{TT}\log(TT)
-+
-\beta_{TC}TC
-+
-\beta_{HW}HW
-+
-\beta_{TT}^{Income}
-(TT \times Income)
+V_2 = ASC + \beta_{TT}\log(TT) + \beta_{TC}TC + \beta_{HW}HW + \beta_{TT}^{Income}(TT \times Income)
 $$
 
 Traditional reinforcement learning algorithms require fixed-dimensional state representations. Delphos therefore learns a representation
 
 $$
-z=f_\theta(s)
+z = f_\theta(s)
 $$
 
 that maps arbitrary specifications into a latent vector space.
@@ -105,11 +83,7 @@ The smallest modelling unit in Delphos is a modelling term.
 Each term is represented by four discrete identifiers:
 
 $$
-t_i=
-(a_i,
-\tau_i,
-\gamma_i,
-c_i)
+t_i=(a_i,\tau_i,\gamma_i,c_i)
 $$
 
 where:
@@ -129,11 +103,7 @@ Headway Box-Cox Specific Gender
 Each identifier is embedded into a continuous vector space:
 
 $$
-e_i=
-[e_a,
-e_\tau,
-e_\gamma,
-e_c]
+e_i=[e_a,e_\tau,e_\gamma,e_c]
 $$
 
 where each component is a learnable embedding vector.
@@ -141,9 +111,7 @@ where each component is a learnable embedding vector.
 The concatenated embedding is then processed through a multilayer perceptron:
 
 $$
-h_i
-
-\phi(e_i)
+h_i = \phi(e_i)
 $$
 
 producing a latent representation of the modelling term.
@@ -157,13 +125,7 @@ This representation allows semantically similar modelling operations to occupy n
 A utility specification consists of a collection of modelling terms:
 
 $$
-S=
-{
-t_1,
-t_2,
-\ldots,
-t_n
-}
+S = \{t_1, t_2, \ldots, t_n\}
 $$
 
 Unlike natural language, utility specifications are naturally sets rather than sequences.
@@ -171,13 +133,7 @@ Unlike natural language, utility specifications are naturally sets rather than s
 The ordering of terms is irrelevant:
 
 $$
-{
-A,B,C
-}
-
-{
-C,B,A
-}
+\begin{Bmatrix}A,B,C\end{Bmatrix} = \begin{Bmatrix}C,B,A\end{Bmatrix}
 $$
 
 Consequently, the encoder must be permutation invariant.
@@ -185,9 +141,7 @@ Consequently, the encoder must be permutation invariant.
 Formally,
 
 $$
-f(S)
-
-f(\pi(S))
+f(S) = f(\pi(S))
 $$
 
 for any permutation $\pi$.
@@ -197,22 +151,16 @@ To satisfy this requirement, Delphos uses a DeepSet architecture.
 Each term is first encoded independently:
 
 $$
-h_i
-
-\phi(t_i)
+h_i = \phi(t_i)
 $$
 
 and then aggregated using a permutation-invariant pooling operation:
 
 $$
-z
-
-\rho
-\Bigg(
-\frac{1}{n}
-\sum_{i=1}^{n}
+z = \rho(
+\frac{1}{n} \sum_{i=1}^{n}
 \phi(t_i)
-\Bigg)
+)
 $$
 
 where:
@@ -263,10 +211,7 @@ where:
 The selected action is
 
 $$
-a^*
-
-\arg\max_a
-Q(z,a)
+a^* = \arg\max_a Q(z,a)
 $$
 
 subject to feasibility constraints.
@@ -302,11 +247,7 @@ $$
 The target network is updated gradually using Polyak averaging:
 
 $$
-\theta^-
-\leftarrow
-\tau \theta
-+
-(1-\tau)\theta^-
+\theta^- = \tau \theta + (1-\tau)\theta^-
 $$
 
 where $\tau$ controls the update rate.
@@ -329,9 +270,7 @@ Consequently, Delphos uses action masking.
 Let
 
 $$
-A_{valid}
-\subseteq
-A
+A_{valid} \subseteq A
 $$
 
 denote the set of valid actions for the current specification.
@@ -339,8 +278,7 @@ denote the set of valid actions for the current specification.
 The modified Q-values become:
 
 $$
-Q’(a)
-
+Q'(a) =
 \begin{cases}
 Q(a),
 &
@@ -355,10 +293,7 @@ $$
 The agent then selects actions using
 
 $$
-a^*
-
-\arg\max_a
-Q’(a)
+a^* = \arg\max_a Q'(a)
 $$
 
 This guarantees that only feasible specifications can be generated.
@@ -374,11 +309,7 @@ After each modelling episode, Delphos stores transitions in a replay buffer.
 Each transition consists of:
 
 $$
-(s_t,
-a_t,
-r_t,
-s_{t+1},
-d_t)
+(s_t, a_t, r_t, s_{t+1}, d_t)
 $$
 
 where:
@@ -410,10 +341,7 @@ denote the experience collected from task $\tau$.
 The replay buffer contains:
 
 $$
-D
-
-\bigcup_{\tau=1}^{N_{tasks}}
-D_\tau
+D = \bigcup_{\tau=1}^{N_{tasks}} D_\tau
 $$
 
 Consequently, the agent learns from modelling experiences generated across multiple datasets simultaneously.
