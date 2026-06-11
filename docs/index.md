@@ -64,7 +64,7 @@ The research framework used to train, evaluate, and extend Delphos agents. It in
 
 Choose the guide that best matches your profile.
 
-- **Choice Modellers**: Learn how to use pretrained Delphos agents for model specification.
+**Choice Modellers**: Learn how to use pretrained Delphos agents for model specification.
 
 1. [Getting Started](./choice_modellers/getting_started.md)
 2. [First application](./choice_modellers/first_application.md)
@@ -74,7 +74,7 @@ Choose the guide that best matches your profile.
 6. [Custom objectives](./choice_modellers/custom_objectives.md)
 7. [Exporting results](./choice_modellers/exporting_results.md)
 
-- **Researchers and ML Practitioners**: Learn how Delphos is trained, evaluated, and extended.
+**Researchers and ML Practitioners**: Learn how Delphos is trained, evaluated, and extended.
 
 1. [Installation](./researchers/installation.md)
 2. [Delphos architecture](./researchers/delphos_architecture.md)
