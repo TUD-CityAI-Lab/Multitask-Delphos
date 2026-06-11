@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# Assisting Discrete Choice Model Specification with Reinforcement Learning
+# Assisting Choice Model Specification with Reinforcement Learning
 
 Specifying discrete choice models is often an iterative and time-consuming process. Modellers typically evaluate many alternative utility specifications while balancing model fit, parsimony, behavioural plausibility, and theoretical consistency. As model complexity and the number of modelling decisions increase, exploring the specification space becomes increasingly challenging.
 
