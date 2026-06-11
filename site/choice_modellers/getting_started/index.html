@@ -1639,17 +1639,24 @@
 </ol>
 <p>Delphos is an open-source Python package that uses Python 3.11. Ensure Python is installed in your computer, if not, follow the instructions on the <a href="https://www.python.org/downloads/">official Python website</a>.</p>
 <p>It is recommended to use a virtual environment to avoid conflicts with other Python packages. You may run the following commands to create a virtual environment:</p>
-<div class="language-bash highlight"><span class="filename">Terminal</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<div class="admonition example">
+<p class="admonition-title">Step 1 — Create a virtual environment</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </span></code></pre></div>
-<p>Activate the virtual environment:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS / Linux</label><label for="__tabbed_1_2">Windows</label></div>
+<div class="admonition example">
+<p class="admonition-title">Step 2 — Activate the environment</p>
+</div>
+<p>==== "macOS / Linux"</p>
+<div class="language-text highlight"><pre><span></span><code>```bash
+source .venv/bin/activate
+
+```
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-bash highlight"><span class="filename">Terminal</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </span></code></pre></div>
 </div>
 </div>
@@ -1658,11 +1665,14 @@
 <li>Install Delphos requirements.</li>
 </ol>
 <p>Having an environment configured, you can install the required dependencies for Delphos using pip:</p>
+<div class="admonition example">
+<p class="admonition-title">Step 3 — Install Delphos requirements</p>
+</div>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </span></code></pre></div>
-<ol>
-<li>Verify the installation. Open a Python shell and run:</li>
-</ol>
+<div class="admonition example">
+<p class="admonition-title">Step 4 — Verify the installation</p>
+</div>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">delphos</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">delphos</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
