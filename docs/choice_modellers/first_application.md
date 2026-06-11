@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # First Application
 
 This tutorial shows how to use a pre-trained Delphos to propose candidate utility specifications for the Swissmetro dataset.
