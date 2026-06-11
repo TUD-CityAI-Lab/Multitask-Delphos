@@ -46,7 +46,15 @@ nav:
       - Extending the Framework: researchers/extending_framework.md
 
   - Tutorials:
-      - Notebooks: tutorials/notebooks.md
+      - Notebooks Overview: tutorials/notebooks.md
+      - 01. Task: tutorials/01_task.md
+      - 02. State: tutorials/02_state.md
+      - 03. Action: tutorials/03_action.md
+      - 04. Apollo Generator: tutorials/04_apollo_generator.md
+      - 05. Apollo Estimator: tutorials/05_apollo_estimator.md
+      - 06. Results Cache: tutorials/06_results_cache.md
+      - 07. Environment: tutorials/07_environment.md
+      - 08. Testing: tutorials/08_testing.md
 
 repo_url: https://github.com/TUD-CityAI-Lab/Multitask-Delphos
 repo_name: Multitask-Delphos
