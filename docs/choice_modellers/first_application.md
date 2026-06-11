@@ -15,7 +15,7 @@ In this tutorial, we use a pretrained Delphos agent to generate candidate utilit
 
 ---
 
-## Step 1: Import Delphos
+!!! example "Step 1: Import Delphos"
 
 ```python
 
@@ -23,7 +23,7 @@ from delphos import Delphos
 
 ```
 
-## Step 2: Load a Pretrained Agent
+!!! example "Step 2: Load a Pretrained Agent"
 
 Delphos provides pretrained agents that have learned model specification strategies from previous choice modelling tasks. For now, Delphos is specialised for transport applications, so we load the pretrained transport agent.
 
@@ -41,7 +41,7 @@ print(agent)
 
 ```
 
-## Step 3: Load a Dataset
+!!! example "Step 3: Load a Dataset"
 
 For this example, we use the Swissmetro dataset.
 
@@ -59,7 +59,7 @@ print(dataset)
 
 ```
 
-## Step 4: Generate Candidate Specifications
+!!! example "Step 4: Generate Candidate Specifications"
 
 Apply the pretrained agent to the dataset. The agent will iteratively propose utility specifications and estimate the corresponding choice models.
 
@@ -71,7 +71,7 @@ results = agent.inference(dataset=dataset, num_specifications=100)
 
 The `num_specifications` controls how many alternative utility specifications are proposed by Delphos. Larger values typically produce a wider range of candidate specifications but require more computation time.
 
-## Step 5: Inspect the Pareto Front
+!!! example "Step 5: Inspect the Pareto Front"
 
 You can inspect the Pareto front using the `plot_pareto_front()` method, which returns a dataframe with the candidate specifications and their associated model performance metrics. It shows the trade-offs between model performance (Log-likelihood) and model complexity (Number of parameters).
 
