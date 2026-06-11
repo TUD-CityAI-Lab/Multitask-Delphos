@@ -313,6 +313,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1679,7 +1681,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1731,6 +1735,8 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
@@ -1759,7 +1765,7 @@
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">task_7</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_8/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2014_spain_parkingChoice</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">task_8</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_9/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018 LPMC</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">task_9</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_10/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018_Optima</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">task_10</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_11/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2019_vanCranenburgh      </span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">task_10</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_11/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2019_vanCranenburgh</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">task_1</span><span class="p">,</span> <span class="n">task_2</span><span class="p">,</span> <span class="n">task_3</span><span class="p">,</span> <span class="n">task_4</span><span class="p">,</span> <span class="n">task_5</span><span class="p">,</span> <span class="n">task_6</span><span class="p">,</span> <span class="n">task_7</span><span class="p">,</span> <span class="n">task_8</span><span class="p">,</span> <span class="n">task_9</span><span class="p">,</span> <span class="n">task_10</span><span class="p">]</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
@@ -1827,7 +1833,7 @@
 18 Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=1, covariate_id=2)
 19 Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=1, covariate_id=3)
 </code></pre></div>
-<p>E. Create a null model </p>
+<p>E. Create a null model</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">specification</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">create_initial_specification</span><span class="p">()</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">specification</span>
 </span></code></pre></div>
@@ -1968,8 +1974,13 @@ Final specification:
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
