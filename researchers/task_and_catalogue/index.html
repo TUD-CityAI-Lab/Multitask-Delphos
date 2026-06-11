@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#motivation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -307,6 +312,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1014,6 +1021,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1393,7 +1402,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1401,6 +1412,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
 </nav>
@@ -1415,13 +1428,333 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
   
 
 
-  <h1>Task and Catalogue</h1>
+<p>This section describes one of the central concepts behind Delphos: the separation between dataset-specific modelling problems (Tasks) and the global modelling grammar (Catalogue).</p>
+<p>While choice modellers interact with datasets, Delphos operates on a higher level of abstraction. Every dataset is transformed into a task representation, and all tasks are subsequently integrated into a common modelling grammar through the Catalogue.</p>
+<p>This abstraction is what enables multitask learning and transfer learning across discrete choice modelling problems.</p>
+<hr />
+<h1 id="motivation">Motivation</h1>
+<p>Suppose we wish to train Delphos on multiple transport datasets:</p>
+<ul>
+<li>Swissmetro</li>
+<li>LTDS</li>
+<li>ModeCanada</li>
+<li>Norway Value of Travel Time</li>
+</ul>
+<p>Although these datasets differ in their variables, alternatives, sample sizes, and geographical contexts, they share many modelling concepts:</p>
+<ul>
+<li>Travel time</li>
+<li>Travel cost</li>
+<li>Socio-demographics</li>
+<li>Generic parameters</li>
+<li>Alternative-specific parameters</li>
+<li>Non-linear transformations</li>
+</ul>
+<p>A reinforcement learning agent cannot directly reason about dataset-specific variable names such as:</p>
+<p>text SM_TT</p>
+<p>or</p>
+<p>text rail_ivt</p>
+<p>because these variables only exist in one dataset.</p>
+<p>Instead, Delphos must learn at the level of modelling concepts.</p>
+<p>The Task and Catalogue abstractions provide this capability.</p>
+<hr />
+<h1 id="task-representation">Task Representation</h1>
+<p>A Task represents a single discrete choice modelling problem.</p>
+<p>Formally, a task can be viewed as:</p>
+<div class="arithmatex">\[
+T=
+(\mathcal{A},
+\mathcal{X},
+\mathcal{C},
+\mathcal{F},
+\mathcal{G})
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathcal{A}\)</span> denotes the alternatives.</li>
+<li><span class="arithmatex">\(\mathcal{X}\)</span> denotes the attributes.</li>
+<li><span class="arithmatex">\(\mathcal{C}\)</span> denotes the covariates.</li>
+<li><span class="arithmatex">\(\mathcal{F}\)</span> denotes the available transformations.</li>
+<li><span class="arithmatex">\(\mathcal{G}\)</span> denotes the available taste structures.</li>
+</ul>
+<p>The task therefore defines the modelling space that Delphos is allowed to explore.</p>
+<hr />
+<h1 id="alternatives">Alternatives</h1>
+<p>Alternatives correspond to the available options within the choice set.</p>
+<p>For example:</p>
+<p>python task.alternatives</p>
+<p>may produce:</p>
+<p>python ( Alternative( id=1, name="car", choice=1, availability="av_car" ), Alternative( id=2, name="rail", choice=2, availability="av_rail" ), Alternative( id=3, name="swissmetro", choice=3, availability="av_sm" ) )</p>
+<p>Each alternative contains:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Internal identifier</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Human-readable name</td>
+</tr>
+<tr>
+<td>choice</td>
+<td>Choice code in the dataset</td>
+</tr>
+<tr>
+<td>availability</td>
+<td>Availability variable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="attributes">Attributes</h1>
+<p>Attributes define the explanatory variables available for model specification.</p>
+<p>For example:</p>
+<p>python task.get_attribute("travel_time")</p>
+<p>may return:</p>
+<p>python Attribute( id=2, name="travel_time", alternative={ 1: "car_tt", 2: "rail_tt", 3: "sm_tt" } )</p>
+<p>The mapping specifies which dataset column corresponds to the attribute for each alternative.</p>
+<p>From the perspective of Delphos, the attribute is represented only by its identifier:</p>
+<div class="arithmatex">\[
+a_i
+\in
+\mathcal X
+\]</div>
+<p>regardless of the original variable names.</p>
+<p>This abstraction is essential for transferring knowledge across datasets.</p>
+<hr />
+<h1 id="covariates">Covariates</h1>
+<p>Covariates define variables that may interact with utility parameters.</p>
+<p>For example:</p>
+<p>python Covariate( id=1, name="income", levels=(0,1,2) )</p>
+<p>The levels define the categories available for systematic taste heterogeneity.</p>
+<p>A modelling term such as</p>
+<div class="arithmatex">\[
+\beta_{TT}^{Income}
+TT
+\]</div>
+<p>can therefore be represented internally as:</p>
+<p>text (travel_time, linear, generic, income)</p>
+<p>without referring to any dataset-specific coding.</p>
+<hr />
+<h1 id="transformations">Transformations</h1>
+<p>Transformations determine how attributes enter the utility function.</p>
+<p>Delphos currently supports:</p>
+<p>python task.transform_names</p>
+<p>python ( "linear", "log", "box_cox" )</p>
+<p>These transformations correspond to:</p>
+<div class="arithmatex">\[
+x
+\]</div>
+<div class="arithmatex">\[
+\log(x)
+\]</div>
+<div class="arithmatex">\[
+\frac{x^\lambda -1}{\lambda}
+\]</div>
+<p>respectively.</p>
+<p>Transformations are represented using global identifiers and therefore remain consistent across tasks.</p>
+<hr />
+<h1 id="taste-structures">Taste Structures</h1>
+<p>Taste structures determine whether parameters are shared across alternatives.</p>
+<p>Delphos currently supports:</p>
+<p>python ( "generic", "specific" )</p>
+<p>A generic parameter:</p>
+<div class="arithmatex">\[
+\beta_{TT}
+\]</div>
+<p>is shared across alternatives.</p>
+<p>A specific parameter:</p>
+<div class="arithmatex">\[
+\beta_{TT,j}
+\]</div>
+<p>is estimated separately for each alternative.</p>
+<hr />
+<h1 id="modelling-terms">Modelling Terms</h1>
+<p>The fundamental modelling unit used by Delphos is a modelling term.</p>
+<p>Each term is represented as:</p>
+<div class="arithmatex">\[
+t_i
+=
+(a_i,
+\tau_i,
+\gamma_i,
+c_i)
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(a_i\)</span> = attribute</li>
+<li><span class="arithmatex">\(\tau_i\)</span> = transformation</li>
+<li><span class="arithmatex">\(\gamma_i\)</span> = taste structure</li>
+<li><span class="arithmatex">\(c_i\)</span> = interaction covariate</li>
+</ul>
+<p>Examples:</p>
+<p>text (travel_time, linear, generic, none) (travel_cost, log, generic, income) (headway, box_cox, specific, gender)</p>
+<p>A utility specification is therefore represented as a set of modelling terms:</p>
+<div class="arithmatex">\[
+S=
+{
+t_1,
+t_2,
+\ldots,
+t_n
+}
+\]</div>
+<p>rather than as executable utility equations.</p>
+<p>This representation forms the state space of the reinforcement learning agent.</p>
+<hr />
+<h1 id="catalogue-construction">Catalogue Construction</h1>
+<p>A Catalogue combines multiple tasks into a single global modelling grammar.</p>
+<p>Suppose we have:</p>
+<p>python catalogue = Catalogue.from_tasks( [ swissmetro, ltds, modecanada ] )</p>
+<p>The catalogue aggregates all modelling concepts appearing across tasks.</p>
+<p>Formally:</p>
+<div class="arithmatex">\[
+A_{global}
+=
+\bigcup_{\tau}
+A_\tau
+\]</div>
+<div class="arithmatex">\[
+C_{global}
+=
+\bigcup_{\tau}
+C_\tau
+\]</div>
+<div class="arithmatex">\[
+F_{global}
+=
+\bigcup_{\tau}
+F_\tau
+\]</div>
+<div class="arithmatex">\[
+G_{global}
+=
+\bigcup_{\tau}
+G_\tau
+\]</div>
+<p>where <span class="arithmatex">\(\tau\)</span> indexes tasks.</p>
+<hr />
+<h1 id="global-identifiers">Global Identifiers</h1>
+<p>The catalogue assigns a unique identifier to every modelling concept.</p>
+<p>For example:</p>
+<p>python catalogue.global_attribute_ids</p>
+<p>python (1,2,3,4,...,15)</p>
+<p>Similarly:</p>
+<p>python catalogue.global_covariate_ids catalogue.global_transform_ids catalogue.global_taste_ids</p>
+<p>These identifiers define the modelling language used throughout Delphos.</p>
+<p>The reinforcement learning agent never interacts with dataset-specific variable names.</p>
+<p>Instead, it reasons entirely in terms of global identifiers.</p>
+<hr />
+<h1 id="task-masks">Task Masks</h1>
+<p>Not every modelling concept is available in every dataset.</p>
+<p>For example:</p>
+<p>text Swissmetro: Travel Time Travel Cost Headway LTDS: Travel Time Travel Cost Access Time</p>
+<p>Consequently, Delphos uses task-specific masks.</p>
+<p>For a task <span class="arithmatex">\(\tau\)</span>:</p>
+<div class="arithmatex">\[
+m_\tau
+\in
+{0,1}^{|A_{global}|}
+\]</div>
+<p>indicates which attributes are available.</p>
+<p>For example:</p>
+<p>python catalogue.attribute_mask(task)</p>
+<p>might return:</p>
+<p>python [1,1,1,0,0,0,1,0,...]</p>
+<p>The same mechanism exists for:</p>
+<ul>
+<li>Attributes</li>
+<li>Covariates</li>
+<li>Transformations</li>
+<li>Taste structures</li>
+</ul>
+<p>These masks ensure that the agent only proposes valid modelling operations.</p>
+<hr />
+<h1 id="why-tasks-and-catalogue-matter">Why Tasks and Catalogue Matter</h1>
+<p>The Task and Catalogue abstractions are the foundation of Delphos' multitask learning framework.</p>
+<p>Without them:</p>
+<ul>
+<li>Every dataset would require its own action space.</li>
+<li>States would have incompatible representations.</li>
+<li>Transfer learning would not be possible.</li>
+</ul>
+<p>By introducing a global modelling grammar, Delphos can learn modelling patterns that generalise across datasets.</p>
+<p>For example:</p>
+<ul>
+<li>Travel time often benefits from non-linear transformations.</li>
+<li>Cost variables frequently appear with generic parameters.</li>
+<li>Certain interactions repeatedly improve model fit.</li>
+</ul>
+<p>These patterns can be transferred from one dataset to another because the Catalogue provides a shared representation.</p>
+<hr />
+<h1 id="summary">Summary</h1>
+<p>The Task abstraction describes an individual model specification problem.</p>
+<p>The Catalogue combines multiple tasks into a shared modelling grammar.</p>
+<p>Together they provide:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Task</td>
+<td>Defines a dataset-specific modelling problem</td>
+</tr>
+<tr>
+<td>Alternative</td>
+<td>Represents a choice option</td>
+</tr>
+<tr>
+<td>Attribute</td>
+<td>Represents explanatory variables</td>
+</tr>
+<tr>
+<td>Covariate</td>
+<td>Represents heterogeneity variables</td>
+</tr>
+<tr>
+<td>Transformation</td>
+<td>Defines functional forms</td>
+</tr>
+<tr>
+<td>Taste Structure</td>
+<td>Defines parameter sharing</td>
+</tr>
+<tr>
+<td>Modelling Term</td>
+<td>Basic unit of model specification</td>
+</tr>
+<tr>
+<td>Catalogue</td>
+<td>Shared modelling grammar across tasks</td>
+</tr>
+<tr>
+<td>Task Masks</td>
+<td>Restrict modelling operations to valid concepts</td>
+</tr>
+</tbody>
+</table>
+<p>These abstractions form the basis of Delphos' representation learning and multitask reinforcement learning framework.</p>
+<hr />
+<h2 id="next-step">Next Step</h2>
+<p>Continue to State Representation to understand how utility specifications are transformed into latent vectors that can be processed by the reinforcement learning agent.</p>
 
 
 
@@ -1429,10 +1762,13 @@
 
 
 
+  
+  
 
 
 
 
+  
 
 
 
