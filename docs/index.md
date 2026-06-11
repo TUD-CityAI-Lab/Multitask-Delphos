@@ -23,12 +23,7 @@ The project supports:
 
 - **Flexible objective**: Delphos supports customisable reward functions, allowing modellers to incorporate their own criteria into the specification process.
 
-- **Collaborative**: Researchers and practitioners can contribute by:
-  1. Adding new datasets to the catalogue,
-  2. Developing new reward functions,
-  3. Extending estimation environments,
-  4. Implementing alternative reinforcement learning algorithms,
-  5. Reporting issues and suggestions.
+- **Collaborative**: Researchers and practitioners can contribute by adding new datasets to the catalogue, developing new reward functions, extending estimation environments, implementing alternative reinforcement learning algorithms, and reporting issues and suggestions.
 
 ---
 
