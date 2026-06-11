@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#understanding-results" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -307,6 +312,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -584,6 +591,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Results
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -601,6 +628,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happened?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1393,7 +1450,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1402,6 +1461,27 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happened?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1415,13 +1495,190 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
   
 
 
-  <h1>Understanding Results</h1>
+<h1 id="understanding-results">Understanding Results</h1>
+<p>After generating candidate specifications, Delphos stores the estimated models and their modelling results in a database. During inference, Delphos iteratively proposes candidate specifications and updates the database with the estimation outcomes. This page explains how to load the results generated during inference and inspect the candidate specifications proposed by Delphos.</p>
+<div class="admonition example">
+<p class="admonition-title">Step 1: Access the modelling results</p>
+</div>
+<p>Delphos stores all estimated specifications and their modelling outcomes in a SQLite database. The easiest way to access the results is through the <code>ResultCache</code> class.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos.env.result_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResultCache</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 2: Connect to the results database</p>
+</div>
+<p>Create a <code>ResultCache</code> object with the path to the results database. If you do not specify a path, it will default to <code>results/rewards.sqlite</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">modelling_results</span> <span class="o">=</span> <span class="n">ResultCache</span><span class="p">(</span><span class="n">db_path</span><span class="o">=</span><span class="s2">&quot;results/rewards.sqlite&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 3: Load the estimated specifications</p>
+</div>
+<p>Load all specifications currently stored in the database.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">results</span> <span class="o">=</span> <span class="n">modelling_results</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a> task_name   specification        adjRho2_0  AIC     BIC
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a> swissmetro  1000_2110_3000_4210  0.245      5234.1  5298.2
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a> swissmetro  1110_2110_3000_4210  0.252      5201.3  5274.8
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a> swissmetro  1110_2310_3000_4210  0.258      5178.4  5261.2
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a> ...         ...                  ...        ...     ...
+</span></code></pre></div>
+<p>Each row corresponds to a candidate specification evaluated by Delphos.</p>
+<div class="admonition example">
+<p class="admonition-title">Step 4: Inspect the available modelling results</p>
+</div>
+<p>The results table contains information about model performance, complexity, estimation success, and computation time.</p>
+<p>You can inspect the available columns using:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Modelling Result</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task_name</code></td>
+<td>Name of the modelling task or dataset on which the specification was estimated.</td>
+</tr>
+<tr>
+<td><code>specification</code></td>
+<td>Encoded representation of the utility specification explored by Delphos. Each block corresponds to a modelling decision such as attribute inclusion, transformation, taste heterogeneity, or covariate interaction.</td>
+</tr>
+<tr>
+<td><code>successfulEstimation</code></td>
+<td>Indicates whether the choice model converged successfully during estimation (<code>1 = success</code>, <code>0 = failure</code>).</td>
+</tr>
+<tr>
+<td><code>numParams</code></td>
+<td>Total number of estimated parameters in the model.</td>
+</tr>
+<tr>
+<td><code>LL0</code></td>
+<td>Log-likelihood of the null model.</td>
+</tr>
+<tr>
+<td><code>LLC</code></td>
+<td>Log-likelihood at the model with alternative-specific constants.</td>
+</tr>
+<tr>
+<td><code>LLout</code></td>
+<td>Log-likelihood of the final model.</td>
+</tr>
+<tr>
+<td><code>rho2_0</code></td>
+<td>McFadden's pseudo-R², computed relative to the null model.</td>
+</tr>
+<tr>
+<td><code>adjRho2_0</code></td>
+<td>Adjusted McFadden's pseudo-R². Penalises models with a large number of parameters.</td>
+</tr>
+<tr>
+<td><code>rho2_C</code></td>
+<td>McFadden's pseudo-R² relative to a constant-only model.</td>
+</tr>
+<tr>
+<td><code>adjRho2_C</code></td>
+<td>Adjusted McFadden's pseudo-R² relative to a constant-only model.</td>
+</tr>
+<tr>
+<td><code>AIC</code></td>
+<td>Akaike Information Criterion. Balances model fit and complexity, with lower values indicating preferred models.</td>
+</tr>
+<tr>
+<td><code>BIC</code></td>
+<td>Bayesian Information Criterion. Similar to AIC but imposes a stronger penalty for additional parameters.</td>
+</tr>
+<tr>
+<td><code>vcHessianConditionNumber</code></td>
+<td>Condition number of the variance-covariance matrix or Hessian approximation. Large values may indicate numerical instability or identification issues.</td>
+</tr>
+<tr>
+<td><code>eigValue</code></td>
+<td>Smallest eigenvalue of the Hessian matrix. Values close to zero may indicate poorly identified parameters.</td>
+</tr>
+<tr>
+<td><code>numResids</code></td>
+<td>Number of residuals or observations used in the estimation process.</td>
+</tr>
+<tr>
+<td><code>timeTaken</code></td>
+<td>Total computational time required to estimate the specification, measured in seconds.</td>
+</tr>
+<tr>
+<td><code>skipped</code></td>
+<td>Indicates whether the specification was skipped without estimation due to a large number of parameters. (<code>1 = skipped</code>, <code>0 = estimated</code>).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Step 5: Keep only successfully estimated models</p>
+</div>
+<p>Some specifications may fail to estimate or be skipped.</p>
+<p>Filter the results as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">successful</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span> <span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;successfulEstimation&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;skipped&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successful models: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">successful</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 6: Rank specifications by model fit</p>
+</div>
+<p>For example, to identify the specifications with the highest Log-Likelihood:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">best_models</span> <span class="o">=</span> <span class="n">successful</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;LLout&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span> <span class="n">best_models</span><span class="p">[</span> <span class="p">[</span><span class="s2">&quot;specification&quot;</span><span class="p">,</span> <span class="s2">&quot;LLout&quot;</span><span class="p">,</span> <span class="s2">&quot;numParams&quot;</span><span class="p">]</span> <span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>specification   LLout   numParams
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>0   1110_2310_4210  -7252.17    10
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>1   1110_2311_4210  -7251.83    11
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>2   1110_2311_4220  -7251.10    12
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 7: Inspect a specific specification</p>
+</div>
+<p>You can retrieve the results associated with a particular specification.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">specification</span> <span class="o">=</span> <span class="s2">&quot;1110_2310_4210&quot;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;specification&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">specification</span><span class="p">]</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>task_name                             swissmetro
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>specification                     1110_2310_4210
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>successfulEstimation                           1
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>numParams                                     10
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>LL0                                   -7902.36
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>LLC                                   -7449.17
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>LLout                                 -7252.17
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>rho2_0                                    0.1077
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>adjRho2_0                                 0.0990
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>rho2_C                                    0.0274
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>adjRho2_C                                -0.0062
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>AIC                                    7272.17
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>BIC                                    7312.11
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>vcHessianConditionNumber                6599.57
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>eigValue                                5.77e-06
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>numResids                             103936.0000
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>timeTaken                              135.1641
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>skipped                                        0
+</span></code></pre></div>
+<h2 id="what-happened">What Happened?</h2>
+<p>During inference, Delphos estimated multiple candidate utility specifications and stored their outcomes in the results database.</p>
+<p>The rewards table contains:</p>
+<ul>
+<li>The generated specification.</li>
+<li>Modelling results.</li>
+<li>Estimation diagnostics.</li>
+</ul>
+<p>By analysing this table, you can identify promising candidate specifications and decide which models deserve further investigation.</p>
 
 
 
@@ -1429,10 +1686,13 @@
 
 
 
+  
+  
 
 
 
 
+  
 
 
 
