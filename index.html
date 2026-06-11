@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#delphos-assisting-discrete-choice-model-specification-with-reinforcement-learning" class="md-skip">
+        <a href="#assisting-discrete-choice-model-specification-with-reinforcement-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -414,15 +414,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#why-delphos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Why Delphos?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
+    <nav class="md-nav" aria-label="Why Delphos?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -464,17 +464,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-delphos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Delphos?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -482,34 +471,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Getting Started">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#choice-modellers-learn-how-to-use-pretrained-delphos-agents-for-model-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choice Modellers: Learn how to use pretrained Delphos agents for model specification.
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#researchers-and-ml-practitioners-learn-how-delphos-is-trained-evaluated-and-extended" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Researchers and ML Practitioners: Learn how Delphos is trained, evaluated, and extended.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1583,15 +1544,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#why-delphos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Why Delphos?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
+    <nav class="md-nav" aria-label="Why Delphos?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1633,17 +1594,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-delphos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Delphos?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#getting-started" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1651,34 +1601,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Getting Started">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#choice-modellers-learn-how-to-use-pretrained-delphos-agents-for-model-specification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choice Modellers: Learn how to use pretrained Delphos agents for model specification.
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#researchers-and-ml-practitioners-learn-how-delphos-is-trained-evaluated-and-extended" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Researchers and ML Practitioners: Learn how Delphos is trained, evaluated, and extended.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1732,7 +1654,7 @@
   
 
 
-<h1 id="delphos-assisting-discrete-choice-model-specification-with-reinforcement-learning">Delphos: Assisting Discrete Choice Model Specification with Reinforcement Learning</h1>
+<h1 id="assisting-discrete-choice-model-specification-with-reinforcement-learning">Assisting Discrete Choice Model Specification with Reinforcement Learning</h1>
 <p>Specifying discrete choice models is often an iterative and time-consuming process. Modellers typically evaluate many alternative utility specifications while balancing model fit, parsimony, behavioural plausibility, and theoretical consistency. As model complexity and the number of modelling decisions increase, exploring the specification space becomes increasingly challenging.</p>
 <p>To support this process, we introduce <strong>Delphos</strong>, a reinforcement learning agent that learns to specify discrete choice models from previous modelling tasks and transfer this modelling knowledge across transport choice datasets.</p>
 <p>The project supports:</p>
@@ -1741,41 +1663,6 @@
 <li>Methodological research on reinforcement learning for automated choice model specification;</li>
 <li>Choice datasets hub for benchmarking and reproducibility.</li>
 </ol>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>It consists of three components: Delphos for automating model specification, transport choice datasets, and Delphos-core for reinforcement learning research and development.</p>
-<h3 id="delphos"><a href="delphos/overview.md">Delphos</a></h3>
-<p>A Python package that allows choice modellers to apply pre-trained Delphos to their own discrete choice datasets without requiring reinforcement learning expertise. It supports zero-shot inference and few-shot fine-tuning on the new dataset.</p>
-<p>Includes:</p>
-<ul>
-<li>Loading pre-trained agents</li>
-<li>Loading discrete choice datasets from the catalgoue</li>
-<li>Automated utility specification generation</li>
-<li>Pareto-front exploration</li>
-<li>Reproducible modelling workflows</li>
-<li>Tutorials and examples</li>
-</ul>
-<h3 id="choice-datasets"><a href="transport-choice-datasets/overview.md">Choice datasets</a></h3>
-<p>A collection of transport choice datasets used for training, benchmarking, teaching, and reproducible research.</p>
-<p>Includes:</p>
-<ul>
-<li>Dataset files</li>
-<li>Data processing and validation pipelines</li>
-<li>Metadata and documentation</li>
-</ul>
-<h3 id="delphos-core"><a href="delphos-core/overview.md">Delphos-core</a></h3>
-<p>The research framework used to train, evaluate, and extend Delphos agents.</p>
-<p>Includes:</p>
-<ul>
-<li>Markov Decision Process formulation</li>
-<li>State and action space</li>
-<li>Reward function design</li>
-<li>Reinforcement learning algorithms</li>
-<li>Apollo integration</li>
-<li>Training and evaluation pipeline</li>
-<li>Experiment configurations</li>
-</ul>
-<hr />
 <h2 id="why-delphos">Why Delphos?</h2>
 <ul>
 <li>
@@ -1796,21 +1683,59 @@
 <li>implementing alternative reinforcement learning algorithms,</li>
 <li>and reporting issues and suggestions.</li>
 </ul>
+<hr />
+<h3 id="delphos"><a href="delphos/overview.md">Delphos</a></h3>
+<p>A Python package that allows choice modellers to apply pre-trained Delphos to their own discrete choice datasets without requiring reinforcement learning expertise. It supports zero-shot inference and few-shot fine-tuning on the new dataset. It includes:</p>
+<ul>
+<li>Loading pre-trained agents</li>
+<li>Loading discrete choice datasets from the catalgoue</li>
+<li>Automated utility specification generation</li>
+<li>Pareto-front exploration</li>
+<li>Reproducible modelling workflows</li>
+<li>Tutorials and examples</li>
+</ul>
+<h3 id="choice-datasets"><a href="transport-choice-datasets/overview.md">Choice datasets</a></h3>
+<p>A collection of transport choice datasets used for training, benchmarking, teaching, and reproducible research. It includes:</p>
+<ul>
+<li>Dataset files</li>
+<li>Data processing and validation pipelines</li>
+<li>Metadata and documentation</li>
+</ul>
+<h3 id="delphos-core"><a href="delphos-core/overview.md">Delphos-core</a></h3>
+<p>The research framework used to train, evaluate, and extend Delphos agents. It includes:</p>
+<ul>
+<li>Markov Decision Process formulation</li>
+<li>State and action space</li>
+<li>Reward function design</li>
+<li>Reinforcement learning algorithms</li>
+<li>Apollo integration</li>
+<li>Training and evaluation pipeline</li>
+<li>Experiment configurations</li>
+</ul>
+<hr />
 <h2 id="getting-started">Getting Started</h2>
 <p>Choose the guide that best matches your profile.</p>
-<h3 id="choice-modellers-learn-how-to-use-pretrained-delphos-agents-for-model-specification">Choice Modellers: Learn how to use pretrained Delphos agents for model specification.</h3>
-<ol>
-<li><a href="choice_modellers/getting_started/">Getting Started</a></li>
+<ul>
+<li>
+<p><strong>Choice Modellers</strong>: Learn how to use pretrained Delphos agents for model specification.</p>
+</li>
+<li>
+<p><a href="choice_modellers/getting_started/">Getting Started</a></p>
+</li>
 <li><a href="choice_modellers/first_application/">First application</a></li>
 <li><a href="choice_modellers/understanding_results/">Understanding results</a></li>
 <li><a href="./choice_modellers/using_catalogue_datasets.md">Using catalogue datasets</a></li>
 <li><a href="./choice_modellers/using_your_own_datasets.md">Using your own datasets</a></li>
 <li><a href="choice_modellers/custom_objectives/">Custom objectives</a></li>
-<li><a href="choice_modellers/exporting_results/">Exporting results</a></li>
-</ol>
-<h3 id="researchers-and-ml-practitioners-learn-how-delphos-is-trained-evaluated-and-extended">Researchers and ML Practitioners: Learn how Delphos is trained, evaluated, and extended.</h3>
-<ol>
-<li><a href="./researchers/installation.md">Installation</a></li>
+<li>
+<p><a href="choice_modellers/exporting_results/">Exporting results</a></p>
+</li>
+<li>
+<p><strong>Researchers and ML Practitioners</strong>: Learn how Delphos is trained, evaluated, and extended.</p>
+</li>
+<li>
+<p><a href="./researchers/installation.md">Installation</a></p>
+</li>
 <li><a href="./researchers/delphos_architecture.md">Delphos architecture</a></li>
 <li><a href="researchers/task_and_catalogue/">Task and Catalogue</a></li>
 <li><a href="./researchers/state_representations.md">State representations</a></li>
@@ -1822,7 +1747,7 @@
 <li><a href="researchers/adding_new_datasets/">Adding new datasets</a></li>
 <li><a href="researchers/adding_new_rewards/">Adding new rewards</a></li>
 <li><a href="./researchers/extending_the_framework.md">Extending the framework</a></li>
-</ol>
+</ul>
 <hr />
 <h2 id="citation">Citation</h2>
 <p>If you use Delphos, please cite the corresponding repositories and associated publications.</p>
