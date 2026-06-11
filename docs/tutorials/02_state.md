@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ```python
 import sys
 from pathlib import Path
@@ -12,7 +17,6 @@ from mdp.state import Specification, Term
 
 A. Load a single task and catalogue
 
-
 ```python
 task_1 = Task.from_yaml(0,  yaml_path=ROOT / "dataset/dataset_1/dataset.yaml") # ApolloModeChoice
 task_2 = Task.from_yaml(1,  yaml_path=ROOT / "dataset/dataset_2/dataset.yaml") # ApolloRouteChoice
@@ -23,7 +27,7 @@ task_6 = Task.from_yaml(5,  yaml_path=ROOT / "dataset/dataset_7/dataset.yaml") #
 task_7 = Task.from_yaml(6,  yaml_path=ROOT / "dataset/dataset_8/dataset.yaml") # 2014_spain_parkingChoice
 task_8 = Task.from_yaml(7,  yaml_path=ROOT / "dataset/dataset_9/dataset.yaml") # 2018 LPMC
 task_9 = Task.from_yaml(8,  yaml_path=ROOT / "dataset/dataset_10/dataset.yaml") # 2018_Optima
-task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh      
+task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh
 
 tasks = [task_1, task_2, task_3, task_4, task_5, task_6, task_7, task_8, task_9, task_10]
 
@@ -32,21 +36,16 @@ catalogue = Catalogue.from_tasks(tasks)
 
 B. Create state manager
 
-
 ```python
 Specification = Specification(catalogue=catalogue)
 ```
 
 C. Create a null model
 
-
 ```python
 null_model = Specification.empty()
 null_model
 ```
-
-
-
 
     tensor([[1, 0, 0, 0],
             [2, 0, 0, 0],
@@ -56,10 +55,7 @@ null_model
             [6, 0, 0, 0],
             [7, 0, 0, 0]])
 
-
-
 D. Create linear additive model
-
 
 ```python
 # ASC
@@ -92,9 +88,6 @@ linear_additive
 
 ```
 
-
-
-
     tensor([[1, 1, 1, 0],
             [2, 1, 1, 0],
             [3, 1, 1, 0],
@@ -103,35 +96,23 @@ linear_additive
             [6, 0, 0, 0],
             [7, 0, 0, 0]])
 
-
-
 E. State to Specification
-
 
 ```python
 terms = Specification.to_terms(linear_additive)
 terms
 ```
 
-
-
-
     [Term(attribute_id=1, transform_id=1, taste_id=1, covariate_id=0),
      Term(attribute_id=2, transform_id=1, taste_id=1, covariate_id=0),
      Term(attribute_id=3, transform_id=1, taste_id=1, covariate_id=0)]
 
-
-
-F. Specification to Apollo 
-
+F. Specification to Apollo
 
 ```python
 backend = Specification.to_backend(linear_additive)
 backend
 ```
-
-
-
 
     {'rows': [{'att_id': 1, 'trans_id': 1, 'taste_id': 1, 'cov_id': 0},
       {'att_id': 2, 'trans_id': 1, 'taste_id': 1, 'cov_id': 0},
@@ -142,16 +123,10 @@ backend
      'taste_ids': [1, 1, 1],
      'covariate_ids': [0, 0, 0]}
 
-
-
-
 ```python
 # State summary
 Specification.summary()
 ```
-
-
-
 
     {'n_attributes': 7,
      'attribute_ids': (1, 2, 3, 4, 5, 6, 7),
@@ -160,5 +135,3 @@ Specification.summary()
      'taste_ids': (1, 2),
      'device': 'cpu',
      'shape': (7, 4)}
-
-

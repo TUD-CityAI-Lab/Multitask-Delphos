@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 ```python
 import sys
 from pathlib import Path
@@ -20,7 +25,6 @@ from mdp.task import (
 A. Create task manually
 
 1. Modelling space definition
-
 
 ```python
 alternatives = (
@@ -75,7 +79,6 @@ tastes = (
 
 2. Task definition
 
-
 ```python
 task = Task(
     id=1,
@@ -105,9 +108,7 @@ print(task)
 
     Task(name='Example', alternatives=2, attributes=2, covariates=1)
 
-
 B. Create Task from YAML file
-
 
 ```python
 task_1 = Task.from_yaml(id=0, yaml_path= ROOT / "dataset/dataset_1/dataset.yaml")
@@ -116,9 +117,7 @@ print(task_1)
 
     Task(name='ApolloModeChoice', alternatives=4, attributes=5, covariates=3)
 
-
 C. Load multiples tasks
-
 
 ```python
 # List of task configurations intended for multi-task RL training
@@ -131,7 +130,7 @@ task_6 = Task.from_yaml(5,  yaml_path=ROOT / "dataset/dataset_7/dataset.yaml") #
 task_7 = Task.from_yaml(6,  yaml_path=ROOT / "dataset/dataset_8/dataset.yaml") # 2014_spain_parkingChoice
 task_8 = Task.from_yaml(7,  yaml_path=ROOT / "dataset/dataset_9/dataset.yaml") # 2018 LPMC
 task_9 = Task.from_yaml(8,  yaml_path=ROOT / "dataset/dataset_10/dataset.yaml") # 2018_Optima
-task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh     
+task_10 = Task.from_yaml(9,  yaml_path=ROOT / "dataset/dataset_11/dataset.yaml") # 2019_vanCranenburgh
 
 tasks = [task_1, task_2, task_3, task_4, task_5, task_6, task_7, task_8, task_9, task_10]
 
@@ -139,13 +138,11 @@ tasks = [task_1, task_2, task_3, task_4, task_5, task_6, task_7, task_8, task_9,
 
 D. Create a Catalogue
 
-
 ```python
 from mdp.catalogue import Catalogue
 
 catalogue = Catalogue.from_tasks(tasks)
 ```
-
 
 ```python
 # Inspect tasks
@@ -164,9 +161,7 @@ for task in catalogue.tasks:
     Task(name='Optima', alternatives=2, attributes=5, covariates=5) /Users/gnova/Developer/Delphos-core/dataset/dataset_10/2018_optima_modechoice_formatted.csv
     Task(name='VanCranenburghVOT', alternatives=3, attributes=3, covariates=4) /Users/gnova/Developer/Delphos-core/dataset/dataset_11/2019_vanCranenburgh_vot_formatted.csv
 
-
 E. Gloabl ids
-
 
 ```python
 # See catalogue ids
@@ -181,9 +176,7 @@ print(f"Covariate ids: {catalogue.covariate_ids}")
     Taste ids: (1, 2)
     Covariate ids: (1, 2, 3, 4, 5, 6, 7)
 
-
 F. Task masks
-
 
 ```python
 print(f"Attributes available in task 1: {catalogue.attribute_mask(task_1)}")
@@ -193,31 +186,18 @@ print(f"Covariates available in task 1: {catalogue.covariate_mask(task_1)}")
     Attributes available in task 1: [ True  True  True  True False  True False]
     Covariates available in task 1: [ True  True False False False  True False]
 
-
 G. Task looup
-
 
 ```python
 catalogue.get_task(1)
 ```
 
-
-
-
     Task(id=1, name='SwissmetroRouteChoice', yaml_path=PosixPath('/Users/gnova/Developer/Delphos-core/dataset/dataset_2/dataset.yaml'), dataset_path=PosixPath('/Users/gnova/Developer/Delphos-core/dataset/dataset_2/2018_apollo_routechoice_formatted.csv'), rewards_path=PosixPath('/Users/gnova/Developer/Delphos-core/dataset/dataset_2/rewards.sqlite'), choice_column='choice', id_column='id', is_panel=True, ll_null=-1933.88063376224, ll_linear=-1337.88755786563, n_obs=2790, alternatives=(Alternative(id=1, name='alt1', choice=1, availability='av_1'), Alternative(id=2, name='alt2', choice=2, availability='av_2')), attributes=(Attribute(id=1, name='ASC', alternative={}), Attribute(id=2, name='time', alternative={1: 'tt1', 2: 'tt2'}), Attribute(id=3, name='cost', alternative={1: 'tc1', 2: 'tc2'}), Attribute(id=4, name='headway', alternative={1: 'hw1', 2: 'hw2'}), Attribute(id=5, name='interchanges', alternative={1: 'ch1', 2: 'ch2'})), covariates=(Covariate(id=2, name='hh_inc_abs', levels=(0, 1, 2, 3, 4)), Covariate(id=5, name='car_availability', levels=(0, 1)), Covariate(id=6, name='business', levels=(0, 1)), Covariate(id=4, name='purpose', levels=(1, 2, 3, 4))), transformations=(Transformation(id=1, name='linear'), Transformation(id=2, name='log'), Transformation(id=3, name='box_cox')), tastes=(Taste(id=1, name='generic'), Taste(id=2, name='specific')))
 
-
-
 H. ID retrival
-
 
 ```python
 catalogue.get_task(1).id_column
 ```
 
-
-
-
     'id'
-
-
