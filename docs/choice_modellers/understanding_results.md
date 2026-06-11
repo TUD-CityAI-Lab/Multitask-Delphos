@@ -156,4 +156,4 @@ By analysing this table, you can identify promising candidate specifications and
 
 ## Next Step
 
-Continue to [Using Catalogue Datasets](./using_catalogue_datasets.md) to learn how to work with datasets from the catalogue of discrete choice datasets.
+Continue to [Using Catalogue Datasets](./catalogue_datasets.md) to learn how to work with datasets from the catalogue of discrete choice datasets.
