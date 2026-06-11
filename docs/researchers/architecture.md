@@ -3,8 +3,6 @@ hide:
   - toc
 ---
 
-## Delphos Architecture
-
 This section provides a technical overview of the Delphos architecture. Unlike the user-oriented documentation, this section focuses on the underlying machine learning framework and how Delphos learns transferable model specification strategies across discrete choice modelling tasks.
 
 At a high level, Delphos formulates model specification as a reinforcement learning problem and combines:
