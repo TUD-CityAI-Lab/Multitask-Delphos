@@ -151,3 +151,9 @@ The rewards table contains:
 - Estimation diagnostics.
 
 By analysing this table, you can identify promising candidate specifications and decide which models deserve further investigation.
+
+---
+
+## Next Step
+
+Continue to [Using Catalogue Datasets](./using_catalogue_datasets.md) to learn how to work with datasets from the catalogue of discrete choice datasets.
