@@ -115,11 +115,8 @@ Inspect the task:
 
 ```python
 print(task)
-```
 
-Example output:
-
-```python
+# Example output:
 Task(
     name='my_dataset',
     alternatives=2,
@@ -235,14 +232,30 @@ Inspect the resulting task:
 
 ```python
 print(task)
+
+# Example output:
+Task(
+    name='my_dataset',
+    alternatives=2,
+    attributes=3,
+    covariates=2
+)
 ```
 
 Inspect its components:
 
 ```python
-task.alternative_names
-task.attribute_names
-task.covariate_names
+print(task.alternative_names)
+# Example output:
+['car', 'bus']
+
+print(task.attribute_names)
+# Example output:
+['travel_time', 'travel_cost']
+
+print(task.covariate_names)
+# Example output:
+['income']
 ```
 
 ## Which Approach Should I Use?
