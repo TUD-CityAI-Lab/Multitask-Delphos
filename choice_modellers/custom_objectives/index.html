@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#custom-objectives" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -307,6 +312,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -668,6 +675,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Objectives
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -685,6 +712,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-reward-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a reward function?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-a-custom-reward-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define a Custom Reward Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-custom-reward-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a Custom Reward Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1393,7 +1494,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1402,6 +1505,71 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-reward-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a reward function?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-the-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-a-custom-reward-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define a Custom Reward Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-custom-reward-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a Custom Reward Function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1415,13 +1583,118 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
   
 
 
-  <h1>Custom Objectives</h1>
+<h1 id="custom-objectives">Custom Objectives</h1>
+<p>One of the main advantages of Delphos is that it allows users to define what constitutes a "good" model. Traditional model specification procedures often optimise a single criterion, such as log-likelihood, AIC, or BIC. However, in practice, choice modellers frequently consider multiple objectives simultaneously:</p>
+<ul>
+<li>Model performance.</li>
+<li>Model complexity.</li>
+<li>Behavioural plausibility.</li>
+</ul>
+<p>Delphos allows users to define their own objective function, referred to as the reward function.</p>
+<hr />
+<h2 id="what-is-a-reward-function">What is a reward function?</h2>
+<p>The reward function assigns a score to each model specification after estimation, which is used to train the agent's behaviour. Conceptually, a higher reward corresponds to a more desirable model specification.</p>
+<p>Let's start by examining the default reward function used in training. It measures the improvement of a candidate specification relative to a baseline model. Formally,</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">reward</span> <span class="o">=</span> <span class="n">tanh</span><span class="p">((</span><span class="n">LL_candidate</span> <span class="o">-</span> <span class="n">LL_linear</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+</span></code></pre></div>
+<p>where: <code>LL_candidate</code> is the log-likelihood of the candidate specification; <code>LL_linear</code> is the log-likelihood of the linear additive model; and <code>N</code> is the number of observations. The <code>tanh</code> function is used to scale the reward to a range of <code>(-1, 1)</code>. This formulation thus encourages Delphos to propose specifications that improve model performance relative to a linear additive model.</p>
+<h2 id="understanding-the-inputs">Understanding the Inputs</h2>
+<p>Every reward function receives two inputs:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">modelling_outcome</span><span class="p">)</span>
+</span></code></pre></div>
+<p>where <code>task</code> is an object containing information about the modelling task, and <code>modelling_outcome</code> is the estimation results for the candidate specification.</p>
+<div class="admonition example">
+<p class="admonition-title">Step 1: Inspecting the Task</p>
+</div>
+<p>The task contains benchmark information.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">task</span><span class="o">.</span><span class="n">ll_null</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">task</span><span class="o">.</span><span class="n">ll_linear</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">task</span><span class="o">.</span><span class="n">n_obs</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Example output:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="o">-</span><span class="mf">15234.6</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="o">-</span><span class="mf">13450.1</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="mi">10719</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 2: Inspecting modelling outcomes</p>
+</div>
+<p>The modelling outcome is stored as a pandas dataframe.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">modelling_outcome</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Example output:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">[</span><span class="s2">&quot;LLout&quot;</span><span class="p">,</span> <span class="s2">&quot;rho2_0&quot;</span><span class="p">,</span> <span class="s2">&quot;adjRho2_0&quot;</span><span class="p">,</span> <span class="s2">&quot;AIC&quot;</span><span class="p">,</span> <span class="s2">&quot;BIC&quot;</span><span class="p">,</span> <span class="s2">&quot;nFreeParams&quot;</span><span class="p">,</span> <span class="s2">&quot;successfulEstimation&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>You can access any metric directly:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">modelling_outcome</span><span class="p">[</span><span class="s2">&quot;adjRho2_0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></code></pre></div>
+<hr />
+<h2 id="define-a-custom-reward-function">Define a Custom Reward Function</h2>
+<p>Let's define a custom reward function that optimises adjusted McFadden's Rho-Square.</p>
+<div class="admonition example">
+<p class="admonition-title">Step 1: Define a Custom Reward Function</p>
+</div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">modelling_outcome</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">if</span> <span class="n">modelling_outcome</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">modelling_outcome</span><span class="p">[</span><span class="s2">&quot;adjRho2_0&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></code></pre></div>
+<p>In this case, Delphos will prioritise specifications with high adjusted pseudo-R² values.</p>
+<p>Some practitioners prefer parsimonious models. A common approach to favour parsimonious models is to penalise the number of free parameters. Let's define a reward function that optimises the Bayesian Information Criterion (BIC).</p>
+<div class="admonition example">
+<p class="admonition-title">Step 2: Optimising BIC</p>
+</div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">modelling_outcome</span><span class="p">):</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">if</span> <span class="n">modelling_outcome</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">modelling_outcome</span><span class="p">[</span><span class="s2">&quot;BIC&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="n">task</span><span class="o">.</span><span class="n">n_obs</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">tanh</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Now, suppose you want to discourage overly complex model specifications. You can do this by penalising the number of free parameters.</p>
+<div class="admonition example">
+<p class="admonition-title">Step 3: Penalising Complex Models</p>
+</div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">modelling_outcome</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">if</span> <span class="n">modelling_outcome</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">LL</span> <span class="o">=</span> <span class="n">modelling_outcome</span><span class="p">[</span><span class="s2">&quot;LLout&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">complexity</span> <span class="o">=</span> <span class="n">modelling_outcome</span><span class="p">[</span><span class="s2">&quot;nFreeParams&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">LL</span> <span class="o">-</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">complexity</span><span class="p">)</span><span class="o">/</span><span class="n">task</span><span class="o">.</span><span class="n">n_obs</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">tanh</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Some modellers might also want to encourage models that align with stablished behavioural assumptions. For instance, we can provide a high penalty for specifications in which sensitive for travel time is positive.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">modelling_outcome</span><span class="p">):</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">if</span> <span class="n">modelling_outcome</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">check_sign</span> <span class="o">=</span> <span class="n">modelling_outcome</span><span class="p">[</span><span class="s2">&quot;b_time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">if</span> <span class="n">check_sign</span><span class="p">:</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">LLout</span> <span class="o">=</span> <span class="n">modelling_outcome</span><span class="p">[</span><span class="s2">&quot;LLout&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">LLout</span> <span class="o">-</span> <span class="n">task</span><span class="o">.</span><span class="n">LL_linear</span><span class="p">)</span><span class="o">/</span><span class="n">task</span><span class="o">.</span><span class="n">n_obs</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">tanh</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+</span></code></pre></div>
+<h2 id="using-a-custom-reward-function">Using a Custom Reward Function</h2>
+<p>Once defined, the reward function can be passed directly to Delphos.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">results</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">inference</span><span class="p">(</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">dataset</span><span class="o">=</span><span class="n">task</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">reward_function</span><span class="o">=</span><span class="n">reward_function</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">num_specifications</span><span class="o">=</span><span class="mi">500</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Delphos will evaluate every candidate specification using the user-defined objective. The reward function represents the modeller's preferences and ultimately determines which specifications Delphos will favour.</p>
+<hr />
+<h2 id="next-step">Next Step</h2>
+<p>Continue to <a href="../choice_modellers/exporting_results">Exporting Results</a> to learn how to save, compare, and report the specifications generated by Delphos.</p>
 
 
 
@@ -1429,10 +1702,13 @@
 
 
 
+  
+  
 
 
 
 
+  
 
 
 
