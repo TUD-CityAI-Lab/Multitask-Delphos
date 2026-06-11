@@ -1623,16 +1623,12 @@
 </span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span>
 </span></code></pre></div>
 <p>The YAML file describes the model specification task and can be shared independently from the Delphos codebase.</p>
-<ol>
-<li>
-<p>Alternatives define the available options from which decision-makers choose. You must define:</p>
-</li>
-<li>
-<p>their name (car, bus, ...).</p>
-</li>
+<p><strong>Alternatives</strong> define the available options from which decision-makers choose. You must define:</p>
+<ul>
+<li>their name (car, bus, ...).</li>
 <li>their id (value in the choice column).</li>
 <li>their availability (binary variable indicating whether the alternative is available in the dataset).</li>
-</ol>
+</ul>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">alternatives</span><span class="p">:</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">car</span><span class="p">:</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
@@ -1641,16 +1637,12 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">avail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">av_bus</span>
 </span></code></pre></div>
-<ol>
-<li>
-<p>Attributes describe the alternatives. You must define:</p>
-</li>
-<li>
-<p>their name (column name in the dataset).</p>
-</li>
+<p><strong>Attributes</strong> describe the alternatives. You must define:</p>
+<ul>
+<li>their name (column name in the dataset).</li>
 <li>their id (ID value from the Catalogue).</li>
 <li>their mapping (which dataset column corresponds to the attribute for each alternative).</li>
-</ol>
+</ul>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">attributes</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">travel_time</span><span class="p">:</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"> </span><span class="c1"># ID value retrieved from the Catalogue. Please see the catalogue list for valid IDs.</span>
@@ -1684,16 +1676,12 @@
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">covariates</span><span class="o">=</span><span class="mi">2</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">)</span>
 </span></code></pre></div>
-<ol>
-<li>
-<p>Covariates are variables that can be used to model systematic taste heterogeneity. You must define:</p>
-</li>
-<li>
-<p>their name (column name in the dataset).</p>
-</li>
+<p><strong>Covariates</strong> are variables that can be used to model systematic taste heterogeneity. You must define:</p>
+<ul>
+<li>their name (column name in the dataset).</li>
 <li>their id (ID value from the Catalogue).</li>
 <li>their levels (categories available for interaction effects).</li>
-</ol>
+</ul>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">covariates</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">income</span><span class="p">:</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
