@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#understanding-catalogue-datasets" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -307,6 +312,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -612,6 +619,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Catalogue Datasets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -629,6 +656,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Task?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Catalogue?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1393,7 +1483,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1402,6 +1494,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Task?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is the Catalogue?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Step
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1415,13 +1561,177 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
 
 
   
   
 
 
-  <h1>Using Catalogue Datasets</h1>
+<h1 id="understanding-catalogue-datasets">Understanding Catalogue Datasets</h1>
+<p>Delphos includes a collection of discrete choice datasets in its Catalogue. Each dataset defines a model specification problem which is used for either training or evaluating Delphos performance on that task. In this tutorial, we explain:</p>
+<ol>
+<li>What a task is.</li>
+<li>How tasks are represented internally.</li>
+<li>How the catalogue is constructed.</li>
+<li>How to inspect catalogue datasets.</li>
+</ol>
+<h2 id="what-is-a-task">What is a Task?</h2>
+<p>In Delphos, a Task describes a discrete choice model specification problem given a dataset and modelling choices.</p>
+<p>A task contains:</p>
+<ul>
+<li>The dataset on which the model is estimated.</li>
+<li>The choice set available to decision-makers.</li>
+<li>The attributes that describe those alternatives.</li>
+<li>The socio-demographic variables used to capture taste heterogeneity.</li>
+<li>The transformations that may be applied to attributes (e.g. linear, log, box-cox).</li>
+<li>The taste structures that may be considered for parameters (e.g. generic, specific).</li>
+</ul>
+<p>Conceptually, a task defines the <strong>modelling space</strong> that Delphos is allowed to explore. For example, the Swissmetro task contains:</p>
+<ul>
+<li>Alternatives: Car, Rail, Swissmetro.</li>
+<li>Attributes: Travel Time, Travel Cost, Headway, Seat Availability.</li>
+<li>Covariates: Income, Purpose, etc.</li>
+<li>Transformations: Linear, Log, Box-Cox.</li>
+<li>Taste structures: Generic and Alternative-Specific.</li>
+</ul>
+<h2 id="working-with-tasks">Working with Tasks</h2>
+<div class="admonition example">
+<p class="admonition-title">Step 1: Load a Catalogue dataset</p>
+</div>
+<p>Catalogue datasets can be loaded directly using their name.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="kn">import</span> <span class="n">Delphos</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">task</span> <span class="o">=</span> <span class="n">Delphos</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;swissmetro&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Inspect the task:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Task</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;swissmetro&#39;</span><span class="p">,</span> <span class="n">alternatives</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">covariates</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 2: Inspect alternatives</p>
+</div>
+<p>Alternatives represent the available choice options for decision-makers. In the Swissmetro dataset, the alternatives are:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">task</span><span class="o">.</span><span class="n">alternative_names</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Example output:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;rail&#39;</span><span class="p">,</span> <span class="s1">&#39;swissmetro&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>You can also inspect the full alternative objects:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">task</span><span class="o">.</span><span class="n">alternatives</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span>   <span class="n">Alternative</span><span class="p">(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>        <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;car&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">choice</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">availability</span><span class="o">=</span><span class="s2">&quot;av_car&quot;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="p">),</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">Alternative</span><span class="p">(</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rail&quot;</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="n">choice</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="n">availability</span><span class="o">=</span><span class="s2">&quot;av_rail&quot;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="p">),</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">Alternative</span><span class="p">(</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="nb">id</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;swissmetro&quot;</span><span class="p">,</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="n">choice</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="n">availability</span><span class="o">=</span><span class="s2">&quot;av_swissmetro&quot;</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="p">)</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 3: Inspecting attributes</p>
+</div>
+<p>Attributes define the explanatory variables available for modelling.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">task</span><span class="o">.</span><span class="n">attribute_names</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="s1">&#39;travel_time&#39;</span><span class="p">,</span> <span class="s1">&#39;travel_cost&#39;</span><span class="p">,</span> <span class="s1">&#39;headway&#39;</span><span class="p">,</span> <span class="s1">&#39;seat_availability&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>To inspect a particular attribute:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">task</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s2">&quot;travel_time&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">Attribute</span><span class="p">(</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;travel_time&#39;</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">alternative</span><span class="o">=</span><span class="p">{</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;car_tt&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;rail_tt&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;sm_tt&#39;</span> <span class="p">}</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>This mapping indicates which dataset column corresponds to the travel time attribute for each alternative.</p>
+<div class="admonition example">
+<p class="admonition-title">Step 4: Inspecting covariates</p>
+</div>
+<p>Covariates are variables that can be used to model systematic taste heterogeneity. The levels attribute indicates the categories available for that covariate.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">task</span><span class="o">.</span><span class="n">covariate_names</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="s1">&#39;income&#39;</span><span class="p">,</span> <span class="s1">&#39;purpose&#39;</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Inspect a specific covariate:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">task</span><span class="o">.</span><span class="n">get_covariate</span><span class="p">(</span><span class="s2">&quot;income&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">Covariate</span><span class="p">(</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;income&#39;</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 5: Inspecting transformations</p>
+</div>
+<p>Delphos currently supports three non-linear transformations that can be applied to attributes to explore different functional forms.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">task</span><span class="o">.</span><span class="n">transform_names</span>
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="s1">&#39;box_cox&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">Step 6: Inspecting taste structures</p>
+</div>
+<p>Delphos currently supports two taste structures: generic and alternative-specific. A generic taste parameter is shared across alternatives, whereas a specific taste parameter is estimated separately for each alternative. Dummy coded attributes can be further included in the grammar.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">task</span><span class="o">.</span><span class="n">taste_names</span>
+</span></code></pre></div>
+<p>Output:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="s1">&#39;generic&#39;</span><span class="p">,</span> <span class="s1">&#39;specific&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="what-is-the-catalogue">What is the Catalogue?</h2>
+<p>A Catalogue combines multiple tasks into a common modelling grammar.</p>
+<p>Suppose we have three choice modelling datasets: (i) the Swissmetro choice experiment, (ii) London Passenger Mode Choice (LPMC), and (iii) Norway Value of Travel Time. Although these datasets differ, many modelling concepts are shared:</p>
+<ul>
+<li>Travel time, Travel cost, other attributes.</li>
+<li>Income, gender, age, other socio-demographics.</li>
+<li>Conception of transport modes or alternatives.</li>
+</ul>
+<p>The Catalogue thus assigns global identifiers to attributes and sociodemographic variables so that they can be represented consistently across tasks. This enables Delphos to learn modelling strategies on one dataset and transfer them to another.</p>
+<p>Instead of traditional model specification approaches that are dataset-specific, Delphos uses a global modelling grammar that allows it to learn across multiple datasets and transfer specification knowledge to unseen tasks. For instance, travellers often exhibit a diminishing sensitivity to increases in travel time: the perceived difference between a 10- and 20-minute trip is typically larger than the difference between a 110- and 120-minute trip. If Delphos repeatedly observes that non-linear transformations of travel time improve model performance across several transport datasets, it can learn to prioritise such specifications when analysing a new dataset. In this way, Delphos transfers modelling knowledge rather than transferring parameter values from one dataset to another.</p>
+<div class="admonition example">
+<p class="admonition-title">Step 7: Inspecting the Catalogue</p>
+</div>
+<p>The catalogue can be loaded directly:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="kn">import</span> <span class="n">Delphos</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">catalogue</span> <span class="o">=</span> <span class="n">Delphos</span><span class="o">.</span><span class="n">load_catalogue</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Inspect the catalogue:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">catalogue</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</span></code></pre></div>
+<p>Example output:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Catalogue( tasks=12, attributes=15, covariates=8, transformations=3, tastes=2 )
+</span></code></pre></div>
+<p>!!! example "Step 8: Global Modelling Grammar</p>
+<p>The catalogue stores the complete set of modelling space parameters that define the search space for Delphos. It uses these global identifiers to represent every model specification.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">catalogue</span><span class="o">.</span><span class="n">global_attribute_ids</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="n">catalogue</span><span class="o">.</span><span class="n">global_covariate_ids</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="n">catalogue</span><span class="o">.</span><span class="n">global_transform_ids</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="n">catalogue</span><span class="o">.</span><span class="n">global_taste_ids</span>
+</span></code></pre></div>
+<hr />
+<h2 id="next-step">Next Step</h2>
+<p>Continue to <a href="../own_datasets/">Using Your Own Datasets</a> to learn how to define new tasks and integrate your own discrete choice datasets into Delphos.</p>
 
 
 
@@ -1429,10 +1739,13 @@
 
 
 
+  
+  
 
 
 
 
+  
 
 
 
