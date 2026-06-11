@@ -194,7 +194,7 @@ print(catalogue.summary())
 Catalogue( tasks=12, attributes=15, covariates=8, transformations=3, tastes=2 )
 ```
 
-!!! example "Step 8: Global Modelling Grammar
+!!! example "Step 8: The global modelling grammar"
 
 The catalogue stores the complete set of modelling space parameters that define the search space for Delphos. It uses these global identifiers to represent every model specification.
 
