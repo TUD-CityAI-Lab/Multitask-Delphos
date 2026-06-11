@@ -42,13 +42,16 @@ where `task` is an object containing information about the modelling task, and `
 The task contains benchmark information.
 
 ```python
-task.ll_null
-task.ll_linear
-task.n_obs
-
+print(task.ll_null)
 # Example output:
 -15234.6
+
+print(task.ll_linear)
+# Example output:
 -13450.1
+
+print(task.n_obs)
+# Example output:
 10719
 ```
 
