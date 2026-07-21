@@ -308,8 +308,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1619,9 +1617,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1643,8 +1639,6 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
@@ -1675,7 +1669,7 @@
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">task_7</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_8/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2014_spain_parkingChoice</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">task_8</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_9/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018 LPMC</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">task_9</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_10/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018_Optima</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">task_10</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_11/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2019_vanCranenburgh</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">task_10</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_11/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2019_vanCranenburgh      </span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">task_1</span><span class="p">,</span> <span class="n">task_2</span><span class="p">,</span> <span class="n">task_3</span><span class="p">,</span> <span class="n">task_4</span><span class="p">,</span> <span class="n">task_5</span><span class="p">,</span> <span class="n">task_6</span><span class="p">,</span> <span class="n">task_7</span><span class="p">,</span> <span class="n">task_8</span><span class="p">,</span> <span class="n">task_9</span><span class="p">,</span> <span class="n">task_10</span><span class="p">]</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
@@ -1744,25 +1738,25 @@ Number of individuals                       : 400
 Number of rows in database                  : 5600
 Number of modelled outcomes                 : 5600
 
-Number of cores used                        :  1
+Number of cores used                        :  1 
 Model without mixing
 
 LL(start)                                   : -6607.09
 LL at equal shares, LL(0)                   : -6607.09
 LL at observed shares, LL(C)                : -5430.89
 LL(final)                                   : -4670.99
-Rho-squared vs equal shares                  :  0.293
-Adj.Rho-squared vs equal shares              :  0.292
-Rho-squared vs observed shares               :  0.1399
-Adj.Rho-squared vs observed shares           :  0.1392
-AIC                                         :  9355.98
+Rho-squared vs equal shares                  :  0.293 
+Adj.Rho-squared vs equal shares              :  0.292 
+Rho-squared vs observed shares               :  0.1399 
+Adj.Rho-squared vs observed shares           :  0.1392 
+AIC                                         :  9355.98 
 BIC                                         :  9402.39
 
 Estimated parameters                        : 7
-Time taken (hh:mm:ss)                       :  00:00:0.49
-     pre-estimation                         :  00:00:0.21
-     estimation                             :  00:00:0.07
-     post-estimation                        :  00:00:0.21
+Time taken (hh:mm:ss)                       :  00:00:0.49 
+     pre-estimation                         :  00:00:0.21 
+     estimation                             :  00:00:0.07 
+     post-estimation                        :  00:00:0.21 
 Iterations                                  :  9
 
 Unconstrained optimisation.
@@ -1812,25 +1806,25 @@ Number of individuals                       : 400
 Number of rows in database                  : 5600
 Number of modelled outcomes                 : 5600
 
-Number of cores used                        :  1
+Number of cores used                        :  1 
 Model without mixing
 
 LL(start)                                   : -6607.09
 LL at equal shares, LL(0)                   : -6607.09
 LL at observed shares, LL(C)                : -5430.89
 LL(final)                                   : -4554.37
-Rho-squared vs equal shares                  :  0.3107
-Adj.Rho-squared vs equal shares              :  0.3083
-Rho-squared vs observed shares               :  0.1614
-Adj.Rho-squared vs observed shares           :  0.159
-AIC                                         :  9140.74
+Rho-squared vs equal shares                  :  0.3107 
+Adj.Rho-squared vs equal shares              :  0.3083 
+Rho-squared vs observed shares               :  0.1614 
+Adj.Rho-squared vs observed shares           :  0.159 
+AIC                                         :  9140.74 
 BIC                                         :  9246.83
 
 Estimated parameters                        : 16
-Time taken (hh:mm:ss)                       :  00:00:0.89
-     pre-estimation                         :  00:00:0.09
-     estimation                             :  00:00:0.1
-     post-estimation                        :  00:00:0.69
+Time taken (hh:mm:ss)                       :  00:00:0.89 
+     pre-estimation                         :  00:00:0.09 
+     estimation                             :  00:00:0.1 
+     post-estimation                        :  00:00:0.69 
 Iterations                                  :  10
 
 Unconstrained optimisation.
@@ -1865,13 +1859,8 @@ b_service_generic     0.18294    0.028208      6.4853    0.027679        6.6092
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
