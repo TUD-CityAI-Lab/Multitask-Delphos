@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/04_apollo_generator/">
+        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/02_your_own_datasets/">
       
       
-        <link rel="prev" href="../03_action/">
+        <link rel="prev" href="../02_datasets_and_user_data/">
       
       
-        <link rel="next" href="../05_apollo_estimator/">
+        <link rel="next" href="../03_modelling_space/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>04. Apollo Generator - Multitask Delphos</title>
+        <title>02. Your Own Datasets - Multitask Delphos</title>
       
     
     
@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#02-datasets-and-user-data" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              04. Apollo Generator
+              02. Your Own Datasets
             
           </span>
         </div>
@@ -1377,14 +1382,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_task/" class="md-nav__link">
+      <a href="../01_getting_started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    01. Task
+    01. Getting Started
   
 
     
@@ -1405,42 +1410,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_state/" class="md-nav__link">
+      <a href="../02_datasets_and_user_data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    02. State
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_action/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    03. Action
+    02. Datasets and User Data
   
 
     
@@ -1467,6 +1444,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Your Own Datasets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1475,7 +1472,7 @@
   <span class="md-ellipsis">
     
   
-    04. Apollo Generator
+    02. Your Own Datasets
   
 
     
@@ -1484,6 +1481,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-load-a-bundled-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Load a bundled dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-inspect-the-schema-and-csv-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inspect the schema and CSV columns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-inspect-alternatives-attributes-and-covariates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Inspect alternatives, attributes, and covariates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-understand-the-trained-global-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Understand the trained global catalogue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-validate-a-schema-against-a-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Validate a schema against a CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-create-a-user-dataset-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Create a user dataset folder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-practical-schema-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Practical schema tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1497,14 +1590,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_apollo_estimator/" class="md-nav__link">
+      <a href="../03_modelling_space/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    05. Apollo Estimator
+    03. Modelling Space
   
 
     
@@ -1525,14 +1618,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_results_cache/" class="md-nav__link">
+      <a href="../04_delphos_parameters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    06. Results Cache
+    04. Delphos Parameters
   
 
     
@@ -1553,14 +1646,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_environment/" class="md-nav__link">
+      <a href="../05_reward_function/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    07. Environment
+    05. Reward Function
   
 
     
@@ -1581,14 +1674,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_testing/" class="md-nav__link">
+      <a href="../06_quick_results/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    08. Testing
+    06. Quick Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_robust_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Robust Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_environment_and_outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Environment and Outputs
   
 
     
@@ -1626,6 +1775,93 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-load-a-bundled-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Load a bundled dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-inspect-the-schema-and-csv-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inspect the schema and CSV columns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-inspect-alternatives-attributes-and-covariates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Inspect alternatives, attributes, and covariates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-understand-the-trained-global-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Understand the trained global catalogue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-validate-a-schema-against-a-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Validate a schema against a CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-create-a-user-dataset-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Create a user dataset folder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-practical-schema-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Practical schema tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1645,223 +1881,140 @@
   
 
 
-  <h1>04. Apollo Generator</h1>
-
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;code&quot;</span><span class="p">))</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.task</span><span class="w"> </span><span class="kn">import</span> <span class="n">Task</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Catalogue</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.state</span><span class="w"> </span><span class="kn">import</span> <span class="n">Specification</span><span class="p">,</span> <span class="n">Term</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.action</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<h1 id="02-datasets-and-user-data">02 - Datasets and user data</h1>
+<p>Delphos expects each choice dataset to have:</p>
+<ul>
+<li>a CSV file</li>
+<li>a <code>dataset.yaml</code> schema</li>
+<li>alternatives with choice codes and optional availability columns</li>
+<li>attributes mapped by alternative</li>
+<li>covariates and their discrete levels</li>
+</ul>
+<p>This notebook shows how to inspect bundled datasets and how to prepare your own.</p>
+<h2 id="1-load-a-bundled-dataset">1. Load a bundled dataset</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dp</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">info</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 </span></code></pre></div>
-<p>A. Load task and create a catalogue</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">task_1</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_1/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># ApolloModeChoice</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">task_2</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_2/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># ApolloRouteChoice</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">task_3</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_3/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># Decisions</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">task_4</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_5/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 1987_NL_VoT</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">task_5</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_6/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2009_Norway_VoT</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">task_6</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_7/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2013_Arentze</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">task_7</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_8/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2014_spain_parkingChoice</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">task_8</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_9/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018 LPMC</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">task_9</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_10/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018_Optima</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">task_10</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_11/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2019_vanCranenburgh      </span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">task_1</span><span class="p">,</span> <span class="n">task_2</span><span class="p">,</span> <span class="n">task_3</span><span class="p">,</span> <span class="n">task_4</span><span class="p">,</span> <span class="n">task_5</span><span class="p">,</span> <span class="n">task_6</span><span class="p">,</span> <span class="n">task_7</span><span class="p">,</span> <span class="n">task_8</span><span class="p">,</span> <span class="n">task_9</span><span class="p">,</span> <span class="n">task_10</span><span class="p">]</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># Define one task</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">task</span> <span class="o">=</span> <span class="n">task_1</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">catalogue</span> <span class="o">=</span> <span class="n">Catalogue</span><span class="o">.</span><span class="n">from_tasks</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">specification_manager</span> <span class="o">=</span> <span class="n">Specification</span><span class="p">(</span><span class="n">catalogue</span><span class="o">=</span><span class="n">catalogue</span><span class="p">)</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">action_space</span> <span class="o">=</span> <span class="n">ActionSpace</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">catalogue</span><span class="p">,</span> <span class="n">specification_manager</span><span class="p">,</span><span class="n">linear_additive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></code></pre></div>
-<p>B. Create ApolloGenerator</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">env.apollo.generator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApolloGenerator</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">generator</span> <span class="o">=</span> <span class="n">ApolloGenerator</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
-</span></code></pre></div>
-<ol>
-<li>Linear additive</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">specification</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">create_initial_specification</span><span class="p">()</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">backend_specification</span> <span class="o">=</span> <span class="n">specification_manager</span><span class="o">.</span><span class="n">to_backend</span><span class="p">(</span><span class="n">specification</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">backend_specification</span>
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>{&#39;rows&#39;: [{&#39;att_id&#39;: 1, &#39;trans_id&#39;: 1, &#39;taste_id&#39;: 1, &#39;cov_id&#39;: 0},
-  {&#39;att_id&#39;: 2, &#39;trans_id&#39;: 1, &#39;taste_id&#39;: 1, &#39;cov_id&#39;: 0},
-  {&#39;att_id&#39;: 3, &#39;trans_id&#39;: 1, &#39;taste_id&#39;: 1, &#39;cov_id&#39;: 0},
-  {&#39;att_id&#39;: 4, &#39;trans_id&#39;: 1, &#39;taste_id&#39;: 1, &#39;cov_id&#39;: 0},
-  {&#39;att_id&#39;: 6, &#39;trans_id&#39;: 1, &#39;taste_id&#39;: 1, &#39;cov_id&#39;: 0}],
- &#39;key&#39;: &#39;1110_2110_3110_4110_5000_6110_7000&#39;,
- &#39;attribute_ids&#39;: [1, 2, 3, 4, 6],
- &#39;transformation_ids&#39;: [1, 1, 1, 1, 1],
- &#39;taste_ids&#39;: [1, 1, 1, 1, 1],
- &#39;covariate_ids&#39;: [0, 0, 0, 0, 0]}
+<div class="language-text highlight"><pre><span></span><code>DatasetInfo(id=4, folder=&#39;dataset_4&#39;, name=&#39;Swissmetro&#39;, path=PosixPath(&#39;/Users/gnova/Developer/Delphos/dataset/dataset_4&#39;))
+Task(name=&#39;Swissmetro&#39;, alternatives=3, attributes=5, covariates=11)
 </code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">apollo_specification</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">build_apollo_specification</span><span class="p">(</span><span class="n">backend_specification</span><span class="p">)</span>
+<h2 id="2-inspect-the-schema-and-csv-columns">2. Inspect the schema and CSV columns</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">schema_path</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">yaml_path</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">csv_path</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">dataset_path</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">schema</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">schema_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Schema:&quot;</span><span class="p">,</span> <span class="n">schema_path</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CSV:&quot;</span><span class="p">,</span> <span class="n">csv_path</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Schema keys:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">schema</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_path</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First CSV columns:&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
 </span></code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Check Apollo betas</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">apollo_specification</span><span class="o">.</span><span class="n">apollo_beta</span>
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>{&#39;ASC_car&#39;: 0.0,
- &#39;ASC_bus&#39;: 0.0,
- &#39;ASC_air&#39;: 0.0,
- &#39;ASC_rail&#39;: 0.0,
- &#39;b_time_generic&#39;: 0.0,
- &#39;b_cost_generic&#39;: 0.0,
- &#39;b_access_generic&#39;: 0.0,
- &#39;b_service_generic&#39;: 0.0}
+<div class="language-text highlight"><pre><span></span><code>Schema: /Users/gnova/Developer/Delphos/dataset/dataset_4/dataset.yaml
+CSV: /Users/gnova/Developer/Delphos/dataset/dataset_4/2001_swissmetro_formatted.csv
+Schema keys: [&#39;id&#39;, &#39;choice&#39;, &#39;panel&#39;, &#39;alternatives&#39;, &#39;attributes&#39;, &#39;covariates&#39;, &#39;path_choice_dataset&#39;, &#39;rewards_path&#39;, &#39;ll_null&#39;, &#39;ll_linear&#39;, &#39;n_obs&#39;, &#39;df_name&#39;]
+First CSV columns: [&#39;id&#39;, &#39;obs_id&#39;, &#39;choice&#39;, &#39;chosen_alt&#39;, &#39;train_av&#39;, &#39;sm_av&#39;, &#39;car_av&#39;, &#39;train_tt_scaled&#39;, &#39;sm_tt_scaled&#39;, &#39;car_tt_scaled&#39;, &#39;train_cost_scaled&#39;, &#39;sm_cost_scaled&#39;, &#39;car_co_scaled&#39;, &#39;train_he_scaled&#39;, &#39;sm_he_scaled&#39;, &#39;sm_seats_scaled&#39;, &#39;purpose&#39;, &#39;first&#39;, &#39;ticket&#39;, &#39;who&#39;]
 </code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Check Apollo beta fixed</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">apollo_specification</span><span class="o">.</span><span class="n">apollo_fixed</span>
+<h2 id="3-inspect-alternatives-attributes-and-covariates">3. Inspect alternatives, attributes, and covariates</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alternatives&quot;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span> <span class="n">alt</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">alternatives</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">alt</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Attributes&quot;</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">attributes</span><span class="p">:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Modelled covariates&quot;</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">for</span> <span class="n">cov</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">modelling_covariates</span><span class="p">:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">cov</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>[&#39;ASC_rail&#39;]
+<div class="language-text highlight"><pre><span></span><code>Alternatives
+Alternative(id=1, name=&#39;TRAIN&#39;, choice=1, availability=&#39;train_av&#39;)
+Alternative(id=2, name=&#39;SM&#39;, choice=2, availability=&#39;sm_av&#39;)
+Alternative(id=3, name=&#39;CAR&#39;, choice=3, availability=&#39;car_av&#39;)
+
+Attributes
+Attribute(id=1, name=&#39;ASC&#39;, alternative={})
+Attribute(id=2, name=&#39;time&#39;, alternative={1: &#39;train_tt_scaled&#39;, 2: &#39;sm_tt_scaled&#39;, 3: &#39;car_tt_scaled&#39;})
+Attribute(id=3, name=&#39;cost&#39;, alternative={1: &#39;train_cost_scaled&#39;, 2: &#39;sm_cost_scaled&#39;, 3: &#39;car_co_scaled&#39;})
+Attribute(id=4, name=&#39;headway&#39;, alternative={1: &#39;train_he_scaled&#39;, 2: &#39;sm_he_scaled&#39;})
+Attribute(id=6, name=&#39;seat&#39;, alternative={2: &#39;sm_seats_scaled&#39;})
+
+Modelled covariates
+Covariate(id=4, name=&#39;purpose&#39;, levels=(1, 2))
+Covariate(id=6, name=&#39;first&#39;, levels=(0, 1))
+Covariate(id=3, name=&#39;age&#39;, levels=(1, 2, 3, 4, 5))
+Covariate(id=1, name=&#39;male&#39;, levels=(0, 1))
+Covariate(id=2, name=&#39;income&#39;, levels=(1, 2, 3, 4))
 </code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Inspect Apollo probabilities code</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">apollo_specification</span><span class="o">.</span><span class="n">probability_code</span><span class="p">)</span>
+<h2 id="4-understand-the-trained-global-catalogue">4. Understand the trained global catalogue</h2>
+<p>User datasets must use the trained Delphos ids. The bundled catalogue helps you map common transport-choice variables to those ids.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">catalogue_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;dataset/catalogue/catalogue.json&quot;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">catalogue</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">catalogue_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attribute ids&quot;</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">catalogue</span><span class="p">[</span><span class="s2">&quot;attributes&quot;</span><span class="p">]:</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">])</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Covariate ids&quot;</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">catalogue</span><span class="p">[</span><span class="s2">&quot;covariates&quot;</span><span class="p">]:</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">])</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>        apollo_probabilities &lt;- function(apollo_beta, apollo_inputs, functionality = &quot;estimate&quot;) {
-
-            apollo_attach(apollo_beta, apollo_inputs)
-            on.exit(apollo_detach(apollo_beta, apollo_inputs))
-            P = list()
-            V = list()
-            V &lt;- list()
-
-V[[&quot;car&quot;]] &lt;-
-      ASC_car +
-      b_time_generic * time_car +
-      b_cost_generic * cost_car
-
-V[[&quot;bus&quot;]] &lt;-
-      ASC_bus +
-      b_time_generic * time_bus +
-      b_cost_generic * cost_bus +
-      b_access_generic * access_bus
-
-V[[&quot;air&quot;]] &lt;-
-      ASC_air +
-      b_time_generic * time_air +
-      b_cost_generic * cost_air +
-      b_access_generic * access_air +
-      b_service_generic * service_air
-
-V[[&quot;rail&quot;]] &lt;-
-      ASC_rail +
-      b_time_generic * time_rail +
-      b_cost_generic * cost_rail +
-      b_access_generic * access_rail +
-      b_service_generic * service_rail
-            mnl_settings = list(
-                alternatives = c(car=1, bus=2, air=3, rail=4),
-                avail = list(car=av_car, bus=av_bus, air=av_air, rail=av_rail),
-                choiceVar = choice,
-                utilities = V
-            )
-            P[[&quot;model&quot;]] = apollo_mnl(mnl_settings, functionality)
-            P = apollo_panelProd(P, apollo_inputs, functionality)
-            P = apollo_prepareProb(P, apollo_inputs, functionality)
-            return(P)
-        }
-</code></pre></div>
-<p>E.2. Rich examples</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">specification_1</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">create_initial_specification</span><span class="p">()</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">specification_1</span>
+<h2 id="5-validate-a-schema-against-a-csv">5. Validate a schema against a CSV</h2>
+<p><code>validate_dataset_config</code> checks required columns before creating a task.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos.data.validation</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate_dataset_config</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">validate_dataset_config</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">csv_path</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bundled schema and CSV are consistent&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>tensor([[1, 1, 1, 0],
-        [2, 1, 1, 0],
-        [3, 1, 1, 0],
-        [4, 1, 1, 0],
-        [5, 0, 0, 0],
-        [6, 1, 1, 0],
-        [7, 0, 0, 0]])
+<div class="language-text highlight"><pre><span></span><code>Bundled schema and CSV are consistent
 </code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">valid_actions</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">get_valid_actions</span><span class="p">(</span><span class="n">specification_1</span><span class="p">,</span> <span class="n">visited_specifications</span><span class="o">=</span><span class="nb">set</span><span class="p">())</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">valid_actions</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span>
+<h2 id="6-create-a-user-dataset-folder">6. Create a user dataset folder</h2>
+<p>The example below uses the bundled Swissmetro CSV as if it were user data. In your own work, replace <code>source_csv</code> and the schema dictionaries.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dp</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">source_csv</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">dataset_path</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">user_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;tutorials/my_swissmetro_dataset&quot;</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">alternatives</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;alternatives&quot;</span><span class="p">]</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">attributes</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;attributes&quot;</span><span class="p">]</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">covariates</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="s2">&quot;covariates&quot;</span><span class="p">]</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># Uncomment to create the folder when you are ready.</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># user_task = dp.create_dataset(</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1">#     user_folder,</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1">#     name=&quot;MySwissmetro&quot;,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1">#     csv_path=source_csv,</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="c1">#     choice_column=schema[&quot;choice&quot;],</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1">#     id_column=schema[&quot;id&quot;],</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1">#     panel=schema[&quot;panel&quot;],</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1">#     alternatives=alternatives,</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1">#     attributes=attributes,</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1">#     covariates=covariates,</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="c1">#     ll_null=schema[&quot;ll_null&quot;],</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="c1">#     ll_linear=schema[&quot;ll_linear&quot;],</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="c1">#     n_obs=schema[&quot;n_obs&quot;],</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="c1">#     dataset_id=100,</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="c1"># )</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="c1"># print(user_task)</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>[Action(type=&lt;ActionType.TERMINATE: 0&gt;, attribute_id=None, transform_id=None, taste_id=None, covariate_id=None),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=1, transform_id=1, taste_id=1, covariate_id=1),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=1, transform_id=1, taste_id=1, covariate_id=2),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=1, transform_id=1, taste_id=1, covariate_id=6),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=1, covariate_id=1),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=1, covariate_id=2),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=1, covariate_id=6),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=2, covariate_id=0),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=2, covariate_id=1),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=2, covariate_id=2),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=1, taste_id=2, covariate_id=6),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=1, covariate_id=0),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=1, covariate_id=1),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=1, covariate_id=2),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=1, covariate_id=6),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=2, covariate_id=0),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=2, covariate_id=1),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=2, covariate_id=2),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=2, taste_id=2, covariate_id=6),
- Action(type=&lt;ActionType.CHANGE: 2&gt;, attribute_id=2, transform_id=3, taste_id=1, covariate_id=0)]
-</code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">specification_2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">apply_action</span><span class="p">(</span><span class="n">specification_1</span><span class="p">,</span> <span class="n">action_index</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">specification_2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">apply_action</span><span class="p">(</span><span class="n">specification_2</span><span class="p">,</span> <span class="n">action_index</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">backend_specification_2</span> <span class="o">=</span> <span class="n">specification_manager</span><span class="o">.</span><span class="n">to_backend</span><span class="p">(</span><span class="n">specification_2</span><span class="p">)</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">apollo_specification_2</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">build_apollo_specification</span><span class="p">(</span><span class="n">backend_specification_2</span><span class="p">)</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">apollo_specification_2</span><span class="o">.</span><span class="n">utility_code</span><span class="p">)</span>
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>V &lt;- list()
-
-V[[&quot;car&quot;]] &lt;-
-      ASC_car +
-      ASC_car_income_1 * (income == 1) +
-      ASC_car_income_2 * (income == 2) +
-      ASC_car_income_3 * (income == 3) +
-      ASC_car_income_4 * (income == 4) +
-      b_time_generic * time_car +
-      b_time_generic_business_0 * (business == 0) * time_car +
-      b_time_generic_business_1 * (business == 1) * time_car +
-      b_cost_generic * cost_car
-
-V[[&quot;bus&quot;]] &lt;-
-      ASC_bus +
-      ASC_bus_income_1 * (income == 1) +
-      ASC_bus_income_2 * (income == 2) +
-      ASC_bus_income_3 * (income == 3) +
-      ASC_bus_income_4 * (income == 4) +
-      b_time_generic * time_bus +
-      b_time_generic_business_0 * (business == 0) * time_bus +
-      b_time_generic_business_1 * (business == 1) * time_bus +
-      b_cost_generic * cost_bus +
-      b_access_generic * access_bus
-
-V[[&quot;air&quot;]] &lt;-
-      ASC_air +
-      ASC_air_income_1 * (income == 1) +
-      ASC_air_income_2 * (income == 2) +
-      ASC_air_income_3 * (income == 3) +
-      ASC_air_income_4 * (income == 4) +
-      b_time_generic * time_air +
-      b_time_generic_business_0 * (business == 0) * time_air +
-      b_time_generic_business_1 * (business == 1) * time_air +
-      b_cost_generic * cost_air +
-      b_access_generic * access_air +
-      b_service_generic * service_air
-
-V[[&quot;rail&quot;]] &lt;-
-      ASC_rail +
-      ASC_rail_income_1 * (income == 1) +
-      ASC_rail_income_2 * (income == 2) +
-      ASC_rail_income_3 * (income == 3) +
-      ASC_rail_income_4 * (income == 4) +
-      b_time_generic * time_rail +
-      b_time_generic_business_0 * (business == 0) * time_rail +
-      b_time_generic_business_1 * (business == 1) * time_rail +
-      b_cost_generic * cost_rail +
-      b_access_generic * access_rail +
-      b_service_generic * service_rail
-</code></pre></div>
+<h2 id="7-practical-schema-tips">7. Practical schema tips</h2>
+<ul>
+<li>Keep <code>id</code> and <code>choice</code> column names explicit.</li>
+<li>Every availability column used by an alternative must exist in the CSV.</li>
+<li>Every attribute mapping column must exist in the CSV.</li>
+<li>Covariate levels should match the values in your CSV.</li>
+<li>Attribute and covariate ids should follow <code>dataset/catalogue/catalogue.json</code>.</li>
+<li>Use <code>id: null</code> for covariates you want documented but not included in Delphos search.</li>
+</ul>
 
 
 

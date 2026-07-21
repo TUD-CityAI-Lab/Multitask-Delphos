@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/07_environment/">
+        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/08_environment_and_outputs/">
       
       
-        <link rel="prev" href="../06_results_cache/">
+        <link rel="prev" href="../07_robust_results/">
       
-      
-        <link rel="next" href="../08_testing/">
       
       
         
@@ -27,7 +25,7 @@
     
     
       
-        <title>07. Environment - Multitask Delphos</title>
+        <title>08. Environment and Outputs - Multitask Delphos</title>
       
     
     
@@ -67,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#08-environment-apollo-caches-and-outputs" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              07. Environment
+              08. Environment and Outputs
             
           </span>
         </div>
@@ -1377,14 +1380,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_task/" class="md-nav__link">
+      <a href="../01_getting_started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    01. Task
+    01. Getting Started
   
 
     
@@ -1405,14 +1408,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_state/" class="md-nav__link">
+      <a href="../02_datasets_and_user_data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    02. State
+    02. Datasets and User Data
   
 
     
@@ -1433,14 +1436,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_action/" class="md-nav__link">
+      <a href="../02_your_own_datasets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    03. Action
+    02. Your Own Datasets
   
 
     
@@ -1461,14 +1464,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_apollo_generator/" class="md-nav__link">
+      <a href="../03_modelling_space/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    04. Apollo Generator
+    03. Modelling Space
   
 
     
@@ -1489,14 +1492,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_apollo_estimator/" class="md-nav__link">
+      <a href="../04_delphos_parameters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    05. Apollo Estimator
+    04. Delphos Parameters
   
 
     
@@ -1517,14 +1520,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_results_cache/" class="md-nav__link">
+      <a href="../05_reward_function/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    06. Results Cache
+    05. Reward Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_quick_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Quick Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_robust_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Robust Results
   
 
     
@@ -1551,6 +1610,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Environment and Outputs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1559,7 +1638,7 @@
   <span class="md-ellipsis">
     
   
-    07. Environment
+    08. Environment and Outputs
   
 
     
@@ -1569,34 +1648,91 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08_testing/" class="md-nav__link">
         
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  <span class="md-ellipsis">
+  
     
   
-    08. Testing
   
-
-    
-  </span>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-generate-one-proposal-and-inspect-apollo-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Generate one proposal and inspect Apollo code
+      
+    </span>
+  </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-direct-environment-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Direct environment call
+      
+    </span>
+  </a>
   
-
-      </a>
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-result-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Result cache
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-save-apollo-output-for-final-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Save Apollo output for final models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-debugging-apollo-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Debugging Apollo failures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-installation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Installation checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1626,6 +1762,82 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-generate-one-proposal-and-inspect-apollo-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Generate one proposal and inspect Apollo code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-direct-environment-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Direct environment call
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-result-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Result cache
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-save-apollo-output-for-final-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Save Apollo output for final models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-debugging-apollo-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Debugging Apollo failures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-installation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Installation checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1645,211 +1857,104 @@
   
 
 
-  <h1>07. Environment</h1>
-
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;code&quot;</span><span class="p">))</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.task</span><span class="w"> </span><span class="kn">import</span> <span class="n">Task</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Catalogue</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.state</span><span class="w"> </span><span class="kn">import</span> <span class="n">Specification</span><span class="p">,</span> <span class="n">Term</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.action</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kn">from</span><span class="w"> </span><span class="nn">env.apollo.generator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApolloGenerator</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">env.environment</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_specification</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kn">from</span><span class="w"> </span><span class="nn">env.result_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResultCache</span>
-</span></code></pre></div>
-<p>A. Load task and create a catalogue</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">task_1</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_1/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># ApolloModeChoice</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">task_2</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_2/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># ApolloRouteChoice</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">task_3</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_3/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># Decisions</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">task_4</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_5/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 1987_NL_VoT</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">task_5</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_6/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2009_Norway_VoT</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">task_6</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_7/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2013_Arentze</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">task_7</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_8/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2014_spain_parkingChoice</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">task_8</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_9/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018 LPMC</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">task_9</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_10/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2018_Optima</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">task_10</span> <span class="o">=</span> <span class="n">Task</span><span class="o">.</span><span class="n">from_yaml</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span>  <span class="n">yaml_path</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;dataset/dataset_11/dataset.yaml&quot;</span><span class="p">)</span> <span class="c1"># 2019_vanCranenburgh      </span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">task_1</span><span class="p">,</span> <span class="n">task_2</span><span class="p">,</span> <span class="n">task_3</span><span class="p">,</span> <span class="n">task_4</span><span class="p">,</span> <span class="n">task_5</span><span class="p">,</span> <span class="n">task_6</span><span class="p">,</span> <span class="n">task_7</span><span class="p">,</span> <span class="n">task_8</span><span class="p">,</span> <span class="n">task_9</span><span class="p">,</span> <span class="n">task_10</span><span class="p">]</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># Define one task</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">task</span> <span class="o">=</span> <span class="n">task_1</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">catalogue</span> <span class="o">=</span> <span class="n">Catalogue</span><span class="o">.</span><span class="n">from_tasks</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">specification_manager</span> <span class="o">=</span> <span class="n">Specification</span><span class="p">(</span><span class="n">catalogue</span><span class="o">=</span><span class="n">catalogue</span><span class="p">)</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">action_space</span> <span class="o">=</span> <span class="n">ActionSpace</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">catalogue</span><span class="p">,</span> <span class="n">specification_manager</span><span class="p">,</span><span class="n">linear_additive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">generator</span> <span class="o">=</span> <span class="n">ApolloGenerator</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
-</span></code></pre></div>
+<h1 id="08-environment-apollo-caches-and-outputs">08 - Environment, Apollo, caches, and outputs</h1>
+<p>This notebook explains what happens when Delphos estimates proposals.</p>
+<p>The flow is:</p>
 <ol>
-<li>Linear additive</li>
+<li>Delphos proposes a specification.</li>
+<li>The Apollo generator builds R code and parameter definitions.</li>
+<li><code>delphos.env.environment.evaluate_specification(...)</code> calls Apollo/R.</li>
+<li>Results are converted to a dataframe.</li>
+<li>The result cache stores outcomes by task and specification key.</li>
 </ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rewards_path&quot;</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">rewards_path</span><span class="p">)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;yaml_path&quot;</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">yaml_path</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dataset_path&quot;</span><span class="p">,</span><span class="n">task</span><span class="o">.</span><span class="n">dataset_path</span><span class="p">)</span>
+<h2 id="1-generate-one-proposal-and-inspect-apollo-code">1. Generate one proposal and inspect Apollo code</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dp</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">load_agent</span><span class="p">()</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">task</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;Swissmetro&quot;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">models</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">propose</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">n_models</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;greedy&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">proposal</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">proposals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">apollo_spec</span> <span class="o">=</span> <span class="n">proposal</span><span class="o">.</span><span class="n">apollo_specification</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Specification:&quot;</span><span class="p">,</span> <span class="n">proposal</span><span class="o">.</span><span class="n">specification_key</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parameters:&quot;</span><span class="p">,</span> <span class="n">apollo_spec</span><span class="o">.</span><span class="n">parameter_names</span><span class="p">[:</span><span class="mi">15</span><span class="p">])</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Probability code preview:&quot;</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">apollo_spec</span><span class="o">.</span><span class="n">probability_code</span><span class="p">[:</span><span class="mi">1500</span><span class="p">])</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>rewards_path /Users/gnova/Developer/Delphos-core/dataset/dataset_1/rewards.sqlite
-yaml_path /Users/gnova/Developer/Delphos-core/dataset/dataset_1/dataset.yaml
-dataset_path /Users/gnova/Developer/Delphos-core/dataset/dataset_1/2019_apollo_modechoice_formatted.csv
-</code></pre></div>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">specification</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">create_initial_specification</span><span class="p">()</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">backend_specification</span> <span class="o">=</span> <span class="n">specification_manager</span><span class="o">.</span><span class="n">to_backend</span><span class="p">(</span><span class="n">specification</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">apollo_specification</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">build_apollo_specification</span><span class="p">(</span><span class="n">backend_specification</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">evaluate_specification</span><span class="p">(</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">task</span><span class="p">,</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">apollo_specification</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="p">)</span> 
+<h2 id="2-direct-environment-call">2. Direct environment call</h2>
+<p>This is what <code>estimate=True</code> uses internally. Keep <code>RUN_DIRECT_ESTIMATION = False</code> until R/Apollo are installed and you are ready to estimate.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">RUN_DIRECT_ESTIMATION</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">if</span> <span class="n">RUN_DIRECT_ESTIMATION</span><span class="p">:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">delphos.env.environment</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_specification</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">outcome</span> <span class="o">=</span> <span class="n">evaluate_specification</span><span class="p">(</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">apollo_specification</span><span class="o">=</span><span class="n">apollo_spec</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="n">info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="n">max_free_parameters</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="p">)</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">display</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skipping direct Apollo/R estimation.&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
-      <th>rho2_0</th>
-      <th>adjRho2_0</th>
-      <th>rho2_C</th>
-      <th>adjRho2_C</th>
-      <th>AIC</th>
-      <th>BIC</th>
-      <th>eigValue</th>
-      <th>timeTaken</th>
-      <th>nFreeParams</th>
-      <th>skipped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2110_3110_4110_5000_6110_7000</td>
-      <td>7.0</td>
-      <td>5600.0</td>
-      <td>-4670.988194</td>
-      <td>5.802145e-07</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4670.988194</td>
-      <td>0.293034</td>
-      <td>0.291975</td>
-      <td>0.139922</td>
-      <td>0.139185</td>
-      <td>9355.976387</td>
-      <td>9402.39004</td>
-      <td>-25.901553</td>
-      <td>0.442298</td>
-      <td>7.0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">specification_2</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">create_initial_specification</span><span class="p">()</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">specification_2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">action_space</span><span class="o">.</span><span class="n">apply_action</span><span class="p">(</span><span class="n">specification_2</span><span class="p">,</span> <span class="n">action_index</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">backend_specification_2</span> <span class="o">=</span> <span class="n">specification_manager</span><span class="o">.</span><span class="n">to_backend</span><span class="p">(</span><span class="n">specification_2</span><span class="p">)</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">apollo_specification_2</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">build_apollo_specification</span><span class="p">(</span><span class="n">backend_specification_2</span><span class="p">)</span>
+<h2 id="3-result-cache">3. Result cache</h2>
+<p>The environment writes <code>rewards.sqlite</code> inside the dataset folder when you estimate. The cache avoids repeating the same Apollo run for the same task and specification key.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos.env.result_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResultCache</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">cache</span> <span class="o">=</span> <span class="n">ResultCache</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">rewards_path</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cache path:&quot;</span><span class="p">,</span> <span class="n">cache</span><span class="o">.</span><span class="n">db_path</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows currently stored:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cache</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+</span></code></pre></div>
+<h2 id="4-save-apollo-output-for-final-models">4. Save Apollo output for final models</h2>
+<p>Use <code>save=True</code> only for the final shortlist. Apollo output files can be large, so the package ignores <code>dataset/**/outputs/</code> by default.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">RUN_SAVE_OUTPUT</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">if</span> <span class="n">RUN_SAVE_OUTPUT</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">proposal_set</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">propose</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">n_models</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;greedy&quot;</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">proposal_set</span><span class="o">.</span><span class="n">estimate</span><span class="p">(</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">task</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="n">save_summary_file</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">max_free_parameters</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="p">)</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">display</span><span class="p">(</span><span class="n">proposal_set</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">())</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skipping saved Apollo output.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="5-debugging-apollo-failures">5. Debugging Apollo failures</h2>
+<p>For a problematic model, rerun with <code>debug_apollo=True</code>. Delphos writes generated beta names, fixed parameters, probability code, and an error file under a debug folder.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">RUN_DEBUG</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">if</span> <span class="n">RUN_DEBUG</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">delphos.env.environment</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate_specification</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">evaluate_specification</span><span class="p">(</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">task</span><span class="p">,</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">apollo_specification_2</span><span class="p">,</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="p">)</span> 
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">debug_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;tutorials/debug_apollo&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="n">proposal</span><span class="o">.</span><span class="n">specification_key</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">outcome</span> <span class="o">=</span> <span class="n">evaluate_specification</span><span class="p">(</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">,</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="n">apollo_specification</span><span class="o">=</span><span class="n">apollo_spec</span><span class="p">,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="n">debug_apollo</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="n">debug_path</span><span class="o">=</span><span class="n">debug_path</span><span class="p">,</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="n">raise_on_error</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Debug files:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">debug_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)))</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">display</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skipping debug run.&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
-      <th>rho2_0</th>
-      <th>adjRho2_0</th>
-      <th>rho2_C</th>
-      <th>adjRho2_C</th>
-      <th>AIC</th>
-      <th>BIC</th>
-      <th>eigValue</th>
-      <th>timeTaken</th>
-      <th>nFreeParams</th>
-      <th>skipped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ApolloModeChoice</td>
-      <td>1112_2110_3110_4110_5000_6110_7000</td>
-      <td>16.0</td>
-      <td>5600.0</td>
-      <td>-4554.368737</td>
-      <td>1.481029e-07</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4554.368737</td>
-      <td>0.310685</td>
-      <td>0.308263</td>
-      <td>0.161395</td>
-      <td>0.159001</td>
-      <td>9140.737474</td>
-      <td>9246.825824</td>
-      <td>-6.232372</td>
-      <td>1.012997</td>
-      <td>16.0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<h2 id="6-installation-checklist">6. Installation checklist</h2>
+<p>Python:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<p>R:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Rscript<span class="w"> </span>install_r_requirements.R
+</span></code></pre></div>
+<p>If <code>rpy2</code> cannot find R, check that <code>R_HOME</code> points to your R installation. The package includes <code>delphos.env.apollo.r_env.configure_r_environment()</code> to discover common R locations.</p>
 
 
 

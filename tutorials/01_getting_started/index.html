@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/06_results_cache/">
+        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/01_getting_started/">
       
       
-        <link rel="prev" href="../05_apollo_estimator/">
+        <link rel="prev" href="../notebooks/">
       
       
-        <link rel="next" href="../07_environment/">
+        <link rel="next" href="../02_datasets_and_user_data/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>06. Results Cache - Multitask Delphos</title>
+        <title>01. Getting Started - Multitask Delphos</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test-rewards" class="md-skip">
+        <a href="#01-getting-started-with-delphos" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              06. Results Cache
+              01. Getting Started
             
           </span>
         </div>
@@ -1379,146 +1379,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../01_task/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    01. Task
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02_state/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    02. State
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03_action/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    03. Action
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04_apollo_generator/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    04. Apollo Generator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05_apollo_estimator/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    05. Apollo Estimator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1528,6 +1388,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1536,7 +1398,7 @@
   <span class="md-ellipsis">
     
   
-    06. Results Cache
+    01. Getting Started
   
 
     
@@ -1554,7 +1416,7 @@
   <span class="md-ellipsis">
     
   
-    06. Results Cache
+    01. Getting Started
   
 
     
@@ -1570,6 +1432,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1578,10 +1442,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#test-rewards" class="md-nav__link">
+  <a href="#1-import-delphos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Test rewards
+        1. Import Delphos
       
     </span>
   </a>
@@ -1589,10 +1453,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#emprical-rewards" class="md-nav__link">
+  <a href="#2-see-datasets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Emprical rewards
+        2. See datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-load-unseen-dataset-and-the-trained-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Load unseen dataset and the trained agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-propose-models-without-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Propose models without estimation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-inspect-the-first-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Inspect the first proposal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inspect-generated-apollo-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Inspect generated Apollo components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-save-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Save proposals
       
     </span>
   </a>
@@ -1615,14 +1534,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_environment/" class="md-nav__link">
+      <a href="../02_datasets_and_user_data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    07. Environment
+    02. Datasets and User Data
   
 
     
@@ -1643,14 +1562,182 @@
   
   
     <li class="md-nav__item">
-      <a href="../08_testing/" class="md-nav__link">
+      <a href="../02_your_own_datasets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    08. Testing
+    02. Your Own Datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_modelling_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Modelling Space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_delphos_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Delphos Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_reward_function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Reward Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_quick_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Quick Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_robust_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Robust Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_environment_and_outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Environment and Outputs
   
 
     
@@ -1688,6 +1775,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1696,10 +1785,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#test-rewards" class="md-nav__link">
+  <a href="#1-import-delphos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Test rewards
+        1. Import Delphos
       
     </span>
   </a>
@@ -1707,10 +1796,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#emprical-rewards" class="md-nav__link">
+  <a href="#2-see-datasets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Emprical rewards
+        2. See datasets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-load-unseen-dataset-and-the-trained-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Load unseen dataset and the trained agent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-propose-models-without-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Propose models without estimation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-inspect-the-first-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Inspect the first proposal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inspect-generated-apollo-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Inspect generated Apollo components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-save-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Save proposals
       
     </span>
   </a>
@@ -1737,204 +1881,93 @@
   
 
 
-  <h1>06. Results Cache</h1>
-
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s2">&quot;code&quot;</span><span class="p">))</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.task</span><span class="w"> </span><span class="kn">import</span> <span class="n">Task</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.catalogue</span><span class="w"> </span><span class="kn">import</span> <span class="n">Catalogue</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.state</span><span class="w"> </span><span class="kn">import</span> <span class="n">Specification</span><span class="p">,</span> <span class="n">Term</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mdp.action</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">env.apollo.generator</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApolloGenerator</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="kn">from</span><span class="w"> </span><span class="nn">env.result_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResultCache</span>
+<h1 id="01-getting-started-with-delphos">01 - Getting started with Delphos</h1>
+<p>This notebook is the shortest path from a trained Delphos checkpoint to candidate choice-model specifications.</p>
+<p>You will learn how to:</p>
+<ul>
+<li>list datasets</li>
+<li>load the pretrained Delphos agent</li>
+<li>propose and estimate models</li>
+<li>inspect terms, parameters, and generated Apollo code</li>
+<li>save a proposal table for later review</li>
+</ul>
+<h2 id="1-import-delphos">1. Import Delphos</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dp</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delphos is ready&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="test-rewards">Test rewards</h2>
-<ol>
-<li>Create a temporary rewards database</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">cache_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./test_rewards.sqlite&quot;</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">if</span> <span class="n">cache_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">cache_path</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">cache</span> <span class="o">=</span> <span class="n">ResultCache</span><span class="p">(</span><span class="n">cache_path</span><span class="p">)</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">cache</span>
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>ResultCache(db_path=PosixPath(&#39;test_rewards.sqlite&#39;))
+<div class="language-text highlight"><pre><span></span><code>Delphos is ready
 </code></pre></div>
-<ol>
-<li>Create a failed outcome</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">failed</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">failed</span><span class="p">(</span><span class="n">task_name</span><span class="o">=</span><span class="s2">&quot;apollo_mode_choice&quot;</span><span class="p">,</span> <span class="n">specification</span><span class="o">=</span><span class="s2">&quot;spec_1&quot;</span><span class="p">)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">failed</span>
+<h2 id="2-see-datasets">2. See datasets</h2>
+<p>The package ships with example datasets that are already mapped to the trained Delphos catalogue.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">datasets</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">list_datasets</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">id</span><span class="si">:</span><span class="s2">&gt;2</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;24</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># training and inference datasets (inference_datasets())</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Swissmetro wasnt used for training, so we will apply Delphos on Swissmtro</span>
 </span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
-      <th>rho2_0</th>
-      <th>adjRho2_0</th>
-      <th>rho2_C</th>
-      <th>adjRho2_C</th>
-      <th>AIC</th>
-      <th>BIC</th>
-      <th>eigValue</th>
-      <th>timeTaken</th>
-      <th>nFreeParams</th>
-      <th>skipped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>apollo_mode_choice</td>
-      <td>spec_1</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>0</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<ol>
-<li>Create a skipped outcome</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">skipped</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">skipped</span><span class="p">(</span><span class="n">task_name</span><span class="o">=</span><span class="s2">&quot;apollo_mode_choice&quot;</span><span class="p">,</span> <span class="n">specification</span><span class="o">=</span><span class="s2">&quot;spec_2&quot;</span><span class="p">,</span> <span class="n">n_free_parameters</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">skipped</span>
-</span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
-      <th>rho2_0</th>
-      <th>adjRho2_0</th>
-      <th>rho2_C</th>
-      <th>adjRho2_C</th>
-      <th>AIC</th>
-      <th>BIC</th>
-      <th>eigValue</th>
-      <th>timeTaken</th>
-      <th>nFreeParams</th>
-      <th>skipped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>apollo_mode_choice</td>
-      <td>spec_2</td>
-      <td>60</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>0</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>&lt;NA&gt;</td>
-      <td>60</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<ol>
-<li>Add failed and skipped outcomes</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">cache</span><span class="o">.</span><span class="n">upsert</span><span class="p">(</span><span class="n">failed</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">cache</span><span class="o">.</span><span class="n">upsert</span><span class="p">(</span><span class="n">skipped</span><span class="p">)</span>
-</span></code></pre></div>
-<ol>
-<li>Check if a specification has already estimated </li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">cache</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">task_name</span><span class="o">=</span><span class="s2">&quot;apollo_mode_choice&quot;</span><span class="p">,</span> <span class="n">specification</span><span class="o">=</span><span class="s2">&quot;spec_1&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code>True
+<div class="language-text highlight"><pre><span></span><code> 1 | ApolloModeChoice         | dataset_1
+ 2 | SwissmetroRouteChoice    | dataset_2
+ 3 | Decisions                | dataset_3
+ 4 | Swissmetro               | dataset_4
+ 5 | NLModeChoice             | dataset_5
+ 6 | NorwayVTT                | dataset_6
+ 7 | Arentze2013              | dataset_7
+ 8 | SpainParkingchoice       | dataset_8
+ 9 | LondonModeChoice         | dataset_9
+10 | Optima                   | dataset_10
+11 | VanCranenburghVOT        | dataset_11
 </code></pre></div>
-<ol>
-<li>Retrieve modelling outcomes of a estimated model</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">cache</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">task_name</span><span class="o">=</span><span class="s2">&quot;apollo_mode_choice&quot;</span><span class="p">,</span> <span class="n">specification</span><span class="o">=</span><span class="s2">&quot;spec_1&quot;</span><span class="p">)</span>
+<h2 id="3-load-unseen-dataset-and-the-trained-agent">3. Load unseen dataset and the trained agent</h2>
+<p>The default checkpoint is the production multitask checkpoint included in <code>checkpoints/full_agent_task_10_seed_123</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">dataset</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;Swissmetro&quot;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">load_agent</span><span class="p">()</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
 </span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Task(name=&#39;Swissmetro&#39;, alternatives=3, attributes=5, covariates=11)
+{&#39;agent&#39;: &#39;DelphosAgent&#39;, &#39;mode&#39;: &#39;inference&#39;, &#39;encoder_kind&#39;: &#39;deepset&#39;, &#39;state_dim&#39;: 64, &#39;num_actions&#39;: 297, &#39;z_cfg&#39;: {&#39;K&#39;: 7, &#39;T&#39;: 3, &#39;G&#39;: 2, &#39;C&#39;: 7, &#39;d_att&#39;: 16, &#39;d_tr&#39;: 8, &#39;d_taste&#39;: 8, &#39;d_cov&#39;: 16, &#39;d_term&#39;: 64, &#39;d_state&#39;: 128, &#39;context_dim&#39;: 0, &#39;head_flag&#39;: False, &#39;pooling&#39;: &#39;mean&#39;, &#39;attention_heads&#39;: 4, &#39;attention_layers&#39;: 1, &#39;attention_dropout&#39;: 0.0}, &#39;device&#39;: &#39;cpu&#39;}
+</code></pre></div>
+<h2 id="4-propose-models-without-estimation">4. Propose models without estimation</h2>
+<p><code>estimate=False</code> is the default. This is fast because Delphos only searches the modelling space and builds Apollo-ready specifications. It does not call R.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">models</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">propose</span><span class="p">(</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">dataset</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">n_models</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">estimate</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">models</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># do not show the </span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Apollo ignition sequence completed
+Several observations per individual detected based on the value of id.
+  Setting panelData in apollo_control set to TRUE.
+All checks on apollo_control completed.
+All checks on database completed.
+Apollo ignition sequence completed
+Several observations per individual detected based on the value of id.
+  Setting panelData in apollo_control set to TRUE.
+All checks on apollo_control completed.
+All checks on database completed.
+Apollo ignition sequence completed
+Several observations per individual detected based on the value of id.
+  Setting panelData in apollo_control set to TRUE.
+All checks on apollo_control completed.
+All checks on database completed.
+Apollo ignition sequence completed
+Several observations per individual detected based on the value of id.
+  Setting panelData in apollo_control set to TRUE.
+All checks on apollo_control completed.
+All checks on database completed.
+Apollo ignition sequence completed
+Several observations per individual detected based on the value of id.
+  Setting panelData in apollo_control set to TRUE.
+All checks on apollo_control completed.
+All checks on database completed.
+</code></pre></div>
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1953,16 +1986,17 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>task_id</th>
       <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
+      <th>specification_key</th>
+      <th>episode_length</th>
+      <th>search_strategy</th>
+      <th>attempt_found</th>
+      <th>estimated</th>
+      <th>reward</th>
+      <th>n_terms</th>
+      <th>action_indices</th>
+      <th>...</th>
       <th>rho2_0</th>
       <th>adjRho2_0</th>
       <th>rho2_C</th>
@@ -1978,508 +2012,205 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>apollo_mode_choice</td>
-      <td>spec_1</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>4</td>
+      <td>Swissmetro</td>
+      <td>1110_2124_3212_4110_5000_6110_7000</td>
+      <td>10</td>
+      <td>topk</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<ol>
-<li>Load all the model outcomes</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">cache</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-</span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
-      <th>rho2_0</th>
-      <th>adjRho2_0</th>
-      <th>rho2_C</th>
-      <th>adjRho2_C</th>
-      <th>AIC</th>
-      <th>BIC</th>
-      <th>eigValue</th>
-      <th>timeTaken</th>
-      <th>nFreeParams</th>
-      <th>skipped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>apollo_mode_choice</td>
-      <td>spec_1</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>NaN</td>
+      <td>True</td>
+      <td>0.080552</td>
+      <td>5</td>
+      <td>[125, 17, 215, 27, 74, 75, 106, 105, 201, 21]</td>
+      <td>...</td>
+      <td>0.266062</td>
+      <td>0.264052</td>
+      <td>0.128452</td>
+      <td>0.126406</td>
+      <td>10251.258636</td>
+      <td>10346.738089</td>
+      <td>-7.165797</td>
+      <td>1.132897</td>
+      <td>14</td>
       <td>0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>apollo_mode_choice</td>
-      <td>spec_2</td>
-      <td>60.0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>60.0</td>
+      <td>4</td>
+      <td>Swissmetro</td>
+      <td>1110_2212_3212_4324_5000_6110_7000</td>
+      <td>10</td>
+      <td>topk</td>
       <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<ol>
-<li>update a model estimation outcome</li>
-</ol>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">updated</span> <span class="o">=</span> <span class="n">failed</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">updated</span><span class="p">[</span><span class="s2">&quot;LLout&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1234</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">cache</span><span class="o">.</span><span class="n">upsert</span><span class="p">(</span><span class="n">updated</span><span class="p">)</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">cache</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">task_name</span><span class="o">=</span><span class="s2">&quot;apollo_mode_choice&quot;</span><span class="p">,</span> <span class="n">specification</span><span class="o">=</span><span class="s2">&quot;spec_1&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
-      <th>rho2_0</th>
-      <th>adjRho2_0</th>
-      <th>rho2_C</th>
-      <th>adjRho2_C</th>
-      <th>AIC</th>
-      <th>BIC</th>
-      <th>eigValue</th>
-      <th>timeTaken</th>
-      <th>nFreeParams</th>
-      <th>skipped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>apollo_mode_choice</td>
-      <td>spec_1</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>-1234.0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<h2 id="emprical-rewards">Emprical rewards</h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">cache_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../dataset/dataset_1/rewards.sqlite&quot;</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">cache</span> <span class="o">=</span> <span class="n">ResultCache</span><span class="p">(</span><span class="n">cache_path</span><span class="p">)</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">cache</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-</span></code></pre></div>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_name</th>
-      <th>specification</th>
-      <th>numParams</th>
-      <th>numResids</th>
-      <th>maximum</th>
-      <th>vcHessianConditionNumber</th>
-      <th>successfulEstimation</th>
-      <th>LL0</th>
-      <th>LLC</th>
-      <th>LLout</th>
-      <th>rho2_0</th>
-      <th>adjRho2_0</th>
-      <th>rho2_C</th>
-      <th>adjRho2_C</th>
-      <th>AIC</th>
-      <th>BIC</th>
-      <th>eigValue</th>
-      <th>timeTaken</th>
-      <th>nFreeParams</th>
-      <th>skipped</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2110_3110_4110_5000_6110_7000_8000</td>
-      <td>7.0</td>
-      <td>5600.0</td>
-      <td>-4670.988194</td>
-      <td>5.802145e-07</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4670.988194</td>
-      <td>0.293034</td>
-      <td>0.291975</td>
-      <td>0.139922</td>
-      <td>0.139185</td>
-      <td>9355.976387</td>
-      <td>9402.390040</td>
-      <td>-25.901553</td>
-      <td>0.592869</td>
-      <td>7.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2110_3110_4110_5000_6120_7000_8000</td>
-      <td>8.0</td>
-      <td>5600.0</td>
-      <td>-4670.221880</td>
-      <td>6.592906e-07</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4670.221880</td>
-      <td>0.293150</td>
-      <td>0.291940</td>
-      <td>0.140063</td>
-      <td>0.139142</td>
-      <td>9356.443760</td>
-      <td>9409.487935</td>
-      <td>-20.973439</td>
-      <td>0.538391</td>
-      <td>8.0</td>
+      <td>True</td>
+      <td>0.096403</td>
+      <td>5</td>
+      <td>[215, 74, 21, 106, 201, 27, 75, 215, 149, 201]</td>
+      <td>...</td>
+      <td>0.278470</td>
+      <td>0.276173</td>
+      <td>0.143186</td>
+      <td>0.140799</td>
+      <td>10082.426811</td>
+      <td>10191.546185</td>
+      <td>-1.686022</td>
+      <td>1.417425</td>
+      <td>16</td>
       <td>0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2110_3110_4110_5000_6210_7000_8000</td>
-      <td>7.0</td>
-      <td>5600.0</td>
-      <td>-4660.531979</td>
-      <td>4.405313e-07</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4660.531979</td>
-      <td>0.294617</td>
-      <td>0.293557</td>
-      <td>0.141847</td>
-      <td>0.141110</td>
-      <td>9335.063957</td>
-      <td>9381.477610</td>
-      <td>-20.114351</td>
-      <td>0.502049</td>
-      <td>7.0</td>
+      <td>4</td>
+      <td>Swissmetro</td>
+      <td>1110_2124_3210_4214_5000_6110_7000</td>
+      <td>10</td>
+      <td>topk</td>
+      <td>2</td>
+      <td>True</td>
+      <td>0.077291</td>
+      <td>5</td>
+      <td>[21, 125, 17, 215, 27, 201, 106, 73, 21, 125]</td>
+      <td>...</td>
+      <td>0.263514</td>
+      <td>0.261791</td>
+      <td>0.125426</td>
+      <td>0.123721</td>
+      <td>10282.754558</td>
+      <td>10364.594089</td>
+      <td>-9.808499</td>
+      <td>0.697092</td>
+      <td>12</td>
       <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2110_3110_4110_5000_6220_7000_8000</td>
-      <td>8.0</td>
-      <td>5600.0</td>
-      <td>-4659.639354</td>
-      <td>2.441837e-07</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4659.639354</td>
-      <td>0.294752</td>
-      <td>0.293541</td>
-      <td>0.142011</td>
-      <td>0.141091</td>
-      <td>9335.278709</td>
-      <td>9388.322884</td>
-      <td>-10.116044</td>
-      <td>0.483173</td>
-      <td>8.0</td>
+      <td>4</td>
+      <td>Swissmetro</td>
+      <td>1110_2121_3212_4111_5000_6110_7000</td>
+      <td>10</td>
+      <td>topk</td>
+      <td>3</td>
+      <td>True</td>
+      <td>0.082602</td>
+      <td>5</td>
+      <td>[21, 125, 106, 17, 215, 21, 27, 18, 201, 75]</td>
+      <td>...</td>
+      <td>0.267665</td>
+      <td>0.265511</td>
+      <td>0.130355</td>
+      <td>0.128138</td>
+      <td>10230.934350</td>
+      <td>10333.233764</td>
+      <td>-7.155435</td>
+      <td>2.857019</td>
+      <td>15</td>
       <td>0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2110_3110_4110_5000_6310_7000_8000</td>
-      <td>8.0</td>
-      <td>5600.0</td>
-      <td>-4603.567575</td>
-      <td>1.183897e-36</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4603.567575</td>
-      <td>0.303239</td>
-      <td>0.302028</td>
-      <td>0.152336</td>
-      <td>0.151415</td>
-      <td>9223.135150</td>
-      <td>9276.179325</td>
-      <td>NaN</td>
-      <td>0.367627</td>
-      <td>8.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>...</th>
+      <td>4</td>
+      <td>Swissmetro</td>
+      <td>1110_2212_3210_4222_5000_6126_7000</td>
+      <td>10</td>
+      <td>topk</td>
+      <td>4</td>
+      <td>True</td>
+      <td>0.097835</td>
+      <td>5</td>
+      <td>[73, 27, 17, 21, 215, 106, 17, 27, 149, 131]</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>26385</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2310_3112_4000_5120_6000_7000_8000</td>
-      <td>9.0</td>
-      <td>5600.0</td>
-      <td>-4563.285215</td>
-      <td>2.534571e-06</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4563.285215</td>
-      <td>0.309335</td>
-      <td>0.307973</td>
-      <td>0.159753</td>
-      <td>0.158648</td>
-      <td>9144.570430</td>
-      <td>9204.245127</td>
-      <td>-24.059556</td>
-      <td>0.715114</td>
-      <td>9.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>26386</th>
-      <td>ApolloModeChoice</td>
-      <td>1116_2110_3216_4000_5120_6000_7000_8000</td>
-      <td>19.0</td>
-      <td>5600.0</td>
-      <td>-4698.099622</td>
-      <td>6.077046e-06</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4698.099622</td>
-      <td>0.288931</td>
-      <td>0.286055</td>
-      <td>0.134930</td>
-      <td>0.131983</td>
-      <td>9434.199244</td>
-      <td>9560.179160</td>
-      <td>-7.391760</td>
-      <td>1.554350</td>
-      <td>19.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>26387</th>
-      <td>ApolloModeChoice</td>
-      <td>1112_2110_3216_4000_5216_6000_7000_8000</td>
-      <td>15.0</td>
-      <td>5600.0</td>
-      <td>-4346.970751</td>
-      <td>6.479791e-06</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4346.970751</td>
-      <td>0.342075</td>
-      <td>0.339805</td>
-      <td>0.199584</td>
-      <td>0.197374</td>
-      <td>8723.941502</td>
-      <td>8823.399330</td>
-      <td>-6.136886</td>
-      <td>1.213176</td>
-      <td>15.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>26388</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2316_3216_4000_5210_6000_7000_8000</td>
-      <td>13.0</td>
-      <td>5600.0</td>
-      <td>-4667.061211</td>
-      <td>1.074200e-05</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4667.061211</td>
-      <td>0.293629</td>
-      <td>0.291661</td>
-      <td>0.140645</td>
-      <td>0.138803</td>
-      <td>9360.122422</td>
-      <td>9446.319206</td>
-      <td>-25.088253</td>
-      <td>1.692919</td>
-      <td>13.0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>26389</th>
-      <td>ApolloModeChoice</td>
-      <td>1110_2326_3216_4000_5120_6000_7000_8000</td>
-      <td>26.0</td>
-      <td>5600.0</td>
-      <td>-4590.831492</td>
-      <td>7.305856e-09</td>
-      <td>1</td>
-      <td>-6607.093673</td>
-      <td>-5430.886635</td>
-      <td>-4590.831492</td>
-      <td>0.305166</td>
-      <td>0.301231</td>
-      <td>0.154681</td>
-      <td>0.150446</td>
-      <td>9233.662985</td>
-      <td>9406.056553</td>
-      <td>-0.007338</td>
-      <td>4.265082</td>
-      <td>26.0</td>
+      <td>0.279593</td>
+      <td>0.277152</td>
+      <td>0.144519</td>
+      <td>0.141962</td>
+      <td>10068.785960</td>
+      <td>10184.725296</td>
+      <td>-1.118034</td>
+      <td>1.279611</td>
+      <td>17</td>
       <td>0</td>
     </tr>
   </tbody>
 </table>
-<p>26390 rows × 20 columns</p>
+<p>5 rows × 29 columns</p>
 </div>
+
+<h2 id="5-inspect-the-first-proposal">5. Inspect the first proposal</h2>
+<p>Motivation -&gt; specify the goal. LL and BIC</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">proposal</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">proposals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Specification key:&quot;</span><span class="p">,</span> <span class="n">proposal</span><span class="o">.</span><span class="n">specification_key</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Episode length:&quot;</span><span class="p">,</span> <span class="n">proposal</span><span class="o">.</span><span class="n">episode_length</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Action indices:&quot;</span><span class="p">,</span> <span class="n">proposal</span><span class="o">.</span><span class="n">action_indices</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Terms:&quot;</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">proposal</span><span class="o">.</span><span class="n">terms</span><span class="p">:</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Specification key: 1110_2124_3212_4110_5000_6110_7000
+Episode length: 10
+Action indices: [125, 17, 215, 27, 74, 75, 106, 105, 201, 21]
+Terms:
+Term(attribute_id=1, transform_id=1, taste_id=1, covariate_id=0)
+Term(attribute_id=2, transform_id=1, taste_id=2, covariate_id=4)
+Term(attribute_id=3, transform_id=2, taste_id=1, covariate_id=2)
+Term(attribute_id=4, transform_id=1, taste_id=1, covariate_id=0)
+Term(attribute_id=6, transform_id=1, taste_id=1, covariate_id=0)
+</code></pre></div>
+<h2 id="6-inspect-generated-apollo-components">6. Inspect generated Apollo components</h2>
+<p>These objects are what Delphos sends to the environment when <code>estimate=True</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">apollo_spec</span> <span class="o">=</span> <span class="n">proposal</span><span class="o">.</span><span class="n">apollo_specification</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of parameters:&quot;</span><span class="p">,</span> <span class="n">apollo_spec</span><span class="o">.</span><span class="n">n_parameters</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First parameters:&quot;</span><span class="p">,</span> <span class="n">apollo_spec</span><span class="o">.</span><span class="n">parameter_names</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Utility code preview:&quot;</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nb">print</span><span class="p">()</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">apollo_spec</span><span class="o">.</span><span class="n">utility_code</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Number of parameters: 16
+First parameters: [&#39;ASC_TRAIN&#39;, &#39;ASC_SM&#39;, &#39;ASC_CAR&#39;, &#39;b_TRAIN_time&#39;, &#39;b_SM_time&#39;, &#39;b_CAR_time&#39;, &#39;b_cost_generic_log_income_1&#39;, &#39;b_cost_generic_log_income_2&#39;, &#39;b_cost_generic_log_income_3&#39;, &#39;b_cost_generic_log_income_4&#39;]
+
+Utility code preview:
+
+V &lt;- list()
+
+V[[&quot;TRAIN&quot;]] &lt;-
+      ASC_TRAIN +
+      b_TRAIN_time * train_tt_scaled +
+      b_cost_generic_log_income_1 * (income == 1) * log(1+train_cost_scaled) +
+      b_cost_generic_log_income_2 * (income == 2) * log(1+train_cost_scaled) +
+      b_cost_generic_log_income_3 * (income == 3) * log(1+train_cost_scaled) +
+      b_cost_generic_log_income_4 * (income == 4) * log(1+train_cost_scaled) +
+      b_TRAIN_headway_box_cox_purpose_1 * (purpose == 1) * ((train_he_scaled^L_headway - 1) / L_headway) +
+      b_TRAIN_headway_box_cox_purpose_2 * (purpose == 2) * ((train_he_scaled^L_headway - 1) / L_headway)
+
+V[[&quot;SM&quot;]] &lt;-
+      ASC_SM +
+      b_SM_time * sm_tt_scaled +
+      b_cost_generic_log_income_1 * (income == 1) * log(1+sm_cost_scaled) +
+      b_cost_generic_log_income_2 * (income == 2) * log(1+sm_cost_scaled) +
+      b_cost_generic_log_income_3 * (income == 3) * log(1+sm_cost_scaled) +
+      b_cost_generic_log_income_4 * (income == 4) * log(1+sm_cost_scaled) +
+      b_SM_headway_box_cox_purpose_1 * (purpose == 1) * ((sm_he_scaled^L_headway - 1) / L_headway) +
+      b_SM_headway_box_cox_purpose_2 * (purpose == 2) * ((sm_he_scaled^L_headway - 1) / L_headway) +
+      b_seat_generic * sm_seats_scaled
+
+V[[&quot;CAR&quot;]] &lt;-
+      ASC_CAR +
+      b_CAR_time * car_tt_scaled +
+      b_cost_generic_log_income_1 * (income == 1) * log(1+car_co_scaled) +
+      b_cost_generic_log_income_2 * (income == 2) * log(1+car_co_scaled) +
+      b_cost_generic_log_income_3 * (income == 3) * log(1+car_co_scaled) +
+      b_cost_generic_log_income_4 * (income == 4) * log(1+car_co_scaled)
+</code></pre></div>
+<h2 id="7-save-proposals">7. Save proposals</h2>
+<p>This is a useful pattern when you want to inspect models first, then estimate them later.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;getting_started_proposals.csv&quot;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">models</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span><span class="si">}</span><span class="s2"> proposals to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Saved 5 proposals to getting_started_proposals.csv
+</code></pre></div>
 
 
 

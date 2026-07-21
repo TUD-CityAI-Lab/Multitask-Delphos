@@ -10,9 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/ready2use/">
+        <link rel="canonical" href="https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/05_reward_function/">
       
       
+        <link rel="prev" href="../04_delphos_parameters/">
+      
+      
+        <link rel="next" href="../06_quick_results/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>Ready to Use: Apollo Integration - Multitask Delphos</title>
+        <title>05. Reward Function - Multitask Delphos</title>
       
     
     
@@ -64,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ready-to-use-apollo-integration" class="md-skip">
+        <a href="#05-reward-function-and-model-ranking" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ready to Use: Apollo Integration
+              05. Reward Function
             
           </span>
         </div>
@@ -280,10 +284,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../notebooks/" class="md-tabs__link">
           
   
@@ -306,8 +312,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -1290,28 +1294,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1329,7 +1336,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1375,14 +1382,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_task/" class="md-nav__link">
+      <a href="../01_getting_started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    01. Task
+    01. Getting Started
   
 
     
@@ -1403,14 +1410,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_state/" class="md-nav__link">
+      <a href="../02_datasets_and_user_data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    02. State
+    02. Datasets and User Data
   
 
     
@@ -1431,14 +1438,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_action/" class="md-nav__link">
+      <a href="../02_your_own_datasets/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    03. Action
+    02. Your Own Datasets
   
 
     
@@ -1459,14 +1466,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_apollo_generator/" class="md-nav__link">
+      <a href="../03_modelling_space/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    04. Apollo Generator
+    03. Modelling Space
   
 
     
@@ -1487,14 +1494,172 @@
   
   
     <li class="md-nav__item">
-      <a href="../05_apollo_estimator/" class="md-nav__link">
+      <a href="../04_delphos_parameters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    05. Apollo Estimator
+    04. Delphos Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Reward Function
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Reward Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-inspect-the-built-in-reward-on-a-synthetic-outcome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Inspect the built-in reward on a synthetic outcome
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-see-what-invalid-outcomes-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. See what invalid outcomes do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-build-your-own-ranking-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Build your own ranking score
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-apply-a-custom-score-to-estimated-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Apply a custom score to estimated results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reward-design-ideas-for-final-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reward-design ideas for final users
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_quick_results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Quick Results
   
 
     
@@ -1515,14 +1680,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../06_results_cache/" class="md-nav__link">
+      <a href="../07_robust_results/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    06. Results Cache
+    07. Robust Results
   
 
     
@@ -1543,42 +1708,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../07_environment/" class="md-nav__link">
+      <a href="../08_environment_and_outputs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    07. Environment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08_testing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    08. Testing
+    08. Environment and Outputs
   
 
     
@@ -1607,9 +1744,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1628,10 +1763,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#generating-the-apollo-script" class="md-nav__link">
+  <a href="#1-inspect-the-built-in-reward-on-a-synthetic-outcome" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Generating the Apollo Script
+        1. Inspect the built-in reward on a synthetic outcome
       
     </span>
   </a>
@@ -1639,10 +1774,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-the-script-in-r" class="md-nav__link">
+  <a href="#2-see-what-invalid-outcomes-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running the Script in R
+        2. See what invalid outcomes do
       
     </span>
   </a>
@@ -1650,10 +1785,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-generated-script" class="md-nav__link">
+  <a href="#3-build-your-own-ranking-score" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Generated Script
+        3. Build your own ranking score
       
     </span>
   </a>
@@ -1661,10 +1796,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#internal-components-tutorials" class="md-nav__link">
+  <a href="#4-apply-a-custom-score-to-estimated-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Internal Components Tutorials
+        4. Apply a custom score to estimated results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reward-design-ideas-for-final-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Reward-design ideas for final users
       
     </span>
   </a>
@@ -1685,104 +1831,94 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
   
 
 
-<h1 id="ready-to-use-apollo-integration">Ready to Use: Apollo Integration</h1>
-<p>One of the key features of Delphos is its ability to directly output model specifications that can be run in the popular R package <strong>Apollo</strong>.</p>
-<p>This tutorial shows how to take a specification generated by Delphos and estimate it using Apollo.</p>
-<h2 id="generating-the-apollo-script">Generating the Apollo Script</h2>
-<p>Once Delphos has completed its exploration phase, you can select any model from the Pareto front and export it as an Apollo R script.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Assuming &#39;agent&#39; has already explored the dataset</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">pareto_front</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_pareto_front</span><span class="p">()</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Get the model with the best BIC score</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">best_model</span> <span class="o">=</span> <span class="n">pareto_front</span><span class="o">.</span><span class="n">get_best_by_metric</span><span class="p">(</span><span class="s2">&quot;BIC&quot;</span><span class="p">)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Export to Apollo</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">best_model</span><span class="o">.</span><span class="n">export_to_apollo</span><span class="p">(</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;apollo_model.R&quot;</span><span class="p">,</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">dataset_path</span><span class="o">=</span><span class="s2">&quot;data/my_dataset.csv&quot;</span><span class="p">,</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;Delphos_Best_BIC&quot;</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="running-the-script-in-r">Running the Script in R</h2>
-<p>The generated <code>apollo_model.R</code> script is fully self-contained. It includes:</p>
+<h1 id="05-reward-function-and-model-ranking">05 - Reward function and model ranking</h1>
+<p>Delphos was trained with a reward function, and the final-user environment also computes a reward after Apollo estimation.</p>
+<p>Important distinction:</p>
 <ul>
-<li>Data loading.</li>
-<li>Parameter initialization (starting values).</li>
-<li>The utility functions defined by Delphos.</li>
-<li>The Apollo probabilities and log-likelihood functions.</li>
-<li>The command to run the estimation and output the results.</li>
+<li>The pretrained agent policy is already fixed.</li>
+<li>Changing the Python reward function does not retrain the policy.</li>
+<li>You can still define custom scores to rank estimated proposals for your project.</li>
 </ul>
-<p>You can run this script directly in R or via the command line:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Rscript<span class="w"> </span>apollo_model.R
+<h2 id="1-inspect-the-built-in-reward-on-a-synthetic-outcome">1. Inspect the built-in reward on a synthetic outcome</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">delphos</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dp</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">delphos.env.reward</span><span class="w"> </span><span class="kn">import</span> <span class="n">reward_function</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">task</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;Swissmetro&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">outcome</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="s2">&quot;successfulEstimation&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="s2">&quot;skipped&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="s2">&quot;LLout&quot;</span><span class="p">:</span> <span class="n">task</span><span class="o">.</span><span class="n">ll_linear</span> <span class="o">+</span> <span class="mf">100.0</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="s2">&quot;nFreeParams&quot;</span><span class="p">:</span> <span class="n">task</span><span class="o">.</span><span class="n">n_attributes</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="p">}</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">])</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">outcome</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="example-generated-script">Example Generated Script</h2>
-<p>Here is an example of what the generated R script looks like:</p>
-<div class="language-R highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># --- Generated by Delphos ---</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">library</span><span class="p">(</span><span class="n">apollo</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Initialize Apollo</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nf">apollo_initialise</span><span class="p">()</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Set core controls</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">apollo_control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="n">modelName</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Delphos_Best_BIC&quot;</span><span class="p">,</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="n">modelDescr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Auto-generated model by Delphos&quot;</span><span class="p">,</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="n">indivID</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ID&quot;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">)</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># Load data</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">database</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;data/my_dataset.csv&quot;</span><span class="p">)</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># Define parameters</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">apollo_beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="n">asc_car</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="n">asc_train</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
-</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="n">b_time</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">  </span><span class="n">b_cost</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">)</span>
-</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
-</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="c1"># Define fixed parameters</span>
-</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="n">apollo_fixed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;asc_car&quot;</span><span class="p">)</span>
-</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
-</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="c1"># Define probabilities function</span>
-</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="n">apollo_probabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">apollo_beta</span><span class="p">,</span><span class="w"> </span><span class="n">apollo_inputs</span><span class="p">,</span><span class="w"> </span><span class="n">functionality</span><span class="o">=</span><span class="s">&quot;estimate&quot;</span><span class="p">){</span>
-</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">  </span><span class="nf">apollo_attach</span><span class="p">(</span><span class="n">apollo_beta</span><span class="p">,</span><span class="w"> </span><span class="n">apollo_inputs</span><span class="p">)</span>
-</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">  </span><span class="nf">on.exit</span><span class="p">(</span><span class="nf">apollo_detach</span><span class="p">(</span><span class="n">apollo_beta</span><span class="p">,</span><span class="w"> </span><span class="n">apollo_inputs</span><span class="p">))</span>
-</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
-</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">  </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">()</span>
-</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
-</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">  </span><span class="n">V</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">()</span>
-</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">  </span><span class="n">V</span><span class="p">[[</span><span class="s">&quot;car&quot;</span><span class="p">]]</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">asc_car</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b_time</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time_car</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b_cost</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cost_car</span>
-</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">  </span><span class="n">V</span><span class="p">[[</span><span class="s">&quot;train&quot;</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">asc_train</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b_time</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">time_train</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b_cost</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cost_train</span>
-</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
-</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">  </span><span class="n">mnl_settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span>
-</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span><span class="n">alternatives</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">car</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">train</span><span class="o">=</span><span class="m">2</span><span class="p">),</span>
-</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">    </span><span class="n">avail</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">car</span><span class="o">=</span><span class="n">avail_car</span><span class="p">,</span><span class="w"> </span><span class="n">train</span><span class="o">=</span><span class="n">avail_train</span><span class="p">),</span>
-</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">    </span><span class="n">choiceVar</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">choice</span><span class="p">,</span>
-</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">    </span><span class="n">V</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="n">V</span>
-</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">  </span><span class="p">)</span>
-</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>
-</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">  </span><span class="n">P</span><span class="p">[[</span><span class="s">&quot;model&quot;</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">apollo_mnl</span><span class="p">(</span><span class="n">mnl_settings</span><span class="p">,</span><span class="w"> </span><span class="n">functionality</span><span class="p">)</span>
-</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">  </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">apollo_prepareProb</span><span class="p">(</span><span class="n">P</span><span class="p">,</span><span class="w"> </span><span class="n">apollo_inputs</span><span class="p">,</span><span class="w"> </span><span class="n">functionality</span><span class="p">)</span>
-</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="p">}</span>
-</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
-</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="c1"># Estimate model</span>
-</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">apollo_estimate</span><span class="p">(</span><span class="n">apollo_beta</span><span class="p">,</span><span class="w"> </span><span class="n">apollo_fixed</span><span class="p">,</span><span class="w"> </span><span class="n">apollo_probabilities</span><span class="p">,</span><span class="w"> </span><span class="n">apollo_inputs</span><span class="p">)</span>
-</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
-</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="c1"># Output results</span>
-</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="nf">apollo_modelOutput</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<h2 id="2-see-what-invalid-outcomes-do">2. See what invalid outcomes do</h2>
+<p>Failed, skipped, or incomplete Apollo runs receive <code>-1.0</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">failed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">{</span><span class="s2">&quot;successfulEstimation&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;skipped&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;LLout&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;nFreeParams&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">])</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">skipped</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">{</span><span class="s2">&quot;successfulEstimation&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;skipped&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;LLout&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;nFreeParams&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">])</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed:&quot;</span><span class="p">,</span> <span class="n">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">failed</span><span class="p">))</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;skipped:&quot;</span><span class="p">,</span> <span class="n">reward_function</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">skipped</span><span class="p">))</span>
 </span></code></pre></div>
-<h2 id="internal-components-tutorials">Internal Components Tutorials</h2>
-<p>If you want to dive deeper into how Delphos works under the hood, check out our <a href="../notebooks/">Jupyter Notebook Tutorials</a>. These notebooks cover the internal components of the framework step-by-step, including the RL environment, state representation, and Apollo generators.</p>
+<h2 id="3-build-your-own-ranking-score">3. Build your own ranking score</h2>
+<p>This is useful after <code>estimate=True</code>, especially when you care about parsimony, interpretability, or a particular information criterion.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">custom_choice_model_score</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">complexity_penalty</span><span class="o">=</span><span class="mf">0.02</span><span class="p">):</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="nb">bool</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;successfulEstimation&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="k">return</span> <span class="o">-</span><span class="mf">1.0</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">ll_gain</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;LLout&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">ll_linear</span><span class="p">))</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">n_obs</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">complexity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;nFreeParams&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">n_attributes</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">ll_gain</span><span class="p">)</span> <span class="o">-</span> <span class="n">complexity_penalty</span> <span class="o">*</span> <span class="n">complexity</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">example_row</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="s2">&quot;successfulEstimation&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="s2">&quot;LLout&quot;</span><span class="p">:</span> <span class="n">task</span><span class="o">.</span><span class="n">ll_linear</span> <span class="o">+</span> <span class="mi">150</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="s2">&quot;nFreeParams&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">custom_choice_model_score</span><span class="p">(</span><span class="n">example_row</span><span class="p">,</span> <span class="n">task</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="4-apply-a-custom-score-to-estimated-results">4. Apply a custom score to estimated results</h2>
+<p>Set <code>RUN_ESTIMATION = True</code> when you want to call Apollo/R. The default below is false so this notebook stays quick.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">RUN_ESTIMATION</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">load_agent</span><span class="p">()</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">models</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">propose</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">n_models</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;topk&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">if</span> <span class="n">RUN_ESTIMATION</span><span class="p">:</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">models</span><span class="o">.</span><span class="n">estimate</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">max_free_parameters</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;custom_score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">custom_choice_model_score</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">task</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;custom_score&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Skipping Apollo/R estimation. Use models.estimate(...) when ready.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="5-reward-design-ideas-for-final-users">5. Reward-design ideas for final users</h2>
+<p>You can rank estimated models by:</p>
+<ul>
+<li>log-likelihood improvement over linear additive baseline</li>
+<li>BIC or AIC improvement</li>
+<li>number of free parameters</li>
+<li>successful estimation and Hessian quality</li>
+<li>domain constraints such as sign plausibility</li>
+<li>preference for fewer covariate interactions</li>
+</ul>
+<p>For final-user inference, use these scores for ranking and filtering. Retraining with a new reward belongs in the training repository, not this final-user package.</p>
 
 
 
@@ -1790,13 +1926,8 @@
 
 
 
-  
-  
 
 
-
-
-  
 
 
 

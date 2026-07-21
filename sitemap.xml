@@ -157,43 +157,43 @@
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/01_task/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/01_getting_started/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/02_state/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/02_datasets_and_user_data/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/03_action/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/02_your_own_datasets/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/04_apollo_generator/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/03_modelling_space/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/05_apollo_estimator/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/04_delphos_parameters/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/06_results_cache/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/05_reward_function/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/07_environment/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/06_quick_results/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/08_testing/</loc>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/07_robust_results/</loc>
+         <lastmod>2026-07-21</lastmod>
+    </url>
+    <url>
+         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/08_environment_and_outputs/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
     <url>
          <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/notebooks/</loc>
-         <lastmod>2026-07-21</lastmod>
-    </url>
-    <url>
-         <loc>https://tud-cityai-lab.github.io/Multitask-Delphos/tutorials/ready2use/</loc>
          <lastmod>2026-07-21</lastmod>
     </url>
 </urlset>
