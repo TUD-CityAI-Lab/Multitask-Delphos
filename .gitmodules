@@ -4,3 +4,6 @@
 [submodule "submodules/transport-choice-datasets"]
 	path = submodules/transport-choice-datasets
 	url = https://github.com/TUD-CityAI-Lab/transport-choice-datasets.git
+[submodule "submodules/delphos"]
+	path = submodules/delphos
+	url = https://github.com/gnova3/Delphos.git
