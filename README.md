@@ -1,4 +1,4 @@
-# Multitask Delphos 🏛️
+# Multitask Delphos
 
 **Reinforcement Learning for Assisted Discrete Choice Model Specification**
 
