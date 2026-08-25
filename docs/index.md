@@ -27,7 +27,7 @@ The project supports:
 
 ---
 
-### [Delphos](delphos/overview.md)
+### [Delphos](https://github.com/gnova3/Delphos)
 
 A Python package that allows choice modellers to apply pre-trained Delphos to their own discrete choice datasets without requiring reinforcement learning expertise. It supports zero-shot inference and few-shot fine-tuning on the new dataset. It includes:
 
@@ -38,17 +38,13 @@ A Python package that allows choice modellers to apply pre-trained Delphos to th
 - Reproducible modelling workflows
 - Tutorials and examples
 
-### [Choice datasets](transport-choice-datasets/overview.md)
+### [Delphos single-task](https://github.com/gnova3/delphos-single-task)
 
-A collection of transport choice datasets used for training, benchmarking, teaching, and reproducible research. It includes:
+The reference implementation, experiments, and reproduction materials for the first Delphos paper.
 
-- Dataset files
-- Data processing and validation pipelines
-- Metadata and documentation
+### [Delphos training](https://github.com/gnova3/Delphos-training)
 
-### [Delphos-core](delphos-core/overview.md)
-
-The research framework used to train, evaluate, and extend Delphos agents. It includes:
+The research framework used to train, evaluate, fine-tune, and extend multitask Delphos agents. It includes:
 
 - Markov Decision Process formulation
 - State and action space
@@ -57,6 +53,14 @@ The research framework used to train, evaluate, and extend Delphos agents. It in
 - Apollo integration
 - Training and evaluation pipeline
 - Experiment configurations
+
+### [Choice datasets](https://github.com/TUD-CityAI-Lab/transport-choice-datasets)
+
+A collection of transport choice datasets used for training, benchmarking, teaching, and reproducible research. It includes:
+
+- Dataset files
+- Data processing and validation pipelines
+- Metadata and documentation
 
 ---
 

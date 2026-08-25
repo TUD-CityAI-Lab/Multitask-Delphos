@@ -1,42 +1,50 @@
-# Managing Submodules
+# Managing Components
 
-The `Multitask-Delphos` repository is the "hub" repository. The actual code lives in submodules (`delphos-core`, `delphos` (user), and `delphos-datasets`).
+`Multitask-Delphos` is the umbrella repository for the Delphos ecosystem. Its implementation and research code lives in four independently versioned component repositories:
 
-This structure allows each component to be versioned and installed independently while keeping the ecosystem logically grouped.
+- `components/delphos`: end-user inference package;
+- `components/delphos-single-task`: Paper 1 single-task implementation;
+- `components/delphos-training`: multitask training and Paper 2 reproduction; and
+- `components/transport-choice-datasets`: canonical dataset collection.
+
+The `components/` directories are Git submodules. The umbrella records an exact approved commit for each component, while every component remains independently cloneable and developable.
 
 ## Cloning the Repository
 
-When cloning the main repository, you must initialize the submodules:
+Clone the umbrella and initialise all components with:
 
 ```bash
-# Clone and initialize submodules in one command
 git clone --recurse-submodules https://github.com/TUD-CityAI-Lab/Multitask-Delphos.git
 ```
 
-If you already cloned it without submodules:
+If the umbrella was cloned without its components, run:
+
 ```bash
 git submodule update --init --recursive
 ```
 
-## Updating Submodules
+## Working on One Component
 
-To update all submodules to the latest commits on their respective remote tracking branches:
+Enter the component directory, create a branch there, and commit changes in that component repository:
 
 ```bash
-git submodule update --remote --merge
+cd components/delphos-training
+git switch -c my-change
 ```
 
-## Making Changes to Submodules
+The umbrella should continue to point to the last approved component commit until the component change has been reviewed and pushed.
 
-If you want to contribute code to `delphos-core`, you must commit those changes within the `submodules/delphos-core` directory. 
+## Updating an Umbrella Pin
 
-1. `cd submodules/delphos-core`
-2. Make your branch, commit, and push *from within that directory*.
-3. Once the submodule is updated on GitHub, go back to the main repository root.
-4. Commit the new submodule pointer in the main repository:
-   ```bash
-   cd ../.. # Back to Multitask-Delphos root
-   git add submodules/delphos-core
-   git commit -m "Update delphos-core submodule pointer"
-   git push
-   ```
+After an approved component commit has been pushed, check out that exact commit inside `components/` and commit the changed pointer in the umbrella:
+
+```bash
+cd components/delphos-training
+git fetch origin
+git checkout <approved-commit>
+cd ../..
+git add components/delphos-training
+git commit -m "Update delphos-training component"
+```
+
+Do not use `git submodule update --remote --merge` as the normal umbrella workflow. It follows moving branches and can update several components without an explicit review of their new pins.

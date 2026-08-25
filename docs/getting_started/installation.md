@@ -11,19 +11,18 @@ Delphos is currently under active development. The best way to use it is by clon
 To use pre-trained Delphos agents for assisted specification, you only need the `delphos` user library.
 
 ```bash
-git clone https://github.com/TUD-CityAI-Lab/Multitask-Delphos.git
-cd Multitask-Delphos/submodules/delphos-user
+git clone --recurse-submodules https://github.com/TUD-CityAI-Lab/Multitask-Delphos.git
+cd Multitask-Delphos/components/delphos
 pip install -e .
 ```
 
-## Installing for Development (Core)
+## Installing for Training Development
 
-If you intend to train new agents or modify the RL environment, you need to install the core repository.
+If you intend to train new agents or modify the RL machinery, install the training component.
 
 ```bash
 git clone https://github.com/TUD-CityAI-Lab/Multitask-Delphos.git
 git submodule update --init --recursive
-cd Multitask-Delphos/submodules/delphos-core
+cd Multitask-Delphos/components/delphos-training
 pip install -r requirements.txt
-pip install -e .
 ```

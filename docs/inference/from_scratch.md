@@ -6,10 +6,10 @@ This essentially treats your single dataset as the entire environment, and the a
 
 ## Running From Scratch
 
-Training from scratch is done via the `delphos-core` repository.
+Training from scratch is done via the `delphos-training` repository.
 
 ```python
-from delphos_core import RLTrainer, DelphosAgent
+from delphos_training import RLTrainer, DelphosAgent
 
 # Initialize a new, untrained agent
 agent = DelphosAgent(config="default_config.yaml")

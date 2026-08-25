@@ -1,9 +1,12 @@
-[submodule "submodules/delphos-core"]
-	path = submodules/delphos-core
-	url = https://github.com/gnova3/delphos-core.git
-[submodule "submodules/transport-choice-datasets"]
-	path = submodules/transport-choice-datasets
-	url = https://github.com/TUD-CityAI-Lab/transport-choice-datasets.git
-[submodule "submodules/delphos"]
-	path = submodules/delphos
+[submodule "components/delphos"]
+	path = components/delphos
 	url = https://github.com/gnova3/Delphos.git
+[submodule "components/delphos-single-task"]
+	path = components/delphos-single-task
+	url = https://github.com/gnova3/delphos-single-task.git
+[submodule "components/delphos-training"]
+	path = components/delphos-training
+	url = https://github.com/gnova3/Delphos-training.git
+[submodule "components/transport-choice-datasets"]
+	path = components/transport-choice-datasets
+	url = https://github.com/TUD-CityAI-Lab/transport-choice-datasets.git

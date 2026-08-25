@@ -8,11 +8,14 @@ This is the **Main Repository** and central hub for the Delphos ecosystem.
 
 ## 📦 The Delphos Ecosystem
 
-The project is structured into three main components:
+The project is structured into four independently versioned components:
 
-1. **[delphos-core](https://github.com/TUD-CityAI-Lab/delphos-core)**: The main engine and research repository where the heavy lifting (training, reinforcement learning environment, model generation) happens.
-2. **delphos (User Library)**: The pip-installable python package intended for end users. It provides a clean API for inference and integrating Delphos with tools like Apollo or Biogeme. 
-3. **[delphos-datasets](https://github.com/TUD-CityAI-Lab/transport-choice-datasets)**: A standardized collection of transportation choice datasets used for training and evaluating Delphos.
+1. **[Delphos](https://github.com/gnova3/Delphos)**: The end-user Python package for loading trained agents, searching for model specifications, and estimating models through Apollo.
+2. **[Delphos single-task](https://github.com/gnova3/delphos-single-task)**: The reference implementation and experiments for the first Delphos paper.
+3. **[Delphos training](https://github.com/gnova3/Delphos-training)**: The multitask reinforcement-learning, fine-tuning, evaluation, and Paper 2 reproduction repository.
+4. **[Transport choice datasets](https://github.com/TUD-CityAI-Lab/transport-choice-datasets)**: The canonical collection of training and evaluation datasets and their standardised schemas.
+
+The umbrella pins an approved commit of each repository under [`components/`](components/). Each component can also be cloned and developed independently.
 
 ## 🚀 Getting Started
 

@@ -18,7 +18,7 @@ A simpler reward based purely on the improvement in Log-Likelihood. This tends t
 
 ## Defining Custom Rewards
 
-You can define custom reward functions by subclassing the base `RewardFunction` class in `delphos-core`.
+You can define custom reward functions by subclassing the base `RewardFunction` class in `delphos-training`.
 
 ```python
 from mdp.reward import RewardFunction

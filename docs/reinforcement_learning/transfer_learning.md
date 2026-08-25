@@ -15,7 +15,7 @@ Transfer learning allows Delphos to:
 
 ## Executing Transfer
 
-To execute transfer learning, use the `run_transfer_benchmark.py` script provided in `delphos-core`.
+To execute transfer learning, use the `run_transfer_benchmark.py` script provided in `delphos-training`.
 
 ```bash
 python scripts/run_transfer_benchmark.py --agent pretrained_multitask.pt --target my_new_dataset.yaml

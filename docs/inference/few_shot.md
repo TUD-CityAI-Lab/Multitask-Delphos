@@ -6,11 +6,11 @@ This is useful when the new dataset has characteristics that are slightly differ
 
 ## Running Few-Shot Inference
 
-Currently, few-shot inference is managed via the `delphos-core` repository, as it requires the training loop to be active.
+Currently, few-shot inference is managed via the `delphos-training` repository, as it requires the training loop to be active.
 
 ```python
 # Pseudo-code for few-shot adaptation
-from delphos_core import RLTrainer, DelphosAgent
+from delphos_training import RLTrainer, DelphosAgent
 
 agent = DelphosAgent.load_pretrained("multitask_base")
 

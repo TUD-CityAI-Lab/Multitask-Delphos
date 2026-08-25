@@ -3,9 +3,9 @@ hide:
   - toc
 ---
 
-# Delphos Core
+# Delphos Training
 
-Welcome to the `delphos-core` repository, the heart of Multitask Delphos framework. This repository contains the complete reinforcement learning infrastructure required to:
+The `delphos-training` repository contains the reinforcement learning infrastructure required to:
 
 - formulate discrete choice model specification as a Markov Decision Process (MDP),
 - train reinforcement learning agents,
