@@ -3,119 +3,69 @@ hide:
   - navigation
 ---
 
-# Assisting Choice Model Specification with Reinforcement Learning
+# Delphos: assisted specification of discrete choice models
 
-Specifying discrete choice models is often an iterative and time-consuming process. Modellers typically evaluate many alternative utility specifications while balancing model fit, parsimony, behavioural plausibility, and theoretical consistency. As model complexity and the number of modelling decisions increase, exploring the specification space becomes increasingly challenging.
+Delphos helps choice modellers explore utility specifications with a trained reinforcement-learning agent. The agent proposes modelling decisions; Apollo estimates the resulting discrete choice models; you decide which specifications are behaviourally meaningful and worth carrying forward.
 
-To support this process, we introduce **Delphos**, a reinforcement learning agent that learns to specify discrete choice models from previous modelling tasks and transfer this modelling knowledge across transport choice datasets.
+Delphos is an assistant, not an automatic model-selection authority. It reduces repetitive search while keeping the modeller responsible for data preparation, identification, interpretation, validation, and reporting.
 
-The project supports:
+## Choose your route
 
-1. Practical model specification assistance through pre-trained agents;
-2. Methodological research on reinforcement learning for automated choice model specification;
-3. Choice datasets hub for benchmarking and reproducibility.
+<div class="grid cards" markdown>
 
-## Why Delphos?
+-   **New to Delphos**
 
-- **Learning from previous modelling tasks**: Delphos learns modelling strategies from previous choice modelling specification tasks and transfers this knowledge to new modelling problems.
+    Understand the workflow, install the package, and generate a small set of proposals.
 
-- **Automated specification process**: Delphos can efficiently navigate large modelling spaces to propose utility specifications that balance model fit, parsimony, and behavioural plausibility.
+    [Start here](getting_started/overview.md)
 
-- **Flexible objective**: Delphos supports customisable reward functions, allowing modellers to incorporate their own criteria into the specification process.
+-   **Choice modeller**
 
-- **Collaborative**: Researchers and practitioners can contribute by adding new datasets to the catalogue, developing new reward functions, extending estimation environments, implementing alternative reinforcement learning algorithms, and reporting issues and suggestions.
+    Control the modelling space, estimate proposals with Apollo, compare results, and export a shortlist.
 
----
+    [Open the user guide](user-guide/index.md)
 
-### [Delphos](https://github.com/gnova3/Delphos)
+-   **Working with data**
 
-A Python package that allows choice modellers to apply pre-trained Delphos to their own discrete choice datasets without requiring reinforcement learning expertise. It supports zero-shot inference and few-shot fine-tuning on the new dataset. It includes:
+    Use a catalogue dataset or describe your own CSV with a transparent Delphos schema.
 
-- Loading pre-trained agents
-- Loading discrete choice datasets from the catalgoue
-- Automated utility specification generation
-- Pareto-front exploration
-- Reproducible modelling workflows
-- Tutorials and examples
+    [Open the datasets guide](datasets/overview.md)
 
-### [Delphos single-task](https://github.com/gnova3/delphos-single-task)
+-   **Researcher or developer**
 
-The reference implementation, experiments, and reproduction materials for the first Delphos paper.
+    Study the MDP, multitask architecture, training machinery, paper repositories, and contribution workflow.
 
-### [Delphos training](https://github.com/gnova3/Delphos-training)
+    [Research and papers](research/index.md) · [Development](development/index.md)
 
-The research framework used to train, evaluate, fine-tune, and extend multitask Delphos agents. It includes:
+-   **Learn by running code**
 
-- Markov Decision Process formulation
-- State and action space
-- Reward function design
-- Reinforcement learning algorithms
-- Apollo integration
-- Training and evaluation pipeline
-- Experiment configurations
+    Follow complete Jupyter notebooks for final users and for the internal training machinery.
 
-### [Choice datasets](https://github.com/TUD-CityAI-Lab/transport-choice-datasets)
+    [Open the tutorial library](tutorials/index.md)
 
-A collection of transport choice datasets used for training, benchmarking, teaching, and reproducible research. It includes:
+</div>
 
-- Dataset files
-- Data processing and validation pipelines
-- Metadata and documentation
+## From Apollo or Biogeme?
 
----
+If you use **Apollo**, the generated objects will look familiar: Delphos constructs parameter definitions, utility functions, availability conditions, and an `apollo_probabilities` function before calling Apollo through R.
 
-## Getting Started
+If you use **Biogeme**, think of Delphos as a learned assisted-specification search over a catalogue of utility terms. The main difference is the estimation backend: the current Delphos package generates and estimates models with Apollo.
 
-Choose the guide that best matches your profile.
+In both cases, the modelling logic is unchanged:
 
-**Choice Modellers**: Learn how to use pretrained Delphos agents for model specification.
+1. define alternatives, attributes, availability, and covariates;
+2. define the modelling space that may be explored;
+3. generate candidate utility specifications;
+4. estimate and diagnose a manageable shortlist; and
+5. use behavioural judgement and validation to select models for further work.
 
-1. [Getting Started](./choice_modellers/getting_started.md)
-2. [First application](./choice_modellers/first_application.md)
-3. [Understanding results](./choice_modellers/understanding_results.md)
-4. [Using catalogue datasets](./choice_modellers/catalogue_datasets.md)
-5. [Using your own datasets](./choice_modellers/own_datasets.md)
-6. [Custom objectives](./choice_modellers/custom_objectives.md)
-7. [Exporting results](./choice_modellers/exporting_results.md)
+## Project components
 
-**Researchers and ML Practitioners**: Learn how Delphos is trained, evaluated, and extended.
+| Component | Purpose | Availability |
+| --- | --- | --- |
+| `gnova3/Delphos` | Final-user inference and Apollo estimation package | Private until the first package release |
+| [Delphos single-task](https://github.com/gnova3/delphos-single-task) | Paper 1 implementation and experiments | Public |
+| `gnova3/Delphos-training` | Multitask training, transfer, and Paper 2 experiments | Private until Paper 2 release |
+| `TUD-CityAI-Lab/transport-choice-datasets` | Canonical data and aggregation schemas | Private during release preparation |
 
-1. [Getting started](./researchers/getting_started.md)
-2. [Delphos architecture](./researchers/architecture.md)
-3. [Task and Catalogue](./researchers/task_and_catalogue.md)
-4. [State representations](./researchers/state_representation.md)
-5. [Action space](./researchers/action_space.md)
-6. [Reward functions](./researchers/reward_functions.md)
-7. [Apollo integration](./researchers/apollo_integration.md)
-8. [Training pipeline](./researchers/training_pipeline.md)
-9. [Inference and transfer](./researchers/inference_and_transfer.md)
-10. [Adding new datasets](./researchers/adding_new_datasets.md)
-11. [Adding new rewards](./researchers/adding_new_rewards.md)
-12. [Extending the framework](./researchers/extending_framework.md)
-
----
-
-## Citation
-
-If you use Delphos, please cite the corresponding repositories and associated publications.
-
-### Publications
-
-```bibtex
-@misc{nova2026delphos,
-  title={Delphos: A reinforcement learning framework for assisting discrete choice model specification},
-  author={Nova, Gabriel and Hess, Stephane and van Cranenburgh, Sander},
-  year={2026},
-  note={SSRN working paper},
-  doi={10.2139/ssrn.6430865},
-  url={https://ssrn.com/abstract=6430865}
-}
-
-@techreport{nova2026sharing,
-  title={Sharing modelling decisions across assisted choice model specification tasks},
-  author={Nova, Gabriel and Hess, Stephane and van Cranenburgh, Sander},
-  year={2026},
-  institution={TU Delft},
-  note={Working paper}
-}
-```
+See [Papers and Reproducibility](research/papers.md) for citations and the repository associated with each paper.

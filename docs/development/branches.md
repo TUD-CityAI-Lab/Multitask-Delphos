@@ -1,29 +1,30 @@
 # Branching Strategy
 
-The Delphos repositories follow a standardized branching strategy to ensure stable releases while allowing active research and development.
+Delphos uses a simple GitHub flow in each repository.
 
-## Main Branches
+## Permanent branch
 
-- **`main`**: The primary, stable branch. Contains code that has been tested and is considered stable. This branch corresponds to the current release versions.
-- **`develop`**: The integration branch for new features and research experiments. All feature branches merge into `develop` before eventually being merged into `main` for a release.
+`main` is the protected integration and release branch. It should remain buildable and should receive changes through reviewed pull requests once branch protection is enabled.
 
-## Supporting Branches
+## Short-lived branches
 
-- **`feature/<feature-name>`**: Used for developing new features or conducting new experiments. Branched from `develop` and merged back into `develop`.
-- **`bugfix/<bug-name>`**: Used to fix non-critical bugs found in `develop`.
-- **`hotfix/<bug-name>`**: Used to quickly patch critical issues in `main`. Merged into both `main` and `develop`.
-- **`docs/<doc-updates>`**: For updates that strictly modify documentation.
+- `feature/<topic>` for user-facing or architectural additions;
+- `fix/<topic>` for defects;
+- `docs/<topic>` for documentation and notebooks; and
+- `research/<topic>` for bounded experimental work intended for a research component.
 
-## Example Workflow
+Branch from the current `main`, keep the branch focused, and delete it after merge. Release tags—not long-lived release branches—identify immutable versions used by papers and packages.
 
-```bash
-# Create a new feature branch from develop
-git checkout develop
-git pull origin develop
-git checkout -b feature/new-reward-function
+## Component and umbrella branches are independent
 
-# ... Make changes and commit ...
+A branch inside `components/delphos-training` belongs to the training repository. A branch at the umbrella root belongs to `Multitask-Delphos`. They do not share commits.
 
-# Push and create a Pull Request to develop
-git push origin feature/new-reward-function
-```
+When work changes a component and its umbrella pin:
+
+1. merge and push the component change;
+2. check out the approved component commit in the umbrella;
+3. create an umbrella branch;
+4. commit the changed submodule pointer; and
+5. open a separate umbrella pull request.
+
+Never point the umbrella at an unpublished local component commit: collaborators and automation cannot retrieve it.

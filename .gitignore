@@ -1,5 +1,6 @@
 # Generated documentation
 site/
+.cache/mkdocs-jupyter/
 
 # Operating-system metadata
 .DS_Store

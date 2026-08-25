@@ -8,11 +8,19 @@ on:
       - "docs/**"
       - "mkdocs.yml"
       - "requirements-docs.txt"
+      - "scripts/check_documentation_links.py"
+      - "scripts/check_tutorial_sync.py"
+      - "scripts/tutorial_manifest.json"
+      - "components/delphos"
+      - "components/delphos-training"
       - ".github/workflows/documentation-deploy.yml"
   workflow_dispatch:
 
 permissions:
   contents: read
+
+env:
+  JUPYTER_PLATFORM_DIRS: "1"
 
 concurrency:
   group: github-pages
@@ -35,6 +43,12 @@ jobs:
 
       - name: Install documentation dependencies
         run: python -m pip install --requirement requirements-docs.txt
+
+      - name: Verify tutorial sources
+        run: python scripts/check_tutorial_sync.py
+
+      - name: Check documentation links
+        run: python scripts/check_documentation_links.py
 
       - name: Build documentation
         run: mkdocs build --strict

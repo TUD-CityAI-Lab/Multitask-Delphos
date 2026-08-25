@@ -1,46 +1,96 @@
-# Dataset Format
+# Dataset Schema Reference
 
-To use your own dataset with Delphos, you need to provide a dataset in the correct format, as well as its dataset schema in a .yaml file.
+Every task folder contains `dataset.yaml` and the referenced CSV. The YAML is designed to be readable, reviewable, and version controlled.
 
-## Dataset schema
+## Complete example
 
-A valid schema must define:
+```yaml
+id: id
+choice: choice
+panel: false
 
-1. **`alternatives`**: The names of the alternatives in the choice set.
-2. **`choice_var`**: The column name representing the chosen alternative.
-3. **`availabilities`**: A mapping from alternative names to their availability columns.
-4. **`variables`**: A list of attributes, their types (e.g., continuous, categorical), and which alternatives they apply to.
+alternatives:
+  CAR:
+    id: 1
+    avail: av_car
+  BUS:
+    id: 2
+    avail: av_bus
 
-## Example JSON Schema
+attributes:
+  time:
+    id: 2
+    mapping:
+      CAR: tt_car
+      BUS: tt_bus
+  cost:
+    id: 3
+    mapping:
+      CAR: cost_car
+      BUS: cost_bus
 
-```json
-{
-  "name": "simple_mode_choice",
-  "choice_var": "choice",
-  "alternatives": ["car", "bus"],
-  "availabilities": {
-    "car": "av_car",
-    "bus": "av_bus"
-  },
-  "variables": [
-    {
-      "name": "time",
-      "type": "continuous",
-      "applies_to": ["car", "bus"],
-      "columns": { "car": "time_car", "bus": "time_bus" }
-    },
-    {
-      "name": "cost",
-      "type": "continuous",
-      "applies_to": ["car", "bus"],
-      "columns": { "car": "cost_car", "bus": "cost_bus" }
-    },
-    {
-      "name": "income",
-      "type": "continuous",
-      "applies_to": ["all"],
-      "columns": { "all": "income" }
-    }
-  ]
-}
+covariates:
+  income:
+    id: 2
+    source: income
+    type: categorical
+    levels: [1, 2, 3, 4]
+
+path_choice_dataset: mode_choice.csv
+rewards_path: rewards
+ll_null: -1250.4
+ll_linear: -980.2
+n_obs: 1500
+df_name: MyModeChoice
 ```
+
+## Top-level fields
+
+| Field | Required | Meaning |
+| --- | --- | --- |
+| `id` | Yes | Decision-maker or panel identifier column |
+| `choice` | Yes | Observed-choice column |
+| `panel` | Yes | Whether observations form panel data |
+| `alternatives` | Yes | Choice codes and availability columns |
+| `attributes` | Yes | Global attribute concepts and alternative-specific CSV mappings |
+| `covariates` | No | Variables available for systematic taste heterogeneity |
+| `path_choice_dataset` | Yes | CSV path relative to the YAML file unless absolute |
+| `ll_null` | Recommended | Null-model benchmark log-likelihood used by rewards |
+| `ll_linear` | Recommended | Linear-additive benchmark log-likelihood |
+| `n_obs` | Recommended | Number of observations used by benchmark calculations |
+| `df_name` | Yes | Human-readable task name |
+
+## Alternative entries
+
+- `id` must be unique and match the observed choice code.
+- `avail` names a binary availability column. Omit it only when the alternative is always available.
+- the alternative key must match the keys used in every attribute mapping.
+
+## Attribute entries
+
+- `id` is the global modelling-concept identifier;
+- `mapping` connects alternative names to CSV columns; and
+- an attribute may be unavailable for some alternatives, in which case omit that alternative from its mapping.
+
+Alternative-specific constants are inserted automatically as `ASC` with global attribute identifier 1.
+
+## Covariate entries
+
+- `id` is the global covariate identifier, or `null` if the variable is retained only as dataset metadata;
+- `source` names the CSV column;
+- `type` documents the intended coding; and
+- `levels` enumerates the categories available for interactions.
+
+## Validation
+
+```python
+import yaml
+import delphos as dp
+
+with open("dataset.yaml", encoding="utf-8") as stream:
+    schema = yaml.safe_load(stream)
+
+dp.validate_dataset_config(schema, "mode_choice.csv")
+```
+
+Validation checks that required columns exist and that alternative, attribute, and non-null covariate identifiers are unique. It does not replace substantive data validation.

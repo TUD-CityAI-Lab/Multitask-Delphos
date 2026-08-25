@@ -1,90 +1,110 @@
----
-hide:
-  - toc
----
-
 # First Application
 
-In this tutorial, we use a pretrained Delphos agent to generate candidate utility specifications for the Swissmetro dataset. The goal is to demonstrate the complete workflow:
+This walkthrough uses a trained Delphos agent to propose utility specifications for the bundled Swissmetro task. You will generate candidates first, inspect the Apollo representation, and then decide whether to estimate them.
 
-1. Load a pretrained agent.
-2. Load a dataset from the catalogue.
-3. Generate candidate specifications.
-4. Inspect the proposed models.
-5. Visualise the trade-off between model performance and complexity.
-
----
-
-!!! example "Step 1: Import Delphos"
+## 1. Import Delphos
 
 ```python
-
-from delphos import Delphos
-
+import delphos as dp
 ```
 
-!!! example "Step 2: Load a pretrained agent"
+The final-user API is available directly from the `delphos` package. Internal training classes are deliberately kept out of this workflow.
 
-Delphos provides pretrained agents that have learned model specification strategies from previous choice modelling tasks. For now, Delphos is specialised for transport applications, so we load the pretrained transport agent.
+## 2. See the available datasets
 
 ```python
-
-agent = Delphos.load_pretrained("transport")
-
+for dataset in dp.list_datasets():
+    print(dataset.id, dataset.name)
 ```
 
-You can inspect the agent:
+Load Swissmetro by name:
 
 ```python
+task = dp.load_dataset("Swissmetro")
 
-print(agent)
-
+print(task.name)
+print([alternative.name for alternative in task.alternatives])
+print([attribute.name for attribute in task.attributes])
 ```
 
-!!! example "Step 3: Load a dataset"
+For an Apollo user, `task` contains the information normally used to build `apollo_control`, the availability list, and utility-variable mappings. For a Biogeme user, it plays a role similar to the database description plus the catalogue of expressions that may enter the utilities.
 
-For this example, we use the Swissmetro dataset.
+## 3. Load the trained agent
 
 ```python
-
-dataset = Delphos.load_dataset("swissmetro")
-
+model = dp.load_agent(device="cpu")
 ```
 
-Inspect the dataset:
+`model` combines the trained policy with the global catalogue used during training. A custom checkpoint can be supplied with `dp.load_agent(checkpoint="path/to/checkpoint.pt")`.
+
+## 4. Generate a small candidate set
 
 ```python
+proposals = model.propose(
+    task,
+    n_models=10,
+    max_attempts=100,
+    strategy="topk",
+    top_k=5,
+    seed=123,
+)
 
-print(dataset)
-
+proposal_table = proposals.to_dataframe()
+print(proposal_table.head())
 ```
 
-!!! example "Step 4: Generate candidate specifications"
+The proposal-only workflow is the recommended starting point. It lets you review what the policy generated without paying the cost of ten Apollo estimations.
 
-Apply the pretrained agent to the dataset. The agent will iteratively propose utility specifications and estimate the corresponding choice models.
+## 5. Read a proposed specification
 
 ```python
+proposal = proposals.proposals[0]
 
-results = agent.inference(dataset=dataset, num_specifications=100)
-
+print("Specification key:", proposal.specification_key)
+print("Number of terms:", len(proposal.terms))
+print("Actions taken:", proposal.action_indices)
 ```
 
-The `num_specifications` controls how many alternative utility specifications are proposed by Delphos. Larger values typically produce a wider range of candidate specifications but require more computation time.
-
-!!! example "Step 5: Inspect the Pareto front"
-
-You can inspect the Pareto front using the `plot_pareto_front()` method, which returns a dataframe with the candidate specifications and their associated model performance metrics. It shows the trade-offs between model performance (Log-likelihood) and model complexity (Number of parameters).
+Inspect the generated Apollo object:
 
 ```python
-results.plot_pareto_front()
+apollo_spec = proposal.apollo_specification
+
+print(apollo_spec.summary())
+print(apollo_spec.utility_code)
+print(apollo_spec.probability_code)
 ```
 
-<iframe src="../../assets/pareto_front.html" width="100%" height="700px" frameborder="0"></iframe>
+The specification key is a stable encoded representation used by Delphos for caching and comparison. The generated R code is the modeller-facing representation: read it as you would read an Apollo model file.
 
-Each point represents a candidate specification. You can use this plot to identify candidate specifications that offer an optimal trade-off between model performance and complexity. For example, the top-left corner of the plot shows the model with the lowest number of parameters and the highest log-likelihood, while the bottom-right corner shows the model with the highest number of parameters and the lowest log-likelihood.
+## 6. Estimate only when ready
 
----
+If R and Apollo are installed, estimate the candidate set:
 
-## Next Step
+```python
+proposals.estimate(
+    task,
+    info=True,
+    save=False,
+    max_free_parameters=30,
+)
 
-Continue to [Understanding Results](./understanding_results.md) to learn how to interpret the specifications generated by Delphos.
+estimated = proposals.to_dataframe()
+print(estimated[["specification_key", "LLout", "AIC", "BIC", "reward"]])
+```
+
+`max_free_parameters` prevents unexpectedly large models from reaching Apollo. Start with a conservative value and raise it deliberately.
+
+!!! warning "Estimation can be expensive"
+
+    Each uncached proposal is a separate Apollo estimation. Test one or two proposals before launching a larger run, particularly when Box–Cox terms or many interactions are allowed.
+
+## 7. Save a first shortlist
+
+```python
+estimated.to_csv("swissmetro_delphos_candidates.csv", index=False)
+```
+
+The CSV records the search metadata and the available Apollo results. The next step is not simply to choose the highest likelihood: inspect convergence, parameter count, signs, uncertainty, identification, and the purpose of the model.
+
+Continue to [Understand Proposals and Results](understanding_results.md).

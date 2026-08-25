@@ -1,28 +1,49 @@
 # Contribution Workflow
 
-We welcome contributions to Delphos! Whether you are adding new features, fixing bugs, or improving documentation, please follow this workflow.
+## 1. Identify the owner
 
-## 1. Open an Issue
-Before writing any code, check the issue tracker to see if your idea is already being worked on. If not, open a new issue describing the bug you found or the feature you want to add.
+Use the [component table](index.md) to choose the repository that owns the change. Open a component independently for focused work, or clone the umbrella when a change must be coordinated across repositories.
 
-## 2. Setup your Development Environment
-Clone the repository and its submodules. Create a virtual environment and install the development requirements.
+Check existing issues before starting a substantial feature. Open an issue when the intended behaviour or repository ownership needs discussion.
 
-## 3. Create a Branch
-Following our [Branching Strategy](branches.md), create a new branch for your work.
+## 2. Start from an up-to-date `main`
+
+Create a short-lived branch in the owning repository:
+
 ```bash
-git checkout -b feature/my-awesome-contribution develop
+git switch main
+git pull --ff-only
+git switch -c docs/clearer-dataset-guide
 ```
 
-## 4. Make Changes
-Write your code, ensuring you follow existing style conventions. Write tests for your new features.
+Use a descriptive prefix such as `feature/`, `fix/`, `docs/`, or `research/`. A permanent `develop` branch is not required.
 
-## 5. Commit and Push
-Commit your changes with clear, descriptive commit messages.
+## 3. Make and verify the change
+
+Keep changes focused. Run the component’s documented tests and any checks specific to the files you touched. For user-facing behaviour, update the relevant example or notebook in the same component.
+
+Documentation changes should pass:
+
 ```bash
-git commit -m "Add new reward function for convergence speed"
-git push origin feature/my-awesome-contribution
+python scripts/check_tutorial_sync.py
+python scripts/check_documentation_links.py
+mkdocs build --strict
 ```
 
-## 6. Open a Pull Request
-Open a Pull Request (PR) against the `develop` branch. Link the PR to the issue you opened in Step 1. A maintainer will review your code.
+## 4. Commit and open a pull request
+
+Write a commit message that describes the outcome, push the branch, and open a pull request into `main`:
+
+```bash
+git add <changed-files>
+git commit -m "Clarify custom dataset validation"
+git push --set-upstream origin docs/clearer-dataset-guide
+```
+
+The pull request should explain the modelling or software problem, the chosen change, verification performed, and any effect on APIs, data, checkpoints, or reproduction results.
+
+## 5. Update the umbrella only after approval
+
+When a component pull request is merged, the umbrella still points to the previous approved commit. Update its submodule pointer in a separate umbrella change and confirm that the documentation and cross-component checks pass.
+
+This creates two reviewable facts: the component change itself, and the decision that the umbrella now coordinates that version.

@@ -1,0 +1,32 @@
+{
+  "components/delphos": {
+    "commit": "ed4d5e3e8702c12246dd60407c23eb3908c4efd6",
+    "source": "tutorials",
+    "published": "docs/tutorials/end-user",
+    "notebooks": {
+      "01_getting_started.ipynb": "071b0867d83c3ba7f4f0f75c2d417f76b0b29d3868f250427545cf83b5fd4ba8",
+      "02_your_own_datasets.ipynb": "ea230a58ebdcf2c641cdd7e31503a3cd83790f87832569516c1725507d4e57a4",
+      "03_modelling_space.ipynb": "c16cb493a11f5284bd0a57dcb0afa585c186731d4caa533e21b728d762736f06",
+      "04_delphos_parameters.ipynb": "dc67c4e19641df6c0251f50c1c6f27e9591b8d76f7997183985c117e0ba3404d",
+      "05_reward_function.ipynb": "f65e32b23f018f504f577feaa9b10707d4662255c470d0b01d59bfdb270cdddb",
+      "06_quick_results.ipynb": "6d6ad37d9674b8250be1c36e1f02be94029d15400eee7c9d5224f6f1d4d80047",
+      "07_robust_results.ipynb": "158d4ff0abf876087effd7a2e86f9142882f6827350960f71d031457752d8c2b",
+      "08_environment_and_outputs.ipynb": "9fa60c85207f0d8fa5a77a7f94404017e263fb27eaf87053c29e56ab5de827bc"
+    }
+  },
+  "components/delphos-training": {
+    "commit": "597215c001967761c237b54e9b4dbc3c7bb448c2",
+    "source": "tutorials",
+    "published": "docs/tutorials/research",
+    "notebooks": {
+      "01_task.ipynb": "8ea0988767a9b87bcc6239faa2d37e6fc2c749cd21a800dd236e52ccea7d8b7d",
+      "02_state.ipynb": "079b0c7a2f704cce2222fdf22bc6181f0cea5df5794a6fa06fbc88c5070cd716",
+      "03_action.ipynb": "cc38a4be006f29828ad4cb5c683f04030a80cbf2c240abd4fc61d70807e4191e",
+      "04_apollo_generator.ipynb": "941f9691e3a610b45574c01eb569177836578c644829bb87ddae4261b2edcd73",
+      "05_apollo_estimator.ipynb": "fac71205c0a14b36ae34f99c7d87dca93d63e14c68293140b04d05bcc58fb4ab",
+      "06_results_cache.ipynb": "c4bc52a18137e97f88d43d0b029c09715d455ef94f3a32a7cde7c9d49e092d2d",
+      "07_environment.ipynb": "dd993a024c5f99589f9953e5530c44b967dfca1a3b615fec9bd6289b71ca0f9c",
+      "08_testing.ipynb": "a322dc791df64257261ef9638c2f78d4a8931c4909b672a42c0fa8208fdb8c48"
+    }
+  }
+}

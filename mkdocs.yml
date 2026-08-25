@@ -14,65 +14,36 @@ nav:
   - Home: index.md
 
   - Start Here:
-      - Overview: getting_started/overview.md
+      - What Delphos Does: getting_started/overview.md
       - Installation: getting_started/installation.md
       - Quickstart: getting_started/quickstart.md
-      - First Example: getting_started/first_example.md
+      - First Application: choice_modellers/first_application.md
 
   - User Guide:
       - Overview: user-guide/index.md
-      - Choice Modellers:
-          - Getting Started: choice_modellers/getting_started.md
-          - First Application: choice_modellers/first_application.md
-          - Understanding Results: choice_modellers/understanding_results.md
-          - Using Catalogue Datasets: choice_modellers/catalogue_datasets.md
-          - Using Your Own Datasets: choice_modellers/own_datasets.md
-          - Custom Objectives: choice_modellers/custom_objectives.md
-          - Exporting Results: choice_modellers/exporting_results.md
-      - Inference Modes:
-          - Overview: inference/overview.md
-          - Zero-Shot: inference/zero_shot.md
-          - Few-Shot: inference/few_shot.md
-          - Training From Scratch: inference/from_scratch.md
-      - Tutorials:
-          - Overview: tutorials/notebooks.md
-          - 01. Getting Started: tutorials/01_getting_started.md
-          - 02. Datasets and User Data: tutorials/02_datasets_and_user_data.md
-          - 02. Your Own Datasets: tutorials/02_your_own_datasets.md
-          - 03. Modelling Space: tutorials/03_modelling_space.md
-          - 04. Delphos Parameters: tutorials/04_delphos_parameters.md
-          - 05. Reward Function: tutorials/05_reward_function.md
-          - 06. Quick Results: tutorials/06_quick_results.md
-          - 07. Robust Results: tutorials/07_robust_results.md
-          - 08. Environment and Outputs: tutorials/08_environment_and_outputs.md
+      - Understand Proposals and Results: choice_modellers/understanding_results.md
+      - Control the Modelling Space: user-guide/modelling-space.md
+      - Search Strategies and Parameters: user-guide/search-strategies.md
+      - Estimate with Apollo: user-guide/apollo-estimation.md
+      - Rank Candidate Models: choice_modellers/custom_objectives.md
+      - Export Results: choice_modellers/exporting_results.md
 
   - Datasets:
       - Overview: datasets/overview.md
-      - Usage: datasets/usage.md
-      - Example: datasets/example.md
-      - Format: datasets/dataset_format.md
+      - Catalogue Datasets: datasets/catalogue.md
+      - Use Your Own Dataset: datasets/own-data.md
+      - Schema Reference: datasets/dataset_format.md
+      - Dataset Repository: datasets/repository.md
 
   - Research & Papers:
       - Overview: research/index.md
       - Papers and Reproducibility: research/papers.md
-      - Reinforcement Learning:
-          - Overview: reinforcement_learning/overview.md
-          - Rewards: reinforcement_learning/rewards.md
-          - Training: reinforcement_learning/training.md
-          - Transfer Learning: reinforcement_learning/transfer_learning.md
-      - Researcher Guide:
-          - Getting Started: researchers/getting_started.md
-          - Delphos Architecture: researchers/architecture.md
-          - Task and Catalogue: researchers/task_and_catalogue.md
-          - State Representations: researchers/state_representation.md
-          - Action Space: researchers/action_space.md
-          - Reward Functions: researchers/reward_functions.md
-          - Apollo Integration: researchers/apollo_integration.md
-          - Training Pipeline: researchers/training_pipeline.md
-          - Inference and Transfer: researchers/inference_and_transfer.md
-          - Adding New Datasets: researchers/adding_new_datasets.md
-          - Adding New Rewards: researchers/adding_new_rewards.md
-          - Extending the Framework: researchers/extending_framework.md
+      - Framework Architecture: research/framework.md
+      - MDP Formulation: research/mdp.md
+      - Tasks and the Global Catalogue: research/task-and-catalogue.md
+      - Multitask Training: research/training.md
+      - Transfer and Evaluation: research/transfer.md
+      - Apollo Estimation Environment: research/apollo-environment.md
 
   - Development:
       - Overview: development/index.md
@@ -80,6 +51,27 @@ nav:
       - Contribution Workflow: development/contribution_workflow.md
       - Branching Strategy: development/branches.md
       - Documentation: development/documentation.md
+
+  - Tutorials:
+      - Tutorial Library: tutorials/index.md
+      - Final-user Notebooks:
+          - 01. Getting Started: tutorials/end-user/01_getting_started.ipynb
+          - 02. Your Own Datasets: tutorials/end-user/02_your_own_datasets.ipynb
+          - 03. Modelling Space: tutorials/end-user/03_modelling_space.ipynb
+          - 04. Search Parameters: tutorials/end-user/04_delphos_parameters.ipynb
+          - 05. Reward and Ranking: tutorials/end-user/05_reward_function.ipynb
+          - 06. Quick Results: tutorials/end-user/06_quick_results.ipynb
+          - 07. Robust Results: tutorials/end-user/07_robust_results.ipynb
+          - 08. Apollo and Outputs: tutorials/end-user/08_environment_and_outputs.ipynb
+      - Research Notebooks:
+          - 01. Task Representation: tutorials/research/01_task.ipynb
+          - 02. State Representation: tutorials/research/02_state.ipynb
+          - 03. Action Space: tutorials/research/03_action.ipynb
+          - 04. Apollo Generator: tutorials/research/04_apollo_generator.ipynb
+          - 05. Apollo Estimator: tutorials/research/05_apollo_estimator.ipynb
+          - 06. Results Cache: tutorials/research/06_results_cache.ipynb
+          - 07. Environment: tutorials/research/07_environment.ipynb
+          - 08. Integration Tests: tutorials/research/08_testing.ipynb
 
 repo_url: https://github.com/TUD-CityAI-Lab/Multitask-Delphos
 repo_name: Multitask-Delphos
@@ -103,3 +95,9 @@ markdown_extensions:
 
 extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true

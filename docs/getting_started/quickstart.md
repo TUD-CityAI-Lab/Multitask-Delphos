@@ -1,27 +1,45 @@
 # Quickstart
 
-If you just want to see Delphos in action as quickly as possible, here is the minimal code required to load a pre-trained agent and generate specifications for a dataset.
-
-## The Minimal Example
+This example loads the bundled Swissmetro task and generates five utility specifications. It does **not** run Apollo estimation.
 
 ```python
-import pandas as pd
-from delphos import DelphosAgent, DatasetSchema
+import delphos as dp
 
-# 1. Load your dataset and schema
-dataset = pd.read_csv("my_transport_data.csv")
-schema = DatasetSchema.from_json("schema.json")
+model = dp.load_agent()
+task = dp.load_dataset("Swissmetro")
 
-# 2. Load the pre-trained agent
-agent = DelphosAgent.load_pretrained("multitask_v1")
-
-# 3. Generate specifications
-pareto_front = agent.generate_specifications(
-    dataset=dataset,
-    schema=schema,
-    n_specs=10
+proposals = model.propose(
+    task,
+    n_models=5,
+    max_attempts=50,
+    strategy="topk",
+    seed=123,
 )
 
-# 4. View results
-print(pareto_front.summary())
+summary = proposals.to_dataframe()
+print(summary[
+    ["specification_key", "n_terms", "episode_length", "search_strategy"]
+])
 ```
+
+Inspect the first generated Apollo specification:
+
+```python
+proposal = proposals.proposals[0]
+
+print(proposal.apollo_specification.summary())
+print(proposal.apollo_specification.utility_code)
+```
+
+At this stage:
+
+- `proposal.terms` contains the structured modelling terms;
+- `utility_code` contains the generated Apollo utility definitions;
+- `probability_code` contains the generated `apollo_probabilities` function; and
+- `summary` contains one row per unique proposal.
+
+!!! tip "Start without estimation"
+
+    Proposal-only runs are fast and make it easier to understand the grammar. Enable Apollo estimation only after the task and generated utility code look correct.
+
+Continue to the [First Application](../choice_modellers/first_application.md) for a complete modeller-facing workflow.

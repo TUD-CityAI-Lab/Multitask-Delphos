@@ -1,153 +1,66 @@
----
-hide:
-  - toc
----
+# Rank Candidate Models
 
-# Custom Objectives
+The trained agent uses the reward defined during training. Final users normally do not change that training reward. Instead, define a transparent ranking rule after Apollo estimation and use it to create a shortlist.
 
-One of the main advantages of Delphos is that it allows users to define what constitutes a "good" model. Traditional model specification procedures often optimise a single criterion, such as log-likelihood, AIC, or BIC. However, in practice, choice modellers frequently consider multiple objectives simultaneously:
-
-- Model performance.
-- Model complexity.
-- Behavioural plausibility.
-
-Delphos allows users to define their own objective function, referred to as the reward function.
-
----
-
-## What is a reward function?
-
-The reward function assigns a score to each model specification after estimation, which is used to train the agent's behaviour. Conceptually, a higher reward corresponds to a more desirable model specification.
-
-Let's start by examining the default reward function used in training. It measures the improvement of a candidate specification relative to a baseline model. Formally,
+## Start from valid estimations
 
 ```python
-reward = tanh((LL_candidate - LL_linear) / N)
+results = proposals.to_dataframe()
+
+valid = results[
+    (results["successfulEstimation"] == 1)
+    & (results["skipped"] == 0)
+].copy()
 ```
 
-where: `LL_candidate` is the log-likelihood of the candidate specification; `LL_linear` is the log-likelihood of the linear additive model; and `N` is the number of observations. The `tanh` function is used to scale the reward to a range of `(-1, 1)`. This formulation thus encourages Delphos to propose specifications that improve model performance relative to a linear additive model.
-
-## Understanding the Inputs
-
-Every reward function receives two inputs:
+## A simple statistical ranking
 
 ```python
-reward_function(task, modelling_outcome)
-```
+valid["delta_bic_from_best"] = valid["BIC"] - valid["BIC"].min()
 
-where `task` is an object containing information about the modelling task, and `modelling_outcome` is the estimation results for the candidate specification.
-
-!!! example "Step 1: Inspecting the Task"
-
-The task contains benchmark information.
-
-```python
-print(task.ll_null)
-# Example output:
--15234.6
-
-print(task.ll_linear)
-# Example output:
--13450.1
-
-print(task.n_obs)
-# Example output:
-10719
-```
-
-!!! example "Step 2: Inspecting modelling outcomes"
-
-The modelling outcome is stored as a pandas dataframe.
-
-```python
-print(modelling_outcome.columns)
-
-# Example output:
-["LLout", "rho2_0", "adjRho2_0", "AIC", "BIC", "nFreeParams", "successfulEstimation"]
-```
-
-You can access any metric directly:
-
-```python
-modelling_outcome["adjRho2_0"].iloc[0]
-```
-
----
-
-## Define a Custom Reward Function
-
-Let's define a custom reward function that optimises adjusted McFadden's Rho-Square.
-
-!!! example "Step 1: Define a Custom Reward Function"
-
-```python
-def reward_function(task, modelling_outcome):
-    if modelling_outcome.empty:
-        return -1.0
-    r = modelling_outcome["adjRho2_0"].iloc[0]
-    return float(tanh(r))
-```
-
-In this case, Delphos will prioritise specifications with high adjusted pseudo-R² values.
-
-Some practitioners prefer parsimonious models. A common approach to favour parsimonious models is to penalise the number of free parameters. Let's define a reward function that optimises the Bayesian Information Criterion (BIC).
-
-!!! example "Step 2: Optimising BIC"
-
-```python
-def reward_function(task, modelling_outcome):
-    if modelling_outcome.empty:
-        return -1.0
-    r = (modelling_outcome["BIC"].iloc[0])/task.n_obs
-    return float(tanh(r))
-```
-
-Now, suppose you want to discourage overly complex model specifications. You can do this by penalising the number of free parameters.
-
-!!! example "Step 3: Penalising Complex Models"
-
-```python
-def reward_function(task, modelling_outcome):
-    if modelling_outcome.empty:
-        return -1.0
-    LL = modelling_outcome["LLout"].iloc[0]
-    complexity = modelling_outcome["nFreeParams"].iloc[0]
-    r = (LL - 0.01 * complexity)/task.n_obs
-    return float(tanh(r))
-```
-
-Some modellers might also want to encourage models that align with stablished behavioural assumptions. For instance, we can provide a high penalty for specifications in which sensitive for travel time is positive.
-
-```python
-def reward_function(task, modelling_outcome):
-    if modelling_outcome.empty:
-        return -1.0
-
-    check_sign = modelling_outcome["b_time"].iloc[0] > 0
-    if check_sign:
-        return -1.0
-
-    LLout = modelling_outcome["LLout"].iloc[0]
-    r = (LLout - task.LL_linear)/task.n_obs
-    return float(tanh(r))
-```
-
-## Using a Custom Reward Function
-
-Once defined, the reward function can be passed directly to Delphos.
-
-```python
-results = agent.inference(
-    dataset=task,
-    reward_function=reward_function,
-    num_specifications=500
+ranked = valid.sort_values(
+    ["BIC", "nFreeParams", "vcHessianConditionNumber"]
 )
 ```
 
-Delphos will evaluate every candidate specification using the user-defined objective. The reward function represents the modeller's preferences and ultimately determines which specifications Delphos will favour.
+This gives priority to BIC, then to parsimony and numerical stability. It is a screening rule, not a behavioural decision rule.
 
----
+## Add modeller-defined checks
 
-## Next Step
+Create explicit columns for the judgements that matter in your application:
 
-Continue to [Exporting Results](exporting_results.md) to learn how to save, compare, and report the specifications generated by Delphos.
+```python
+ranked["expected_signs"] = False
+ranked["parameters_identified"] = False
+ranked["policy_interpretable"] = False
+ranked["validated_out_of_sample"] = False
+ranked["modeller_notes"] = ""
+```
+
+Populate these columns after reading the full Apollo outputs. A candidate should not become a preferred model only because it performs well on an automated scalar score.
+
+## Example composite score
+
+If a scalar score is useful for sorting, make its assumptions visible:
+
+```python
+import numpy as np
+
+ranked["selection_score"] = (
+    -ranked["BIC"]
+    - 2.0 * ranked["nFreeParams"]
+    - np.log1p(ranked["vcHessianConditionNumber"].clip(lower=0))
+    + 25.0 * ranked["expected_signs"].astype(int)
+    + 25.0 * ranked["parameters_identified"].astype(int)
+)
+
+ranked = ranked.sort_values("selection_score", ascending=False)
+```
+
+The weights above are illustrative. Report and justify any weights used in your own analysis.
+
+## Training rewards belong in the research package
+
+Changing the reward that teaches the policy is a different operation: it requires training or fine-tuning machinery from `delphos-training`. Use the [Research & Papers](../research/index.md) section if your objective is to study alternative RL rewards rather than rank final-user results.
+
+Continue to [Export Results](exporting_results.md).

@@ -1,15 +1,16 @@
 # Contributing to Delphos
 
-Thank you for your interest in contributing to Delphos! 
+Thank you for contributing. Delphos is split across independently versioned repositories, so first identify the component that owns the proposed change.
 
-Please refer to our full **[Development Documentation](https://tud-cityai-lab.github.io/Multitask-Delphos/development/contribution_workflow/)** for detailed information on:
+## Quick workflow
 
-1. [Branching Strategy](https://tud-cityai-lab.github.io/Multitask-Delphos/development/branches/)
-2. [Contribution Workflow](https://tud-cityai-lab.github.io/Multitask-Delphos/development/contribution_workflow/)
-3. [Managing Components](https://tud-cityai-lab.github.io/Multitask-Delphos/development/components/)
+1. Read the [component ownership guide](https://tud-cityai-lab.github.io/Multitask-Delphos/development/).
+2. Check or open an issue for substantial changes.
+3. Branch from the owning repository’s current `main`.
+4. Make a focused change and run that component’s tests.
+5. Open a pull request into `main` with the verification results.
+6. Update the umbrella pin only after the component commit is approved and pushed.
 
-## Quick Summary
+The repositories use a simple GitHub flow; there is no required permanent `develop` branch. See the [contribution workflow](https://tud-cityai-lab.github.io/Multitask-Delphos/development/contribution_workflow/) and [branching strategy](https://tud-cityai-lab.github.io/Multitask-Delphos/development/branches/) for details.
 
-- Delphos uses submodules. Ensure you clone with `--recurse-submodules`.
-- All features should branch from `develop`.
-- Please open an issue before starting major work.
+For documentation or notebooks, also read the [documentation guide](https://tud-cityai-lab.github.io/Multitask-Delphos/development/documentation/).
