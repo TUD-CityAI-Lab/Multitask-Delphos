@@ -15,6 +15,10 @@ nav:
 
   - Getting Started:
       - Getting Started: choice_modellers/getting_started.md
+      - 01. Getting Started: tutorials/01_getting_started.md
+      - 02. Datasets and User Data: tutorials/02_datasets_and_user_data.md
+      - 02. Your Own Datasets: tutorials/02_your_own_datasets.md
+      - 03. Modelling Space: tutorials/03_modelling_space.md
 
   - Choice Modellers:
       - Getting Started: choice_modellers/getting_started.md
@@ -24,6 +28,16 @@ nav:
       - Using Your Own Datasets: choice_modellers/own_datasets.md
       - Custom Objectives: choice_modellers/custom_objectives.md
       - Exporting Results: choice_modellers/exporting_results.md
+      - Tutorials:
+          - 01. Getting Started: tutorials/01_getting_started.md
+          - 02. Datasets and User Data: tutorials/02_datasets_and_user_data.md
+          - 02. Your Own Datasets: tutorials/02_your_own_datasets.md
+          - 03. Modelling Space: tutorials/03_modelling_space.md
+          - 04. Delphos Parameters: tutorials/04_delphos_parameters.md
+          - 05. Reward Function: tutorials/05_reward_function.md
+          - 06. Quick Results: tutorials/06_quick_results.md
+          - 07. Robust Results: tutorials/07_robust_results.md
+          - 08. Environment and Outputs: tutorials/08_environment_and_outputs.md
 
   - Datasets:
       - Overview: datasets/overview.md

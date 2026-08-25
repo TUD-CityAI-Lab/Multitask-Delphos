@@ -1,8 +1,10 @@
-# 06 - Quick results within about 20 minutes
+---
+hide:
+  - toc
+---
+# 06 - Quick results
 
 This recipe is for a first practical run. It keeps the modelling space small, proposes a modest number of models, and optionally estimates them with Apollo/R.
-
-The exact runtime depends on the dataset, machine, and Apollo convergence.
 
 
 ## 1. Quick-run settings
@@ -47,7 +49,7 @@ print("Covariates:", quick_task.covariate_names)
     Covariates: ()
 
 
-## 3. Generate a small candidate pool
+## 3. Generate specifications
 
 
 
@@ -60,327 +62,16 @@ models = agent.propose(
 )
 
 df = models.to_dataframe()
-df
-
-```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>task_id</th>
-      <th>task_name</th>
-      <th>specification_key</th>
-      <th>episode_length</th>
-      <th>search_strategy</th>
-      <th>attempt_found</th>
-      <th>estimated</th>
-      <th>reward</th>
-      <th>n_terms</th>
-      <th>action_indices</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2210_3210_4120_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>0</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 121, 225, 81, 33, 105, 113, 25, 65, 73]</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2220_3120_4210_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>1</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[17, 81, 25, 73, 33, 81, 113, 73, 65, 121]</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2220_3120_4210_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>2</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[73, 25, 81, 33, 225, 25, 113, 33, 65, 121]</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2220_3210_4210_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>3</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[17, 33, 25, 225, 17, 121, 25, 81, 33, 73]</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2220_3120_4110_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>5</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[17, 25, 225, 121, 33, 201, 81, 105, 73, 65]</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2220_3210_4110_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>6</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[73, 121, 25, 17, 33, 225, 25, 105, 201, 33]</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2120_3210_4110_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>7</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 121, 33, 81, 105, 65, 225, 25, 17, 73]</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2210_3120_4110_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>8</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 73, 17, 65, 81, 225, 33, 201, 65, 25]</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2220_3220_4120_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>12</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 33, 121, 81, 17, 105, 25, 33, 113, 225]</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2120_3220_4110_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>14</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 121, 17, 225, 81, 73, 105, 65, 81, 201]</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2210_3120_4120_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>17</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[81, 25, 33, 17, 225, 121, 25, 105, 113, 65]</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2210_3120_4210_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>18</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 17, 73, 225, 65, 201, 81, 25, 65, 121]</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2120_3120_4210_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>21</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[81, 17, 121, 73, 33, 25, 113, 17, 65, 121]</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2120_3220_4110_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>22</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 121, 73, 81, 225, 33, 113, 105, 25, 17]</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2210_3220_4120_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>23</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[73, 225, 25, 81, 33, 201, 17, 25, 113, 225]</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2210_3220_4210_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>25</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[33, 17, 225, 121, 73, 33, 105, 81, 121, 25]</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2210_3120_4120_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>26</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 33, 73, 121, 81, 113, 73, 65, 17, 25]</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2120_3210_4210_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>27</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[25, 33, 73, 121, 17, 81, 33, 225, 73, 17]</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2220_3220_4210_5000_6220_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>29</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[81, 73, 17, 225, 121, 33, 105, 65, 121, 81]</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>4</td>
-      <td>Swissmetro</td>
-      <td>1110_2120_3220_4210_5000_6110_7000</td>
-      <td>10</td>
-      <td>topk</td>
-      <td>30</td>
-      <td>False</td>
-      <td>None</td>
-      <td>5</td>
-      <td>[81, 17, 33, 25, 73, 121, 65, 81, 33, 17]</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-## 4. Optional estimation
-
-For a quick first run, cap model complexity with `max_free_parameters`. This protects you from accidentally estimating very large models.
-
-
-
-```python
 if RUN_ESTIMATION:
     models.estimate(
         quick_task,
-        max_free_parameters=25,
+        max_free_parameters=50,
         info=True,
         save=False,
     )
     df = models.to_dataframe()
-else:
-    print("Skipping Apollo/R estimation. Set RUN_ESTIMATION = True to estimate.")
 
 df.to_csv(OUTPUT_CSV, index=False)
 print(f"Saved results to {OUTPUT_CSV}")

@@ -64,3 +64,17 @@ If no errors are produced, Delphos has been successfully installed. The installe
 ## Next Steps
 
 Continue to the [First Application](./first_application.md) tutorial to run Delphos on a discrete choice dataset and generate your first utility specifications.
+
+## Interactive Tutorials
+
+The latest end-to-end Delphos tutorials from the submodule notebooks are available here:
+
+- [01. Getting Started](../tutorials/01_getting_started.md)
+- [02. Datasets and User Data](../tutorials/02_datasets_and_user_data.md)
+- [02. Your Own Datasets](../tutorials/02_your_own_datasets.md)
+- [03. Modelling Space](../tutorials/03_modelling_space.md)
+- [04. Delphos Parameters](../tutorials/04_delphos_parameters.md)
+- [05. Reward Function](../tutorials/05_reward_function.md)
+- [06. Quick Results](../tutorials/06_quick_results.md)
+- [07. Robust Results](../tutorials/07_robust_results.md)
+- [08. Environment and Outputs](../tutorials/08_environment_and_outputs.md)
