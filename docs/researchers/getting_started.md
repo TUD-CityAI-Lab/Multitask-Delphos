@@ -63,4 +63,4 @@ If no errors are produced, Delphos has been successfully installed. The installe
 
 ## Next Steps
 
-Continue to the [First Application](./first_application.md) tutorial to run Delphos on a discrete choice dataset and generate your first utility specifications.
+Continue to the [First Application](../choice_modellers/first_application.md) tutorial to run Delphos on a discrete choice dataset and generate your first utility specifications.

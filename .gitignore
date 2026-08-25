@@ -1,0 +1,5 @@
+# Generated documentation
+site/
+
+# Operating-system metadata
+.DS_Store

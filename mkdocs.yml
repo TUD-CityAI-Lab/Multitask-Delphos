@@ -13,22 +13,29 @@ theme:
 nav:
   - Home: index.md
 
-  - Getting Started:
-      - Getting Started: choice_modellers/getting_started.md
-      - 01. Getting Started: tutorials/01_getting_started.md
-      - 02. Datasets and User Data: tutorials/02_datasets_and_user_data.md
-      - 02. Your Own Datasets: tutorials/02_your_own_datasets.md
-      - 03. Modelling Space: tutorials/03_modelling_space.md
+  - Start Here:
+      - Overview: getting_started/overview.md
+      - Installation: getting_started/installation.md
+      - Quickstart: getting_started/quickstart.md
+      - First Example: getting_started/first_example.md
 
-  - Choice Modellers:
-      - Getting Started: choice_modellers/getting_started.md
-      - First Application: choice_modellers/first_application.md
-      - Understanding Results: choice_modellers/understanding_results.md
-      - Using Catalogue Datasets: choice_modellers/catalogue_datasets.md
-      - Using Your Own Datasets: choice_modellers/own_datasets.md
-      - Custom Objectives: choice_modellers/custom_objectives.md
-      - Exporting Results: choice_modellers/exporting_results.md
+  - User Guide:
+      - Overview: user-guide/index.md
+      - Choice Modellers:
+          - Getting Started: choice_modellers/getting_started.md
+          - First Application: choice_modellers/first_application.md
+          - Understanding Results: choice_modellers/understanding_results.md
+          - Using Catalogue Datasets: choice_modellers/catalogue_datasets.md
+          - Using Your Own Datasets: choice_modellers/own_datasets.md
+          - Custom Objectives: choice_modellers/custom_objectives.md
+          - Exporting Results: choice_modellers/exporting_results.md
+      - Inference Modes:
+          - Overview: inference/overview.md
+          - Zero-Shot: inference/zero_shot.md
+          - Few-Shot: inference/few_shot.md
+          - Training From Scratch: inference/from_scratch.md
       - Tutorials:
+          - Overview: tutorials/notebooks.md
           - 01. Getting Started: tutorials/01_getting_started.md
           - 02. Datasets and User Data: tutorials/02_datasets_and_user_data.md
           - 02. Your Own Datasets: tutorials/02_your_own_datasets.md
@@ -45,31 +52,34 @@ nav:
       - Example: datasets/example.md
       - Format: datasets/dataset_format.md
 
-  - Researchers and ML Practitioners:
-      - Getting Started: researchers/getting_started.md
-      - Delphos Architecture: researchers/architecture.md
-      - Task and Catalogue: researchers/task_and_catalogue.md
-      - State Representations: researchers/state_representations.md
-      - Action Space: researchers/action_space.md
-      - Reward Functions: researchers/reward_functions.md
-      - Apollo Integration: researchers/apollo_integration.md
-      - Training Pipeline: researchers/training_pipeline.md
-      - Inference and Transfer: researchers/inference_and_transfer.md
-      - Adding New Datasets: researchers/adding_datasets.md
-      - Adding New Rewards: researchers/adding_rewards.md
-      - Extending the Framework: researchers/extending_framework.md
+  - Research & Papers:
+      - Overview: research/index.md
+      - Papers and Reproducibility: research/papers.md
+      - Reinforcement Learning:
+          - Overview: reinforcement_learning/overview.md
+          - Rewards: reinforcement_learning/rewards.md
+          - Training: reinforcement_learning/training.md
+          - Transfer Learning: reinforcement_learning/transfer_learning.md
+      - Researcher Guide:
+          - Getting Started: researchers/getting_started.md
+          - Delphos Architecture: researchers/architecture.md
+          - Task and Catalogue: researchers/task_and_catalogue.md
+          - State Representations: researchers/state_representation.md
+          - Action Space: researchers/action_space.md
+          - Reward Functions: researchers/reward_functions.md
+          - Apollo Integration: researchers/apollo_integration.md
+          - Training Pipeline: researchers/training_pipeline.md
+          - Inference and Transfer: researchers/inference_and_transfer.md
+          - Adding New Datasets: researchers/adding_new_datasets.md
+          - Adding New Rewards: researchers/adding_new_rewards.md
+          - Extending the Framework: researchers/extending_framework.md
 
-  - Tutorials:
-      - Notebooks Overview: tutorials/notebooks.md
-      - 01. Getting Started: tutorials/01_getting_started.md
-      - 02. Datasets and User Data: tutorials/02_datasets_and_user_data.md
-      - 02. Your Own Datasets: tutorials/02_your_own_datasets.md
-      - 03. Modelling Space: tutorials/03_modelling_space.md
-      - 04. Delphos Parameters: tutorials/04_delphos_parameters.md
-      - 05. Reward Function: tutorials/05_reward_function.md
-      - 06. Quick Results: tutorials/06_quick_results.md
-      - 07. Robust Results: tutorials/07_robust_results.md
-      - 08. Environment and Outputs: tutorials/08_environment_and_outputs.md
+  - Development:
+      - Overview: development/index.md
+      - Components: development/components.md
+      - Contribution Workflow: development/contribution_workflow.md
+      - Branching Strategy: development/branches.md
+      - Documentation: development/documentation.md
 
 repo_url: https://github.com/TUD-CityAI-Lab/Multitask-Delphos
 repo_name: Multitask-Delphos

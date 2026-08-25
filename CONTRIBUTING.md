@@ -6,7 +6,7 @@ Please refer to our full **[Development Documentation](https://tud-cityai-lab.gi
 
 1. [Branching Strategy](https://tud-cityai-lab.github.io/Multitask-Delphos/development/branches/)
 2. [Contribution Workflow](https://tud-cityai-lab.github.io/Multitask-Delphos/development/contribution_workflow/)
-3. [Managing Submodules](https://tud-cityai-lab.github.io/Multitask-Delphos/development/submodules/)
+3. [Managing Components](https://tud-cityai-lab.github.io/Multitask-Delphos/development/components/)
 
 ## Quick Summary
 

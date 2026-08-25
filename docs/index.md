@@ -73,17 +73,17 @@ Choose the guide that best matches your profile.
 1. [Getting Started](./choice_modellers/getting_started.md)
 2. [First application](./choice_modellers/first_application.md)
 3. [Understanding results](./choice_modellers/understanding_results.md)
-4. [Using catalogue datasets](./choice_modellers/using_catalogue_datasets.md)
-5. [Using your own datasets](./choice_modellers/using_your_own_datasets.md)
+4. [Using catalogue datasets](./choice_modellers/catalogue_datasets.md)
+5. [Using your own datasets](./choice_modellers/own_datasets.md)
 6. [Custom objectives](./choice_modellers/custom_objectives.md)
 7. [Exporting results](./choice_modellers/exporting_results.md)
 
 **Researchers and ML Practitioners**: Learn how Delphos is trained, evaluated, and extended.
 
-1. [Installation](./researchers/installation.md)
-2. [Delphos architecture](./researchers/delphos_architecture.md)
+1. [Getting started](./researchers/getting_started.md)
+2. [Delphos architecture](./researchers/architecture.md)
 3. [Task and Catalogue](./researchers/task_and_catalogue.md)
-4. [State representations](./researchers/state_representations.md)
+4. [State representations](./researchers/state_representation.md)
 5. [Action space](./researchers/action_space.md)
 6. [Reward functions](./researchers/reward_functions.md)
 7. [Apollo integration](./researchers/apollo_integration.md)
@@ -91,7 +91,7 @@ Choose the guide that best matches your profile.
 9. [Inference and transfer](./researchers/inference_and_transfer.md)
 10. [Adding new datasets](./researchers/adding_new_datasets.md)
 11. [Adding new rewards](./researchers/adding_new_rewards.md)
-12. [Extending the framework](./researchers/extending_the_framework.md)
+12. [Extending the framework](./researchers/extending_framework.md)
 
 ---
 
@@ -102,12 +102,13 @@ If you use Delphos, please cite the corresponding repositories and associated pu
 ### Publications
 
 ```bibtex
-@techreport{nova2025delphos,
+@misc{nova2026delphos,
   title={Delphos: A reinforcement learning framework for assisting discrete choice model specification},
   author={Nova, Gabriel and Hess, Stephane and van Cranenburgh, Sander},
-  year={2025},
-  institution={TU Delft},
-  url={https://arxiv.org/abs/2506.06410}
+  year={2026},
+  note={SSRN working paper},
+  doi={10.2139/ssrn.6430865},
+  url={https://ssrn.com/abstract=6430865}
 }
 
 @techreport{nova2026sharing,
