@@ -10,14 +10,13 @@ Start here if you normally specify models in Apollo or Biogeme and want Delphos 
 
 | Notebook | Modelling question | Outcome |
 | --- | --- | --- |
+| [00. Installation](end-user/00_installation.ipynb) | How do I install Delphos? | Verify pip installation, import the package, and test R |
 | [01. Getting Started](end-user/01_getting_started.ipynb) | How do I obtain my first candidate specifications? | Load a task and checkpoint, propose candidates, inspect Apollo code |
 | [02. Your Own Datasets](end-user/02_your_own_datasets.ipynb) | How does my CSV become a Delphos task? | Inspect a bundled task and build a validated user task |
 | [03. Modelling Space](end-user/03_modelling_space.ipynb) | Which modelling decisions should Delphos be allowed to explore? | Restrict transformations, tastes, and covariates |
-| [04. Search Parameters](end-user/04_delphos_parameters.ipynb) | How do I balance determinism, diversity, and runtime? | Configure proposal generation deliberately |
-| [05. Reward and Ranking](end-user/05_reward_function.ipynb) | What did the training reward mean, and how should I rank candidates? | Separate learned policy reward from application-specific ranking |
-| [06. Quick Results](end-user/06_quick_results.ipynb) | How can I run a small first application? | Produce a reviewable shortlist with a modest budget |
-| [07. Robust Results](end-user/07_robust_results.ipynb) | How do I run a broader, reproducible search? | Repeat seeds, estimate candidates, and consolidate evidence |
-| [08. Apollo and Outputs](end-user/08_environment_and_outputs.ipynb) | Where do R, Apollo, caches, and exported files enter? | Diagnose the environment and preserve outputs |
+| [04. Advanced Search](end-user/04_advanced_search.ipynb) | How do I run a broader search? | Configure advanced sampling, run Delphos in a loop, save outputs |
+| [05. Reward and Ranking](end-user/05_reward_function.ipynb) | How does Delphos rank candidate models? | Rank outputs by AIC, BIC, and Adjusted Rho-squared |
+| [06. Exploring in R](end-user/06_exploring_in_r.ipynb) | How can I explore specifications manually? | Extract R scripts from proposals and use them in RStudio |
 
 The early notebooks include representative saved output where it helps interpretation. Some tutorials intentionally call Apollo so that the resulting diagnostics can be explained; others guard estimation or long searches with flags such as `RUN_ESTIMATION` or `RUN_LONG`. Read the setup cell before using **Run All**.
 

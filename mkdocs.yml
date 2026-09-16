@@ -55,14 +55,13 @@ nav:
   - Tutorials:
       - Tutorial Library: tutorials/index.md
       - Final-user Notebooks:
+          - 00. Installation: tutorials/end-user/00_installation.ipynb
           - 01. Getting Started: tutorials/end-user/01_getting_started.ipynb
           - 02. Your Own Datasets: tutorials/end-user/02_your_own_datasets.ipynb
           - 03. Modelling Space: tutorials/end-user/03_modelling_space.ipynb
-          - 04. Search Parameters: tutorials/end-user/04_delphos_parameters.ipynb
+          - 04. Advanced Search: tutorials/end-user/04_advanced_search.ipynb
           - 05. Reward and Ranking: tutorials/end-user/05_reward_function.ipynb
-          - 06. Quick Results: tutorials/end-user/06_quick_results.ipynb
-          - 07. Robust Results: tutorials/end-user/07_robust_results.ipynb
-          - 08. Apollo and Outputs: tutorials/end-user/08_environment_and_outputs.ipynb
+          - 06. Exploring in R: tutorials/end-user/06_exploring_in_r.ipynb
       - Research Notebooks:
           - 01. Task Representation: tutorials/research/01_task.ipynb
           - 02. State Representation: tutorials/research/02_state.ipynb
