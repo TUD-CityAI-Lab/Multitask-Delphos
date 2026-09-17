@@ -73,4 +73,4 @@ Increasing the budget does not guarantee more useful models. Monitor duplicates,
 
 Always record the checkpoint, task schema, modelling-space restrictions, search parameters, and random seed. A seed makes a run repeatable only when the software versions and input artefacts are also unchanged.
 
-The [Robust Results notebook](../tutorials/end-user/07_robust_results.ipynb) demonstrates a longer, resumable strategy schedule.
+The [Robust Results notebook](../tutorials/end-user/04_advanced_search.ipynb) demonstrates a longer, resumable strategy schedule.

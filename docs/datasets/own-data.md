@@ -107,4 +107,4 @@ print(proposal.apollo_specification.utility_code)
 
 Confirm that variable mappings, availability, reference alternatives, parameter sharing, and transformations match your intended choice model.
 
-The complete executable example is available in [02. Your Own Datasets](../tutorials/end-user/02_your_own_datasets.ipynb).
+The complete executable example is available in [02. Your Own Datasets](../tutorials/end-user/03_your_own_datasets.ipynb).

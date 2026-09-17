@@ -102,4 +102,4 @@ Correct the data or modelling space rather than repeatedly increasing the search
 | `probability_code` | `apollo_probabilities` | `loglogit`/probability expression |
 | `ProposalSet.to_dataframe()` | Compact model-output comparison | Compiled estimation-results table |
 
-For a detailed walkthrough, open [Apollo and Outputs](../tutorials/end-user/08_environment_and_outputs.ipynb).
+For a detailed walkthrough, open [Apollo and Outputs](../tutorials/end-user/04_advanced_search.ipynb).
