@@ -4,7 +4,7 @@
     "source": "tutorials",
     "published": "docs/tutorials/end-user",
     "notebooks": {
-      "00_installation.ipynb": "d5c11ca05e0496605ece3a06e565ff7219ee45704c26b076a26040e570913c48",
+      "00_installation.ipynb": "288ebaaf189fb6ff064aa467b371bb3a0f06050e03fddce98a0692547836888b",
       "01_getting_started.ipynb": "ddca41c3e17c8d3741b0dc3cbe900daba1e4b1e418398795cc827add50dc46bf",
       "02_modelling_space.ipynb": "067120602d31fe24bf82d60bc3637e213f287837d76897d80131e85b73830aab",
       "03_your_own_datasets.ipynb": "49e7d8c6e787a4c4b8f04968889933ffea3f0b055e49633aa8e9ed153284aecc",
