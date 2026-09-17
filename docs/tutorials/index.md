@@ -12,8 +12,8 @@ Start here if you normally specify models in Apollo or Biogeme and want Delphos 
 | --- | --- | --- |
 | [00. Installation](end-user/00_installation.ipynb) | How do I install Delphos? | Verify pip installation, import the package, and test R |
 | [01. Getting Started](end-user/01_getting_started.ipynb) | How do I obtain my first candidate specifications? | Load a task and checkpoint, propose candidates, inspect Apollo code |
-| [02. Your Own Datasets](end-user/02_your_own_datasets.ipynb) | How does my CSV become a Delphos task? | Inspect a bundled task and build a validated user task |
-| [03. Modelling Space](end-user/03_modelling_space.ipynb) | Which modelling decisions should Delphos be allowed to explore? | Restrict transformations, tastes, and covariates |
+| [02. Modelling Space](end-user/02_modelling_space.ipynb) | Which modelling decisions should Delphos be allowed to explore? | Restrict transformations, tastes, and covariates |
+| [03. Your Own Datasets](end-user/03_your_own_datasets.ipynb) | How does my CSV become a Delphos task? | Inspect a bundled task and build a validated user task |
 | [04. Advanced Search](end-user/04_advanced_search.ipynb) | How do I run a broader search? | Configure advanced sampling, run Delphos in a loop, save outputs |
 | [05. Reward and Ranking](end-user/05_reward_function.ipynb) | How does Delphos rank candidate models? | Rank outputs by AIC, BIC, and Adjusted Rho-squared |
 | [06. Exploring in R](end-user/06_exploring_in_r.ipynb) | How can I explore specifications manually? | Extract R scripts from proposals and use them in RStudio |

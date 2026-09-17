@@ -57,8 +57,8 @@ nav:
       - Final-user Notebooks:
           - 00. Installation: tutorials/end-user/00_installation.ipynb
           - 01. Getting Started: tutorials/end-user/01_getting_started.ipynb
-          - 02. Your Own Datasets: tutorials/end-user/02_your_own_datasets.ipynb
-          - 03. Modelling Space: tutorials/end-user/03_modelling_space.ipynb
+          - 02. Modelling Space: tutorials/end-user/02_modelling_space.ipynb
+          - 03. Your Own Datasets: tutorials/end-user/03_your_own_datasets.ipynb
           - 04. Advanced Search: tutorials/end-user/04_advanced_search.ipynb
           - 05. Reward and Ranking: tutorials/end-user/05_reward_function.ipynb
           - 06. Exploring in R: tutorials/end-user/06_exploring_in_r.ipynb
